@@ -1,22 +1,23 @@
 import style from './index.module.scss'
-import ProdcutAndServiceItem from '../../../components/ProductAndServiceItem';
+import HomeItem from '../../../components/HomeItem';
 import { useState, useEffect } from 'react';
 function Service({ windowWidth }) {
+
     const services = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_18087353_M-e1602471243188.jpg",
-            mainText: "顔",
-            subText: "FACE"
+            upperLeftCornerMainText: "顔",
+            upperLeftCornerSubText: "FACE"
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_18087337_M-e1602471279127.jpg",
-            mainText: "全身",
-            subText: "BODY"
+            upperLeftCornerMainText: "全身",
+            upperLeftCornerSubText: "BODY"
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_66741724_M.jpg",
-            mainText: "VIO",
-            subText: "VIO"
+            upperLeftCornerMainText: "VIO",
+            upperLeftCornerSubText: "VIO"
         }
     ]
 
@@ -34,8 +35,8 @@ function Service({ windowWidth }) {
         <div className={style.container}>
             <div className={style.items}>
                 {services.map((item, index) => {
-                    return <div className={style.item}>
-                        <ProdcutAndServiceItem fontSize={fontSizeMainText} infor={item} index={index} />
+                    return <div key={index} className={style.item}>
+                        <HomeItem upperLeftCornerTextFS={fontSizeMainText} infor={item} />
                     </div>
                 })}
             </div>

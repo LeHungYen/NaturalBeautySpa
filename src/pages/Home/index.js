@@ -2,7 +2,7 @@ import style from './index.module.scss'
 
 import Service from './Service'
 import Product from './Product'
-
+import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 export function Home() {
 
@@ -30,6 +30,10 @@ export function Home() {
 
             <div className={style.product}>
                 <Product windowWidth={windowWidth} />
+            </div>
+
+            <div className={style.courseProduct}>
+                <CourseProduct windowWidth={windowWidth} />
             </div>
         </div>
     )

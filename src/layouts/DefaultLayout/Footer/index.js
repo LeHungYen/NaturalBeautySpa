@@ -2,10 +2,73 @@ import style from './index.module.scss'
 import { ImHome } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
+import HomeItem from '../../../components/HomeItem';
+import { useState, useEffect } from 'react';
 function Footer() {
+    const row1Item = [
+        {
+            img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_69294004_M.jpg",
+            textBelow: "本店アクセス"
+        },
+        {
+            img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23376677_M-e1603864881118.jpg",
+            textBelow: "脱毛メニュー"
+        },
+        {
+            img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_21787413_M.jpg",
+            textBelow: "会社概要"
+        }
+    ]
+
+    // check window width
+    const [windowWidth, setWindowWidth] = useState(null);
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    //end
+
+
+    // Update font size based on window width
+    const [row1FS, setRow1FS] = useState(20)
+    const [textBelowH, setTextBelowH] = useState(60)
+    useEffect(() => {
+        if (windowWidth < 750) {
+            setRow1FS(16);
+        } else {
+            setRow1FS(20);
+        }
+
+        if (windowWidth < 550) {
+            setTextBelowH(50);
+        } else {
+            setTextBelowH(60)
+        }
+    }, [windowWidth]);
+
     return (
         <div className={style.container}>
             <div className={style.row1}>
+                <div className={style.items}>
+                    {row1Item.map((item, index) => {
+                        return (
+                            <div key={index} className={style.item}>
+                                <HomeItem infor={item} textBelowH={textBelowH} textBelowFS={row1FS} textBelowC="#2bb8d1" />
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+
+            <div className={style.row2}>
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
                         <div className={style.logo}>
@@ -57,7 +120,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className={style.row2}>
+            <div className={style.row3}>
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
                         <div className={style.home}>
@@ -97,7 +160,7 @@ function Footer() {
 
             </div>
 
-            <div className={style.row3}>
+            <div className={style.row4}>
                 <div className={style.displayFlex}>
                     <div className={style.social}>
                         <ul>
