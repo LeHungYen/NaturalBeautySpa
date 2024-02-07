@@ -4,7 +4,7 @@ import { Home } from "../pages/Home"
 import { NullLayout } from "../layouts/NullLayout"
 
 const publicRoutes = [
-    { path: routes.home, component: Home, layout: NullLayout }
+    { path: routes.home, component: Home }
 ]
 
 const privateRoutes = [
