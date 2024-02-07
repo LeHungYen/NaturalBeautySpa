@@ -2,6 +2,8 @@ import style from './index.module.scss'
 
 import Service from './Service'
 import Product from './Product'
+import New from './New';
+import Instagram from './Instagram';
 import Pharagraph from './Pharagraph';
 import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
@@ -31,6 +33,14 @@ export function Home() {
 
             <div className={style.product}>
                 <Product windowWidth={windowWidth} />
+            </div>
+
+            <div className={style.new}>
+                <New windowWidth={windowWidth} />
+            </div>
+
+            <div className={style.instagram}>
+                <Instagram windowWidth={windowWidth} />
             </div>
 
             <div className={style.pharagraph}>
