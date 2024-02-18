@@ -1,0 +1,78 @@
+.homePharagraphItem {
+    width: 100%;
+    height: 100%;
+}
+
+.container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .img {
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+    }
+
+    .img:hover {
+        img {
+            transform: scale(1.2);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .pharagraph {
+        height: 50%;
+        width: 100%;
+        background-color: #f4f4f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.75s ease;
+        cursor: pointer;
+
+        .text {
+            padding: 50px;
+
+            .title {
+                font-size: 24px;
+                font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+                // font-family: 'Times New Roman', Times, serif;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+
+            .subTitle {
+                margin-top: 14px;
+                font-size: 16px;
+                font-weight: 400;
+                // font-family: 'Times New Roman', Times, serif;
+                font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+                line-height: 2;
+            }
+        }
+    }
+
+    .pharagraph:hover {
+        background-color: #2dccd3;
+    }
+
+
+}

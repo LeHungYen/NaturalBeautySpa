@@ -1,0 +1,380 @@
+.container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 30px 0px 120px 0px;
+
+    .row1 {
+        width: 1182px;
+        margin: 0px auto;
+        padding: 90px 0px 35px 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+
+            img {
+                margin: 0px auto 45px auto;
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+            }
+        }
+
+        .title,
+        .titleMobile {
+            width: 100%;
+
+            p {
+                word-wrap: break-word;
+                text-align: center;
+                font-size: 42px;
+                font-weight: 500;
+                font-family: 'Times New Roman', Times, serif;
+                line-height: 1.6;
+            }
+        }
+
+        .sub,
+        .subMobile {
+            margin-top: 5px;
+
+            p {
+                text-align: center;
+                font-size: 16px;
+                line-height: 2.3;
+                font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+            }
+        }
+
+        .subMobile,
+        .titleMobile {
+            display: none;
+        }
+    }
+
+    .row2 {
+        width: 1182px;
+        margin: 0px auto;
+        margin-bottom: 60px;
+
+
+        .items {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            // flex-direction: column;
+
+            .item {
+                width: 33.33333%;
+                height: 800px;
+
+
+
+                .dFlex {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .flexReverse {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+
+                .dFlex,
+                .flexReverse {
+                    .img {
+                        height: 50%;
+                        width: 100%;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center center;
+                            transition: transform 0.5s ease;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .img:hover {
+                        img {
+                            transform: scale(1.2);
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .pharagraph {
+                        height: 50%;
+                        width: 100%;
+                        background-color: #f4f4f5;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.25s ease;
+                        cursor: pointer;
+
+                        .text {
+                            padding: 50px;
+
+                            .title {
+                                font-size: 24px;
+                                font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+                                // font-family: 'Times New Roman', Times, serif;
+                                font-weight: 500;
+                                line-height: 1.4;
+                            }
+
+                            .subTitle {
+                                margin-top: 14px;
+                                font-size: 16px;
+                                font-weight: 400;
+                                // font-family: 'Times New Roman', Times, serif;
+                                font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+                                line-height: 2;
+                            }
+                        }
+                    }
+
+                    .pharagraph:hover {
+                        background-color: #2dccd3;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}
+
+@media screen and (max-width:1250px) {
+    .container {
+        padding: 15px 30px 60px 30px;
+
+        .row1 {
+            width: 100%;
+            padding: 37px 30px 40px 30px;
+        }
+
+        .row2 {
+            width: 100%;
+
+            .items {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 100%;
+                    height: 350px;
+
+                    .dFlex {
+                        display: flex;
+                        flex-direction: row;
+                    }
+
+                    .flexReverse {
+                        display: flex;
+                        flex-direction: row-reverse;
+                    }
+
+                    .dFlex,
+                    .flexReverse {
+                        .img {
+                            width: 50%;
+                            height: 100%;
+                        }
+
+                        .pharagraph {
+                            width: 50%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:950px) {
+    .container {
+        padding: 15px 30px 60px 30px;
+
+        .row1 {
+            padding: 25px 20px 23px 20px;
+            width: 100%;
+
+            .logo {
+                img {
+                    width: 38px;
+                    height: 38px;
+                    margin-bottom: 25px;
+                }
+            }
+
+            .title,
+            .titleMobile {
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            .sub,
+            .subMobile {
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .row2 {
+            width: 100%;
+
+            .items {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 100%;
+                    height: 250px;
+
+                    .dFlex {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+
+                    .flexReverse {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        flex-wrap: wrap;
+                    }
+
+                    .dFlex,
+                    .flexReverse {
+                        .img {
+                            width: 50%;
+                            height: 100%;
+                        }
+
+                        .pharagraph {
+                            width: 50%;
+                            height: 100%;
+
+                            .text {
+                                .title {
+                                    font-size: 18px;
+                                }
+
+                                .subTitle {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:750px) {
+    .container {
+        .row1 {
+            width: 100%;
+
+            .title {
+                display: none;
+            }
+
+            .titleMobile {
+                display: block;
+            }
+
+            .sub {
+                display: none;
+            }
+
+            .subMobile {
+                display: block;
+            }
+        }
+
+        .row2 {
+            width: 100%;
+
+            .items {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 100%;
+                    height: auto;
+
+                    .dFlex,
+                    .flexReverse {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        .img {
+                            width: 100%;
+                            height: 320px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center center;
+                            }
+                        }
+
+                        .pharagraph {
+                            width: 100%;
+
+                            .text {
+                                padding: 65px 30px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    .container {
+        padding: 15px 20px 40px 20px;
+
+        .row1 {
+            width: 100%;
+            padding: 25px 0px 23px 0px;
+        }
+    }
+
+}

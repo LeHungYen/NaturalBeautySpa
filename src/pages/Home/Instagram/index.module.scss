@@ -1,0 +1,110 @@
+.container * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+.container {
+    width: 1182px;
+    margin: 0 auto;
+    padding: 60px 0px 60px 0px;
+
+    .instagram {
+        width: 100%;
+        padding: 26.4px 3.3px;
+        margin: 65px 0px 30px 0px;
+        border-top: solid 1px #cccccc;
+        border-bottom: solid 1px #cccccc;
+
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 1.6;
+        }
+    }
+
+    .text {
+        p {
+            text-align: center;
+            line-height: 2.4;
+            margin: 0px 0px 28px 0px;
+            word-wrap: break-word;
+        }
+    }
+
+    .button {
+        margin: 0px 0px 28px 0px;
+        display: flex;
+        justify-content: center;
+
+        button {
+            min-width: 350px;
+            max-width: 90%;
+            font-size: 110%;
+            padding: 12.3px 23px 11px 23px;
+            border: none;
+            height: 60px;
+            background-color: #535353;
+            transition: background-color 0.3s;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6c6c6c;
+        }
+    }
+
+}
+
+@media screen and (max-width:1250px) {
+    .container {
+        padding: 40px 30px 10px 30px;
+        width: 100%;
+
+        .text {
+            p {
+                line-height: 2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:950px) {
+    .container {
+        padding: 30px 20px 0px 20px;
+
+        .text {
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:765px) {
+    .container {
+        .instagram {
+            margin: 30px 0px 20px 0px;
+            padding: 11px 2.7px 11px 2.7px;
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:465px) {
+    .container {
+        .button{
+            height: auto;
+            button{
+                min-width: 90%;
+            }
+        }
+    }
+}
