@@ -7,10 +7,34 @@ import Instagram from './Instagram';
 import Pharagraph from './Pharagraph';
 import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
+import post from "../../services/api-call";
+import {useDispatch} from "react-redux";
+import {updateDict} from "../../store/action";
+import NavigationBar from "./header/navigation-bar";
+
+const apiData = {
+    dictKeys: [
+        "home"
+    ]
+}
 export function Home() {
 
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
+    const [apiSucceed, setApiSucceed] = useState(false);
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        const callApi = async function (requiredDict) {
+            const data = await post(apiData, "/home/get-page-data");
+            console.log(data);
+            const dictLibrary = data.dicts;
+            updateDict(dispatch, dictLibrary);
+            setApiSucceed(true);
+        }
+        callApi();
+    },[])
+
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -25,6 +49,9 @@ export function Home() {
 
     //end
 
+    if(!apiSucceed) {
+        return <></>
+    }
     return (
         <div className={style.container}>
             <div className={style.service}>

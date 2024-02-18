@@ -9,10 +9,9 @@ export function changeLanguage(dispatch, lang) {
 
 export function updateDict(dispatch, dictLibrary) {
     const state = store.getState();
-    const keys = Object.keys(dictLibrary);
     const dicts = state.dictLibrary;
-    for(const key of keys) {
-        dicts[key] = dictLibrary[key];
+    for(const dict of dictLibrary) {
+        dicts[dict.dictKey] = dict;
     }
     dispatch({
         type: 'UPDATE_DICT',

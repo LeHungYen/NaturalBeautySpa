@@ -4,7 +4,9 @@ import './App.css';
 
 import { publicRoutes } from './routes/index'
 import DefaultLayout from './layouts/DefaultLayout'
+import {useSelector} from "react-redux";
 function App() {
+    const state = useSelector(state => state);
   return (
     <BrowserRouter>
       <div className="App">
