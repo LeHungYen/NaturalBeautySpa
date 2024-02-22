@@ -1,29 +1,49 @@
 .header {
   background: transparent;
-  width: 100vh;
+  width: 100%;
 
   .site-top-bar {
     background-color: white;
   }
 
-  .header-item-container {
-    min-width: 1200px;
+  .items {
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
+
+    .logo {
+      margin-right: auto;
+      width: 200px;
+    }
+    .messenger {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        background-color: #266568;
+        color: white;
+        padding: 10px;
+      }
+    }
   }
 
-  .logo {
-    margin-right: auto;
-    width: 200px;
+  .navigation {
+    position: relative;
+    width: 100%;
+
+    .container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      z-index: 999;
+    }
   }
 
-  .top-bar-right-box {
-
-  }
-
-  .navigation-bar-container {
-
-  }
 }
 
 

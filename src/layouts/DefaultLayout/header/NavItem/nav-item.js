@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import style from './index.module.css'
 export default function NavItem(props) {
     const {name, url, items} = props;
     const [isShowPopup, showPopup] = useState(false);
@@ -21,7 +22,7 @@ export default function NavItem(props) {
     }
     return (
         <React.Fragment>
-            <div className="navigation-item-container"
+            <div className={style.container}
                  onMouseEnter={
                      ()=> {
                          showPopup(true)
@@ -31,8 +32,8 @@ export default function NavItem(props) {
                          showPopup(false)
                      }}
             >
-                <a className="navigation-path" href={url}>
-                    <span className="navigation-header">{name}</span>
+                <a className={style.path} href={url}>
+                    <span className={style.caption}>{name}</span>
                 </a>
                 {popupMenu()}
             </div>

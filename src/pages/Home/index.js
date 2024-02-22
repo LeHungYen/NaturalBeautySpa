@@ -9,27 +9,31 @@ import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
-import {updateDict} from "../../store/action";
-import NavigationBar from "./header/navigation-bar";
+import {updateDict, updatePageData} from "../../store/action";
+import {getLayoutDict} from "../../services/request-body-for-api";
 
 const apiData = {
     dictKeys: [
-        "home"
+        "home",
+        "nav-company",
+        "nav-customer-feedback",
+        "nav-intro",
+        "nav-product",
+        "nav-reservation",
+        "nav-service"
     ]
 }
-export function Home() {
-
+export function Home(props) {
+    const {layout} = props;
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
     const [apiSucceed, setApiSucceed] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        const callApi = async function (requiredDict) {
+        const callApi = async function () {
             const data = await post(apiData, "/home/get-page-data");
-            console.log(data);
-            const dictLibrary = data.dicts;
-            updateDict(dispatch, dictLibrary);
+            updatePageData(dispatch, data);
             setApiSucceed(true);
         }
         callApi();

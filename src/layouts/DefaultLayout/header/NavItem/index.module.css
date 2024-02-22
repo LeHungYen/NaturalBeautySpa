@@ -1,0 +1,11 @@
+.container {
+    .path {
+        text-decoration: none;
+        .caption {
+            color: white;
+            height: 60px;
+            font-size: 14px;
+            border: 1px transparent;
+        }
+    }
+}

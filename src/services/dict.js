@@ -2,10 +2,11 @@ import store from "../store/store";
 
 
 export function getDict(key) {
-    const state = store.getState();
-    const rs = state.dictLibrary[key][state.lang]
-    if(rs) {
+    try {
+        const state = store.getState();
+        const rs = state.dictLibrary[key][state.lang]
         return rs;
+    } catch (e) {
+        return "DICT_ERROR";
     }
-    return "DICT_ERROR";
 }
