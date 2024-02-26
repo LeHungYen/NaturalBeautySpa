@@ -20,11 +20,11 @@ export default function Header(props) {
     if(!navigations) {
         navigations = [
             {
-                name: getDict("nav-company"),
+                name: getDict("nav-about-company"),
                 url: "/"
             },
             {
-                name: getDict("nav-customer-feedback"),
+                name: getDict("nav-hair-remover"),
                 url: "/",
                 items: [
                     {
@@ -46,19 +46,19 @@ export default function Header(props) {
                 ]
             },
             {
-                name: getDict("nav-intro"),
-                url: "/"
-            },
-            {
                 name: getDict("nav-product"),
                 url: "/"
             },
             {
-                name: getDict("nav-reservation"),
+                name: getDict("nav-customer-feedback"),
                 url: "/"
             },
             {
-                name: getDict("nav-service"),
+                name: getDict("nav-company-profile"),
+                url: "/"
+            },
+            {
+                name: getDict("nav-reservation"),
                 url: "/"
             }
         ]
@@ -69,7 +69,7 @@ export default function Header(props) {
                 <div className={style.items}>
                     <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
                     <div className={style.messenger}>
-                        <span>Messenger</span>
+                        <span>{getDict("messenger-reservation")}</span>
                     </div>
                     <NavigationBarDrawerMode navigations={navigations}/>
                 </div>

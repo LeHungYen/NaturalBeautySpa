@@ -61,7 +61,7 @@ export default function NavigationBarDrawerMode(props) {
             <div className={style.drawer}>
                 <HiOutlineBars3 className={style.icon} onClick={openDrawer}/>
             </div>
-            <div className={style.popup}
+            <div className={style.popup} id="drawer-popup"
                  style={{display: isOpen ? 'block': 'none'}}
                  onMouseEnter={()=> insideDrawer.current = true}
                  onMouseLeave={()=> insideDrawer.current = false}
@@ -70,6 +70,7 @@ export default function NavigationBarDrawerMode(props) {
                     <NavItem {...item} key={index} />
                 )}
             </div>
+            <div className={style.overlay}  style={{display: isOpen ? 'block': 'none'}}/>
         </React.Fragment>
     )
 }

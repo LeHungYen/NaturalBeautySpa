@@ -2,7 +2,8 @@
 const defaultValue = {
     lang: "jp",
     dictLibrary: [],
-    pageData: undefined
+    pageData: undefined,
+    showLoading: true
 }
 
 export function reducer (state = defaultValue, action) {
@@ -16,7 +17,13 @@ export function reducer (state = defaultValue, action) {
             return {
                 ...state,
                 dictLibrary: action.payload.library,
-                pageData: action.payload.pageData
+                pageData: action.payload.pageData,
+                showLoading: false
+            }
+        case "SHOW_LOADING":
+            return {
+                ...state,
+                showLoading: true
             }
         default:
             return state

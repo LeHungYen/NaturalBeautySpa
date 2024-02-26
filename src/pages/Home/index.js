@@ -9,33 +9,36 @@ import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
-import {updateDict, updatePageData} from "../../store/action";
+import {showLoading, updateDict, updatePageData} from "../../store/action";
 import {getLayoutDict} from "../../services/request-body-for-api";
 import Banner from "./Banner";
+import Loading from "../../components/Loading/loading";
+import store from "../../store/store";
 
 const apiData = {
     dictKeys: [
-        "home",
-        "nav-company",
+        "nav-about-company",
+        "nav-company-profile",
         "nav-customer-feedback",
-        "nav-intro",
         "nav-product",
         "nav-reservation",
-        "nav-service"
+        "nav-hair-remover",
+        "banner-title",
+        "banner-sub-title",
+        "messenger-reservation"
     ]
 }
 export function Home(props) {
     const {layout} = props;
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
-    const [apiSucceed, setApiSucceed] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(()=> {
         const callApi = async function () {
+            showLoading(dispatch);
             const data = await post(apiData, "/home/get-page-data");
             updatePageData(dispatch, data);
-            setApiSucceed(true);
         }
         callApi();
     },[])
@@ -54,8 +57,8 @@ export function Home(props) {
 
     //end
 
-    if(!apiSucceed) {
-        return <></>
+    if(store.getState().showLoading) {
+        return <Loading/>
     }
     return (
         <div className={style.container}>

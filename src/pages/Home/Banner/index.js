@@ -1,5 +1,6 @@
 import style from './index.module.scss'
 import {useEffect, useRef} from "react";
+import {getDict} from "../../../services/dict";
 export default function Banner() {
     return (
         <div className={style.banner}>
@@ -25,10 +26,10 @@ export default function Banner() {
             </div>
             <div className={style.title}>
                 <div className={style.main}>
-                    プロが通うプライベートサロン「マリーブ」へようこそ。
+                    {getDict("banner-title")}
                 </div>
                 <div className={style.sub}>
-                    10万人の施術実績。私たちになくせない「ムダ毛」はありません。
+                    {getDict("banner-sub-title")}
                 </div>
             </div>
         </div>

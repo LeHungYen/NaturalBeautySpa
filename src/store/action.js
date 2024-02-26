@@ -22,3 +22,11 @@ export function updatePageData(dispatch, pageData) {
         }
     })
 }
+
+export function showLoading(dispatch) {
+    dispatch({
+        type: 'SHOW_LOADING',
+        payload: {
+        }
+    })
+}
