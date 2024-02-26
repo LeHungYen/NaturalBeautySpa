@@ -11,6 +11,7 @@ import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
 import {updateDict, updatePageData} from "../../store/action";
 import {getLayoutDict} from "../../services/request-body-for-api";
+import Banner from "./Banner";
 
 const apiData = {
     dictKeys: [
@@ -58,6 +59,9 @@ export function Home(props) {
     }
     return (
         <div className={style.container}>
+            <div>
+                <Banner/>
+            </div>
             <div className={style.service}>
                 <Service windowWidth={windowWidth} />
             </div>

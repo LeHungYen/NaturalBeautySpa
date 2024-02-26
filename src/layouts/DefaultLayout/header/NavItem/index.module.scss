@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    height: 60px;
+    min-width: 198px;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    .in {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background: #2dccd3;
+        transform: scaleY(0);
+        transition: top 0.5s ease;
+        animation: slideOut 0.5s ease forwards;
+    }
+    .path {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 100%;
+        .caption {
+            color: white;
+            font-size: 14px;
+            border: 1px transparent;
+        }
+    }
+}
+
+.container:hover {
+    .in {
+        animation: slideIn 0.5s ease forwards;
+    }
+    .popup {
+        animation: slideIn 0.5s ease forwards;
+    }
+    .intro {
+        display: flex;
+    }
+}
+
+.popup {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transform: translateY(0);
+    background: #00abc9;
+    width: 200px;
+    transition: top 0.5s ease;
+    animation: slideOut 0.5s ease forwards;
+    .item {
+        width: 100%;
+        cursor: pointer;
+        padding: 15px ;
+        .caption {
+            color: white;
+            overflow-wrap: break-word;
+            padding: 10px 15px;
+            font-size: 12px;
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    100% {
+        transform: scaleY(100%);
+        transform-origin: top;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: scaleY(100%);
+        transform-origin: top;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,23 @@
+.drawer {
+  display: none;
+  font-size: 30px;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+.popup {
+  position: absolute;
+  width: 400px;
+  height: 100vh;
+  right: 0;
+  background: #222222;
+  color: #ffffff ;
+  font-weight: 200;
+  font-size: 16px;
+  z-index: 9999;
+}
+
+@media (max-width: 1200px) {
+  .drawer {
+    display: block !important;
+  }
+}
