@@ -45,7 +45,9 @@
         display: flex;
     }
 }
-
+:global(.interacted) .popup {
+    animation: slideOut 0.5s ease forwards;
+}
 .popup {
     position: absolute;
     top: 60px;
@@ -54,7 +56,6 @@
     background: #00abc9;
     width: 140%;
     transition: top 0.5s ease;
-    animation: slideOut 0.5s ease forwards;
     .item {
         text-align: left;
         cursor: pointer;
