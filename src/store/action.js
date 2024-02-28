@@ -17,8 +17,8 @@ export function updatePageData(dispatch, pageData) {
     dispatch({
         type: 'UPDATE_PAGE_DATA',
         payload: {
-            library,
-            pageData
+            library: library,
+            pageData: pageData
         }
     })
 }

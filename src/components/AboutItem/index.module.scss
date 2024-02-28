@@ -1,15 +1,41 @@
 .container {
-
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  position: relative;
   .title {
-
+    color: #2dccd3;
+    font-size: 22px;
+    text-align: center;
+    line-height: 80px;
   }
   img {
-
+    width: 100%;
+    height: auto;
+  }
+  .subs {
+    margin: 40px 80px;
   }
   .sub {
-
+    font-size: 24px;
+    font-weight: 500;
+    flex:1;
   }
   .description {
-
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+    line-height: 2.4;
+    font-size: 17px;
+  }
+  button {
+    color:white;
+    background: #222222;
+    height: 60px;
+    min-width: 240px;
+    margin-bottom: 40px;
+    margin-top: auto;
   }
 }

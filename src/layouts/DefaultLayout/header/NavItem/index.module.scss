@@ -28,7 +28,9 @@
             font-size: 14px;
             border: 1px transparent;
         }
-
+    }
+    .show {
+        display: none;
     }
 }
 
@@ -68,7 +70,7 @@
 }
 
 
-@keyframes slideIn {
+@keyframes slideInPu {
     0% {
         transform: scaleY(0);
         height: 0;
@@ -81,7 +83,7 @@
     }
 }
 
-@keyframes slideOut {
+@keyframes slideOutPu {
     0% {
         transform: scaleY(100%);
         transform-origin: top;
@@ -91,6 +93,28 @@
         transform: scaleY(0);
         transform-origin: top;
         height: 0;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    100% {
+        transform: scaleY(100%);
+        transform-origin: top;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: scaleY(100%);
+        transform-origin: top;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: top;
     }
 }
 
@@ -128,11 +152,11 @@
         background: #2bc6ce;
     }
     :global(.interacted.open).popup {
-        animation: slideIn 0.5s ease forwards;
+        animation: slideInPu 0.5s ease forwards;
         display: flex;
     }
     :global(.interacted.close).popup {
-        animation: slideOut 0.5s ease forwards;
+        animation: slideOutPu 0.5s ease forwards;
         display: flex;
         height: 0;
     }

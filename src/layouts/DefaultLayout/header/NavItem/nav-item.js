@@ -59,7 +59,7 @@ export default function NavItem(props) {
                         }
                     }
                 }}
-                     style={{display: `${(items) ? 'flex' : 'none'}`}}
+                     style={{display: `${(items && drawerMode) ? 'flex' : 'none'}`}}
                 >
                     <FaChevronDown/>
                 </div>
