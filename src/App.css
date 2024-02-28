@@ -2,13 +2,32 @@ html {
     overflow-x: hidden;
 }
 
-html:has(#root.disable) {
-    overflow: hidden;
-}
+@media (max-width: 1200px) {
+    html:has(#root.disable) {
+        overflow: hidden;
+    }
 
-#root.disable *:not(#drawer-popup),
-#root.disable *:not(#drawer-popup *)
-{
-    pointer-events: none;
-    backdrop-filter: blur(1px);
+    #root.disable
+    {
+        pointer-events: none;
+    }
+
+    #root.disable .drawer *, #root.disable .drawer {
+        pointer-events: auto;
+    }
+
+    .disable-background-overlay {
+        display: none;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 990;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+    }
+
+    #root.disable *:not(#drawer-popup) .disable-background-overlay {
+        display: block;
+    }
 }

@@ -5,32 +5,18 @@ import style from './index.module.scss'
 import NavItem from "../NavItem/nav-item";
 import {getDict} from "../../../../services/dict";
 
-
+var insideDrawer = false;
 export default function NavigationBarDrawerMode(props) {
     let {navigations} = props;
     if(!navigations) {
         navigations = defaultNavigations();
     }
     const [isOpen, setIsOpen] = useState(false);
-    const insideDrawer = useRef(false);
     const [isFirstOpen, setFirstOpen] = useState(true);
-
-
-    useEffect(() => {
-        const resize = function(e) {
-            if (window.innerWidth < 800 && !isFirstOpen) {
-                setFirstOpen(true);
-            }
-        }
-        window.addEventListener("resize", resize);
-        return ()=> {
-            window.removeEventListener("resize", resize);
-        }
-    }, [isFirstOpen])
 
     useEffect(() => {
         const closeDrawer = function(e) {
-            if(!insideDrawer.current) {
+            if(!insideDrawer) {
                 setIsOpen(false);
                 document.getElementById("root").classList.remove("disable");
             }
@@ -45,10 +31,6 @@ export default function NavigationBarDrawerMode(props) {
         };
     }, [isOpen]);
 
-    for (const i in navigations) {
-        navigations[i]['items'] = undefined;
-    }
-
     const openDrawer = function(e) {
         e.stopPropagation();
         document.getElementById("root").classList.toggle("disable");
@@ -58,19 +40,18 @@ export default function NavigationBarDrawerMode(props) {
 
     return (
         <React.Fragment>
-            <div className={style.drawer}>
-                <HiOutlineBars3 className={style.icon} onClick={openDrawer}/>
+            <div className={style.icon}>
+                <HiOutlineBars3 onClick={openDrawer}/>
             </div>
-            <div className={style.popup} id="drawer-popup"
-                 style={{display: isOpen ? 'block': 'none'}}
-                 onMouseEnter={()=> insideDrawer.current = true}
-                 onMouseLeave={()=> insideDrawer.current = false}
+            <div className={`drawer ${isOpen ? 'out' : 'in'} ${isFirstOpen ? '' : 'clicked'}`} id="drawer-popup"
+                 style={{transform: `scaleX(${isOpen ? 1: 0})`}}
+                 onMouseEnter={()=> insideDrawer = true}
+                 onMouseLeave={()=> insideDrawer = false}
             >
                 {navigations.map((item, index) =>
-                    <NavItem {...item} key={index} />
+                    <NavItem {...item} drawerMode={true} key={index} />
                 )}
             </div>
-            <div className={style.overlay}  style={{display: isOpen ? 'block': 'none'}}/>
         </React.Fragment>
     )
 }

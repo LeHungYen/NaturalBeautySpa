@@ -9,6 +9,7 @@ function DefaultLayout({ children }) {
                 {children}
             </div>
             <Footer />
+            <div className="disable-background-overlay"/>
         </div>
     );
 }

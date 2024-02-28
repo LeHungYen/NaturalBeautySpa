@@ -1,3 +1,7 @@
+:global(#root.disable) .header {
+  position: unset;
+}
+
 .header {
   background: transparent;
   width: 100%;
