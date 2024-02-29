@@ -11,7 +11,11 @@ import Loading from "./components/Loading/loading";
 import store from "./store/store";
 import {useEffect, useState} from "react";
 function App() {
-    const state = useSelector(state => state)
+    const {pageData, dictLibrary, showLoading} = useSelector(state => ({
+        pageData: state.pageData,
+        dictLibrary: state.dictLibrary,
+        showLoading: state.showLoading
+    }))
   return (
     <BrowserRouter>
       <div className="App">

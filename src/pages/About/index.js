@@ -53,15 +53,8 @@ const apiData = {
     ]
 }
 
-export function About() {
-    const dispatch = useDispatch()
-    const bannerData = {
-        titles: [getDict("about-banner-title1"), getDict("about-banner-title2")],
-        subTitles: [getDict("about-banner-description1"), getDict("about-banner-description2")],
-        image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23234665_M-1.jpg",
-    }
-
-    const items = [
+export function getAboutData() {
+    return [
         {
             title: getDict("about-item-1-title"),
             subTitles: [getDict("about-item-1-sub-title-1st"), getDict("about-item-1-sub-title-2nd")],
@@ -79,14 +72,14 @@ export function About() {
         {
             title: getDict("about-item-3-title"),
             subTitles: [getDict("about-item-3-sub-title-1st"), getDict("about-item-3-sub-title-2nd")],
-            src: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
+            src: "https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_69294110_M-830x300.jpg",
             btn: getDict("about-item-3-button-caption"),
             description : getDict("about-item-3-description"),
         },
         {
             title: getDict("about-item-4-title"),
             subTitles: [getDict("about-item-4-sub-title-1st"), getDict("about-item-4-sub-title-2nd")],
-            src: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
+            src: "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_27-830x300.jpg",
             btn: getDict("about-item-4-button-caption"),
             description : getDict("about-item-4-description"),
         },
@@ -105,6 +98,16 @@ export function About() {
             description : getDict("about-item-6-description"),
         },
     ]
+}
+
+export function About() {
+    const dispatch = useDispatch()
+    const bannerData = {
+        titles: [getDict("about-banner-title1"), getDict("about-banner-title2")],
+        subTitles: [getDict("about-banner-description1"), getDict("about-banner-description2")],
+        image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23234665_M-1.jpg",
+    }
+    const items = getAboutData();
 
     useEffect(()=> {
         const callApi = async function () {
