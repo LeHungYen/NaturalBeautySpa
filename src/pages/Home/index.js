@@ -7,10 +7,63 @@ import Instagram from './Instagram';
 import Pharagraph from './Pharagraph';
 import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
-export function Home() {
+import post from "../../services/api-call";
+import {useDispatch} from "react-redux";
+import {showLoading, updateDict, updatePageData} from "../../store/action";
+import {getLayoutDict} from "../../services/request-body-for-api";
+import Banner from "./Banner";
+import Loading from "../../components/Loading/loading";
+import store from "../../store/store";
 
+const apiData = {
+    dictKeys: [
+        "nav-about-company",
+        "nav-company-profile",
+        "nav-customer-feedback",
+        "nav-product",
+        "nav-reservation",
+        "nav-hair-remover",
+        "banner-title",
+        "banner-sub-title",
+        "messenger-reservation",
+        "about-item-1-title",
+        "about-item-1-sub-title-1st",
+        "about-item-1-sub-title-2nd",
+        "about-item-2-title",
+        "about-item-2-sub-title-1st",
+        "about-item-2-sub-title-2nd",
+        "about-item-3-title",
+        "about-item-3-sub-title-1st",
+        "about-item-3-sub-title-2nd",
+        "about-item-4-title",
+        "about-item-4-sub-title-1st",
+        "about-item-4-sub-title-2nd",
+        "about-item-5-title",
+        "about-item-5-sub-title-1st",
+        "about-item-5-sub-title-2nd",
+        "about-item-6-title",
+        "about-item-6-sub-title-1st",
+        "about-item-6-sub-title-2nd",
+        "about-popup-sub-title",
+        "about-popup-description",
+        "about-popup-btn",
+    ]
+}
+export function Home(props) {
+    const {layout} = props;
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        const callApi = async function () {
+            showLoading(dispatch);
+            const data = await post(apiData, "/home/get-page-data");
+            updatePageData(dispatch, data);
+        }
+        callApi();
+    },[])
+
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -25,8 +78,14 @@ export function Home() {
 
     //end
 
+    if(store.getState().showLoading) {
+        return <Loading/>
+    }
     return (
         <div className={style.container}>
+            <div>
+                <Banner/>
+            </div>
             <div className={style.service}>
                 <Service windowWidth={windowWidth} />
             </div>

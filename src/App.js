@@ -3,8 +3,19 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 
 import { publicRoutes } from './routes/index'
-import DefaultLayout from './layouts/DefaultLayout';
+import DefaultLayout from './layouts/DefaultLayout'
+import {useDispatch, useSelector, useStore} from "react-redux";
+import post from "./services/api-call";
+import {updatePageData} from "./store/action";
+import Loading from "./components/Loading/loading";
+import store from "./store/store";
+import {useEffect, useState} from "react";
 function App() {
+    const {pageData, dictLibrary, showLoading} = useSelector(state => ({
+        pageData: state.pageData,
+        dictLibrary: state.dictLibrary,
+        showLoading: state.showLoading
+    }))
   return (
     <BrowserRouter>
       <div className="App">
@@ -15,13 +26,12 @@ function App() {
               if (route.layout) {
                 Layout = route.layout;
               }
-
               const Page = route.component;
               return (
                 <Route key={index}
                   path={route.path}
                   element={
-                    <Layout><Page /></Layout>
+                    <Layout><Page layout={Layout}/></Layout>
                   }>
                 </Route>
               );
