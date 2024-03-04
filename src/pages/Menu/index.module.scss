@@ -1,0 +1,85 @@
+.container>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+.container {
+    .banner {
+        width: 100%;
+        height: 180px;
+        position: relative;
+
+        .bannerBackground {
+            height: 180px;
+
+            img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                object-position: center 0px;
+            }
+        }
+
+        .bannerText {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+
+            p {
+                margin: 0px auto;
+                width: 1182px;
+                font-size: 32px;
+                color: #ffffff;
+                font-weight: 500;
+                font-family: 'Times New Roman', Times, serif;
+            }
+        }
+    }
+
+    .menu {
+        width: 100%;
+        border-bottom: 1px solid #bdbdbd;
+
+        ul {
+            width: 1182px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            height: 60px;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .homeIcon {
+                    display: flex;
+                    font-size: 13px;
+                    padding-bottom: 3px;
+                }
+
+                .icon {
+                    color: #7c7c7c;
+                }
+            }
+
+
+        }
+    }
+
+    .content {
+        width: 1182px;
+        margin: 0 auto;
+        min-height: 700px;
+    }
+
+}
