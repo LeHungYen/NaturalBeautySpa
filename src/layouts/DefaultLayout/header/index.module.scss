@@ -69,7 +69,7 @@
 }
 
 .intro {
-  height: calc(100vw - 142px);
+  height: fit-content;
   width: calc(100% + 5px);
   left: -3px;
   position: absolute;
@@ -121,6 +121,9 @@
         font-size: 14px;
         color: white;
       }
+    }
+    :global(.about-item-popup) {
+      cursor: pointer;
     }
   }
 }

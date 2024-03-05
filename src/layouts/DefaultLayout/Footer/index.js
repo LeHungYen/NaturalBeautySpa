@@ -4,6 +4,8 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import HomeItem from '../../../components/HomeItem';
 import { useState, useEffect } from 'react';
+import store from "../../../store/store";
+import Loading from "../../../components/Loading/loading";
 function Footer() {
     const row1Item = [
         {
@@ -54,6 +56,9 @@ function Footer() {
         }
     }, [windowWidth]);
 
+    if(store.getState().showLoading) {
+        return <Loading/>
+    }
     return (
         <div className={style.container}>
             <div className={style.row1}>
