@@ -70,33 +70,6 @@
     }
 }
 
-
-@keyframes slideInPu {
-    0% {
-        transform: scaleY(0);
-        height: 0;
-        transform-origin: top;
-    }
-    100% {
-        transform: scaleY(100%);
-        transform-origin: top;
-        height: 240px;
-    }
-}
-
-@keyframes slideOutPu {
-    0% {
-        transform: scaleY(100%);
-        transform-origin: top;
-        height: 240px;
-    }
-    100% {
-        transform: scaleY(0);
-        transform-origin: top;
-        height: 0;
-    }
-}
-
 @keyframes slideIn {
     0% {
         transform: scaleY(0);
@@ -152,15 +125,7 @@
         color: #ffffff !important;
         background: #2bc6ce;
     }
-    :global(.interacted.open).popup {
-        animation: slideInPu 0.5s ease forwards;
-        display: flex;
-    }
-    :global(.interacted.close).popup {
-        animation: slideOutPu 0.5s ease forwards;
-        display: flex;
-        height: 0;
-    }
+
     .popup {
         transform: scaleY(0);
         position: unset;

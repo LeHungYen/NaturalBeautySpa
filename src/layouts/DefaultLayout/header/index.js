@@ -35,21 +35,33 @@ export default function Header(props) {
                 url: "/",
                 items: [
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-1"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-2"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-3"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-4"),
                         url: "#",
-                    }
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-5"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-6"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-7"),
+                        url: "#",
+                    },
                 ]
             },
             {
@@ -62,7 +74,29 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-company-profile"),
-                url: "/"
+                url: "/",
+                items: [
+                    {
+                        caption: getDict("nav-drawer-sub-3-1"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-2"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-3"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-4"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-5"),
+                        url: "#",
+                    },
+                ]
             },
             {
                 name: getDict("nav-reservation"),
