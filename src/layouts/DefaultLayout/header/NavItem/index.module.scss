@@ -59,7 +59,7 @@
     .item {
         text-align: left;
         cursor: pointer;
-        padding: 15px ;
+        padding: 10px 15px;
         .caption {
             color: white;
             overflow-wrap: break-word;
@@ -67,6 +67,9 @@
             font-size: 12px;
             width: 90%;
         }
+    }
+    .item:hover {
+        background: #2bb8d1;
     }
 }
 

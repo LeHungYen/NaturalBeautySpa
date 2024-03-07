@@ -28,7 +28,33 @@ export default function Header(props) {
         navigations = [
             {
                 name: getDict("nav-about-company"),
-                url: "/about"
+                url: "/about",
+                items: [
+                    {
+                        caption: getDict("about-item-1-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-2-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-3-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-4-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-5-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-6-title"),
+                        url: "#",
+                    },
+                ]
             },
             {
                 name: getDict("nav-hair-remover"),

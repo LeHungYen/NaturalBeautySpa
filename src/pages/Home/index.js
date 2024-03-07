@@ -47,6 +47,18 @@ const apiData = {
         "about-popup-sub-title",
         "about-popup-description",
         "about-popup-btn",
+        "nav-drawer-sub-3-1",
+        "nav-drawer-sub-3-2",
+        "nav-drawer-sub-3-3",
+        "nav-drawer-sub-3-4",
+        "nav-drawer-sub-3-5",
+        "nav-drawer-sub-2-1",
+        "nav-drawer-sub-2-2",
+        "nav-drawer-sub-2-3",
+        "nav-drawer-sub-2-4",
+        "nav-drawer-sub-2-5",
+        "nav-drawer-sub-2-6",
+        "nav-drawer-sub-2-7",
     ]
 }
 export function Home(props) {

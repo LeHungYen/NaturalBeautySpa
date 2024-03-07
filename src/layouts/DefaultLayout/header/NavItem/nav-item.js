@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import style from './index.module.scss'
 import {FaChevronDown} from "react-icons/fa";
-import {css, keyframes} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 
 export default function NavItem(props) {
-    let {name, url, items, drawerMode, callBack} = props;
+    let {name, url, items, drawerMode, callBack, index} = props;
     const [firstOpen, setFirstOpen] = useState(true);
     const [openSubMenu, setOpenSubMenu] = useState(false);
-    const getAnimation = function () {
-        if (firstOpen || !items) {
-            return {}
+    const getCss = function () {
+        if (!drawerMode || firstOpen || !items) {
+            return '';
         }
         const inAnimation = keyframes`
           0% {
@@ -21,7 +21,7 @@ export default function NavItem(props) {
             transform: scaleY(100%);
             transform-origin: top;
             height: ${items.length * 60}px;
-          }`
+          }`;
 
         const outAnimation = keyframes`
           0% {
@@ -33,27 +33,29 @@ export default function NavItem(props) {
             transform: scaleY(0);
             transform-origin: top;
             height: 0;
-          }`
+          }`;
         if (openSubMenu) {
-            return {
-                display: "flex",
-                animation: css`${inAnimation} ${0.5}s ease forwards`,
-            }
+            return css`
+                display: flex !important;
+                animation: ${inAnimation} ${0.5}s ease forwards;
+            `;
         }
-        return {
-            display: "flex",
-            animation: css`${outAnimation} ${0.5}s ease forwards`,
-            height: 0,
-        }
+        return css`
+            display: flex !important;
+            animation: ${outAnimation} ${0.5}s ease forwards;
+            height: 0;
+        `;
     }
+
+    const AnimatedDiv = styled.div `
+        ${getCss()}
+    `
     const popupMenu = function () {
-        if (!items) {
+        if (!items || (!drawerMode && index === 0)) {
             return <></>
         }
         return (
-            <div className={`${style.popup} ${firstOpen ? '' : 'interacted'} ${openSubMenu ? 'open' : 'close'}`}
-                 style={getAnimation()}
-            >
+            <AnimatedDiv className={`${style.popup} ${firstOpen ? '' : 'interacted'} ${openSubMenu ? 'open' : 'close'}`}>
                 {items.map((item, idx) => {
                     return (
                         <div className={style.item} key={idx}>
@@ -63,7 +65,7 @@ export default function NavItem(props) {
                         </div>
                     )
                 })}
-            </div>
+            </AnimatedDiv>
         )
     }
     return (
