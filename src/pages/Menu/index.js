@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import style from './index.module.scss'
 import MenuComponent from './MenuComponent';
-import { getDict } from "../../services/dict";
 //libary
 import { ImHome } from "react-icons/im";
 import { MdKeyboardArrowRight } from "react-icons/md";
 function Menu() {
-    const [currentMenu, setCurrentMenu] = useState("dfsdf")
+    const [currentMenu, setCurrentMenu] = useState("")
 
 
     return (
