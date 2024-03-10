@@ -126,15 +126,12 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-reservation"),
-                url: "/"
+                url: "/contact"
             }
         ]
     }
     const changeLang = function (lang) {
         changeLanguage(dispatch, lang);
-    }
-    if(store.getState().showLoading) {
-        return <></>
     }
     return (
         <div className={style.header} >

@@ -55,10 +55,6 @@ function Footer() {
             setTextBelowH(60)
         }
     }, [windowWidth]);
-
-    if(store.getState().showLoading) {
-        return <Loading/>
-    }
     return (
         <div className={style.container}>
             <div className={style.row1}>

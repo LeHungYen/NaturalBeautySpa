@@ -9,7 +9,7 @@ import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
-import {setShowLoading, updateDict, updatePageData} from "../../store/action";
+import {updatePageData} from "../../store/action";
 import {getLayoutDict} from "../../services/request-body-for-api";
 import Banner from "./Banner";
 import Loading from "../../components/Loading/loading";
@@ -67,15 +67,6 @@ export function Home(props) {
     const [windowWidth, setWindowWidth] = useState(null);
     const dispatch = useDispatch();
 
-    useEffect(()=> {
-        const callApi = async function () {
-            setShowLoading(dispatch)
-            const data = await post(apiData, "/home/get-page-data");
-            updatePageData(dispatch, data);
-        }
-        callApi();
-    },[])
-
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -90,12 +81,10 @@ export function Home(props) {
 
     //end
 
-    if(store.getState().showLoading) {
-        return <Loading/>
-    }
     return (
         <div className={style.container}>
             <div>
+                {store.getState().dictLibrary}
                 <Banner/>
             </div>
             <div className={style.service}>

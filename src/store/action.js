@@ -14,6 +14,7 @@ export function updatePageData(dispatch, pageData) {
     for(const dict of dicts) {
         library[dict.dictKey] = dict;
     }
+    console.log(library)
     dispatch({
         type: 'UPDATE_PAGE_DATA',
         payload: {
