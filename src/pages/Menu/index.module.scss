@@ -1,85 +1,157 @@
-.container>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+.container .banner {
+    // width: 100%;
+    height: 180px;
+    position: relative;
+}
+
+.container .banner .bannerBackground {
+    width: 100%;
+    height: 100%;
+}
+
+.container .banner .bannerBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 0px;
+}
+
+.container .banner .bannerText {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.container .banner .bannerText .text {
+    width: 1182px;
+    margin: auto;
+}
+
+.container .banner .bannerText .text p {
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container .menu {
+    width: 100%;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.container .menu ul {
+    width: 1182px;
+    margin: auto;
+    list-style: none;
+    // display: flex;
+    // align-items: center;
+    gap: 5px;
+    height: 60px;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis !important;
+    position: relative;
+}
+
+.container .menu ul .menuPosition {
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+}
+
+
+
+.container .menu ul li {
+    overflow: hidden;
+    display: flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-width: fit-content;
+    text-overflow: ellipsis;
+}
+
+.container .menu ul li p {
+    flex-shrink: 2;
+    min-width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container .menu ul li .homeIcon {
+    display: flex;
+    min-width: max-content;
+    font-size: 15px;
+    padding-bottom: 3px;
+}
+
+.container .menu ul li .icon {
+    color: #7c7c7c;
 }
 
 .container {
-    .banner {
-        width: 100%;
-        height: 180px;
-        position: relative;
-
-        .bannerBackground {
-            height: 180px;
-
-            img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-                object-position: center 0px;
-            }
-        }
-
-        .bannerText {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: rgba(0, 0, 0, 0.3);
-            width: 100%;
-            height: 180px;
-            display: flex;
-            align-items: center;
-
-            p {
-                margin: 0px auto;
-                width: 1182px;
-                font-size: 32px;
-                color: #ffffff;
-                font-weight: 500;
-                font-family: 'Times New Roman', Times, serif;
-            }
-        }
-    }
-
-    .menu {
-        width: 100%;
-        border-bottom: 1px solid #bdbdbd;
-
-        ul {
-            width: 1182px;
-            margin: 0 auto;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            height: 60px;
-
-            li {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-
-                .homeIcon {
-                    display: flex;
-                    font-size: 13px;
-                    padding-bottom: 3px;
-                }
-
-                .icon {
-                    color: #7c7c7c;
-                }
-            }
-
-
-        }
-    }
-
     .content {
-        width: 1182px;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0 auto !important;
         min-height: 700px;
     }
 
+}
+
+@media screen and (max-width:1250px) {
+    .container .banner .bannerText .text {
+        width: 100%;
+        margin: 0 35px;
+    }
+
+    .container .menu ul {
+        width: 100%;
+        padding: 0 30px;
+        height: 50px;
+    }
+
+    // .container .content {
+    //     width: 100%;
+    // }
+}
+
+@media screen and (max-width:950px) {
+    .container .banner {
+        height: 130px;
+    }
+
+    .container .banner .bannerText {
+        height: 130px;
+    }
+
+    .container .banner .bannerText .text p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .container .menu ul {
+        padding: 0 20px;
+
+    }
+}
+
+@media screen and (max-width:550px) {
+    .container .banner {
+        height: 90px;
+    }
+
+    .container .banner .bannerText {
+        height: 90px;
+    }
 }
