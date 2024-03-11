@@ -302,6 +302,8 @@
                 }
             }
         }
+
+
     }
 
 
@@ -319,6 +321,11 @@
         }
     }
 
+    .container .row4 {
+        .displayFlex {
+            width: 100% !important;
+        }
+    }
 }
 
 @media screen and (max-width:950px) {

@@ -96,7 +96,7 @@ export function Home(props) {
             </div>
 
             <div className={style.new}>
-                <New windowWidth={windowWidth} />
+                <New/>
             </div>
 
             <div className={style.instagram}>

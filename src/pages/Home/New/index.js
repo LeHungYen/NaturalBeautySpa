@@ -18,7 +18,13 @@ function New() {
                     <p className={style.date}>2020.11.24</p>
                     <p className={style.title}>コーポレートサイトをオープン致しました</p>
                 </div>
+
+                <div className={style.item}>
+                    <p className={style.date}>2020.11.24</p>
+                    <p className={style.title}>コーポレートサイトをオープン致しました</p>
+                </div>
             </div>
+
 
             <div className={style.button}>
                 <button>お知らせ一覧へ</button>
