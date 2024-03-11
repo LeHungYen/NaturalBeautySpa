@@ -2,5 +2,6 @@ export const routes = {
     home: '/',
     about: '/about',
     menu: '/menu',
-    mainMenu: "/mainMenu"
+    mainMenu: "/mainMenu",
+    privacyPolicy: "/privacy-policy"
 }
