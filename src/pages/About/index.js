@@ -110,9 +110,6 @@ export function About() {
         image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23234665_M-1.jpg",
     }
     const items = getAboutData();
-    if(store.getState().showLoading) {
-       return <Loading/>
-    }
     return (
         <div className={style.about}>
             <PageBanner  {...bannerData}/>

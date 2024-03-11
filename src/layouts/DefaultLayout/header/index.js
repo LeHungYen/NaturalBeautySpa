@@ -100,7 +100,7 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-company-profile"),
-                url: "/",
+                url: "/company",
                 items: [
                     {
                         caption: getDict("nav-drawer-sub-3-1"),
@@ -126,23 +126,15 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-reservation"),
-                url: "/contact"
+                url: "/reservation"
             }
         ]
-    }
-    const changeLang = function (lang) {
-        changeLanguage(dispatch, lang);
     }
     return (
         <div className={style.header} >
             <div className={style.top}>
                 <div className={style.items}>
                     <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
-                    <div className={style.btns}>
-                        <button onClick={()=>changeLang("en")}>en</button>
-                        <button onClick={()=>changeLang("jp")}>jp</button>
-                        <button onClick={()=>changeLang("vi")}>vi</button>
-                    </div>
                     <div className={style.messenger}>
                         <span>{getDict("messenger-reservation")}</span>
                     </div>
