@@ -3,5 +3,6 @@ export const routes = {
     about: '/about',
     menu: '/menu',
     mainMenu: "/mainMenu",
-    privacyPolicy: "/privacy-policy"
+    privacyPolicy: "/privacy-policy",
+    news: "/news"
 }

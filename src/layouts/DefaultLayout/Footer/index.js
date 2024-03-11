@@ -83,8 +83,9 @@ function Footer() {
                             <li><span>MAREVE 恵比寿本店</span></li>
                             <li><span>営業時間/11:00〜21:00</span></li>
                             <li><span>定休日/年末年始</span></li>
-                            <li><span>予約専用フリーダイヤル：0120-262-633</span></li>
-                            <li><span>TEL：03-6416-3451　FAX：03-6416-3455</span></li>
+                            <li><span>予約専用フリーダイヤル：0246-6899-303</span></li>
+                            <li><span>TEL：0246-6899-303</span></li>
+                            <li><span>メール: naturalbeautyjapan24@gmail.com</span></li>
                         </ul>
 
                     </div>
