@@ -110,6 +110,9 @@ export function Home(props) {
             <div className={style.courseProduct}>
                 <CourseProduct windowWidth={windowWidth} />
             </div>
+            <div className={style.floating}>
+                脱毛メニュー
+            </div>
         </div>
     )
 }

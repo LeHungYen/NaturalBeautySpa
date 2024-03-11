@@ -134,7 +134,9 @@ export default function Header(props) {
         <div className={style.header} >
             <div className={style.top}>
                 <div className={style.items}>
-                    <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
+                    <a href="/">
+                        <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
+                    </a>
                     <div className={style.messenger}>
                         <span>{getDict("messenger-reservation")}</span>
                     </div>

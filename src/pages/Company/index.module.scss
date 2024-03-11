@@ -1,6 +1,6 @@
 .contact {
   margin-bottom: 70px;
-  padding: 0 20px;
+  padding: 0 30px;
   table {
     width: 900px;
     margin: 50px auto;
@@ -113,8 +113,11 @@
 @media (max-width: 960px) {
   .contact {
     table {
-      margin: 50px 0;
-      width: calc(100%);
+      margin: 50px 0px;
+      width: 100%;
+    }
+    .profile {
+      margin: 0 20px;
     }
   }
 }

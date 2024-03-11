@@ -1,9 +1,8 @@
 export const routes = {
     home: '/',
-    about: '/about',
     contact: '/contact',
     reservation: '/reservation',
-    company: '/company'
+    company: '/company',
     about: '/about',
     menu: '/menu',
     mainMenu: "/mainMenu",
