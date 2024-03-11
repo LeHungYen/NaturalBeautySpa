@@ -454,7 +454,7 @@ function MenuComponent({ setCurrentMenu }) {
 
             <div className={style.containerCol1}>
                 <div className={style.title}>
-                    <p>hair removal</p>
+                    <p>脱毛</p>
                 </div>
 
                 <ul>
