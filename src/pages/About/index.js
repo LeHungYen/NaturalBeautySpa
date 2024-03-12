@@ -9,6 +9,7 @@ import store from "../../store/store";
 import Loading from "../../components/Loading/loading";
 import {updatePageData} from "../../store/action";
 
+
 const apiData = {
     dictKeys: [
         "nav-about-company",

@@ -66,7 +66,6 @@ export function Home(props) {
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
     const dispatch = useDispatch();
-
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
