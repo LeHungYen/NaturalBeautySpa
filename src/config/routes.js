@@ -7,5 +7,11 @@ export const routes = {
     menu: '/menu',
     mainMenu: "/mainMenu",
     privacyPolicy: "/privacy-policy",
-    news: "/news"
+    news: "/news",
+    about_message: "/about/message",
+    about_feature: "/about/feature",
+    about_important: "/about/important",
+    about_academy: "/about/academy",
+    about_product: "/about/product",
+    about_access: "/about/access",
 }

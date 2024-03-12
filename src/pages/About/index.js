@@ -11,7 +11,8 @@ export function getAboutData() {
             subTitles: [getDict("about-item-1-sub-title-1st"), getDict("about-item-1-sub-title-2nd")],
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
             description : getDict("about-item-1-description"),
-            btn: getDict("about-item-1-button-caption")
+            btn: getDict("about-item-1-button-caption"),
+            url: "/about/message",
         },
         {
             title: getDict("about-item-2-title"),
@@ -19,6 +20,7 @@ export function getAboutData() {
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/101417297-830x300.jpg",
             btn: getDict("about-item-2-button-caption"),
             description : getDict("about-item-2-description"),
+            url: "/about/feature",
         },
         {
             title: getDict("about-item-3-title"),
@@ -26,6 +28,7 @@ export function getAboutData() {
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_69294110_M-830x300.jpg",
             btn: getDict("about-item-3-button-caption"),
             description : getDict("about-item-3-description"),
+            url: "/about/important",
         },
         {
             title: getDict("about-item-4-title"),
@@ -33,6 +36,7 @@ export function getAboutData() {
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_27-830x300.jpg",
             btn: getDict("about-item-4-button-caption"),
             description : getDict("about-item-4-description"),
+            url: "/about/academy",
         },
         {
             title: getDict("about-item-5-title"),
@@ -40,6 +44,7 @@ export function getAboutData() {
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
             btn: getDict("about-item-5-button-caption"),
             description : getDict("about-item-5-description"),
+            url: "/about/product",
         },
         {
             title: getDict("about-item-6-title"),
@@ -47,6 +52,7 @@ export function getAboutData() {
             src: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
             btn: getDict("about-item-6-button-caption"),
             description : getDict("about-item-6-description"),
+            url: "/about/access",
         },
     ]
 }

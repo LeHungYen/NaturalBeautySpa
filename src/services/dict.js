@@ -13,6 +13,42 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    about_sub_item_1: {
+        "vi": null,
+        "en": null,
+        "jp": "ごあいさつ",
+        "kr": null,
+    },
+    about_sub_item_2: {
+        "vi": null,
+        "en": null,
+        "jp": "マリーブの脱毛",
+        "kr": null,
+    },
+    about_sub_item_3: {
+        "vi": null,
+        "en": null,
+        "jp": "マリーブが大切にしていること",
+        "kr": null,
+    },
+    about_sub_item_4: {
+        "vi": null,
+        "en": null,
+        "jp": "M beauty academyについて",
+        "kr": null,
+    },
+    about_sub_item_5: {
+        "vi": null,
+        "en": null,
+        "jp": "プロデュース商品について",
+        "kr": null,
+    },
+    about_sub_item_6: {
+        "vi": null,
+        "en": null,
+        "jp": "MAREVE恵比寿本店アクセス",
+        "kr": null,
+    },
     about_banner_description1: {
         "vi": null,
         "en": null,
@@ -184,7 +220,7 @@ const dictLibrary = {
     about_item_4_sub_title_2nd: {
         "vi": null,
         "en": null,
-        "jp": "\n最新の脱毛技術スクール",
+        "jp": "最新の脱毛技術スクール",
         "kr": null,
         "mergeFlag": false
     },
@@ -219,7 +255,7 @@ const dictLibrary = {
     about_item_5_sub_title_2nd: {
         "vi": null,
         "en": null,
-        "jp": "\n福田麻理プロデュースアイテム",
+        "jp": "福田麻理プロデュースアイテム",
         "kr": null,
         "mergeFlag": false
     },
@@ -310,7 +346,7 @@ const dictLibrary = {
     nav_about_company: {
         "vi": null,
         "en": null,
-        "jp": "ABOUT MAREVE",
+        "jp": "ABOUT US",
         "kr": null,
         "mergeFlag": false
     },

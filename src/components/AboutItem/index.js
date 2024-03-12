@@ -1,6 +1,6 @@
 import style from "./index.module.scss"
 export default function AboutItem(props) {
-    const {src, title, subTitles, description, btn} = props
+    const {src, title, subTitles, description, btn, url} = props
     return (
         <div className={style.container}>
             <div className={style.title}>{title}</div>
@@ -10,7 +10,7 @@ export default function AboutItem(props) {
                     <div className={style.sub}>{t}</div>
                 )}
                 <div className={style.description}>{description}</div>
-                <button>{btn}</button>
+                <a href={url}><button>{btn}</button></a>
             </div>
         </div>
     )

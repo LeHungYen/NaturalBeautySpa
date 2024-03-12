@@ -29,27 +29,27 @@ export default function Header(props) {
                 items: [
                     {
                         caption: getDict("about-item-1-title"),
-                        url: "#",
+                        url: "/about/message",
                     },
                     {
                         caption: getDict("about-item-2-title"),
-                        url: "#",
+                        url: "/about/feature",
                     },
                     {
                         caption: getDict("about-item-3-title"),
-                        url: "#",
+                        url: "/about/important",
                     },
                     {
                         caption: getDict("about-item-4-title"),
-                        url: "#",
+                        url: "/about/academy",
                     },
                     {
                         caption: getDict("about-item-5-title"),
-                        url: "#",
+                        url: "/about/product",
                     },
                     {
                         caption: getDict("about-item-6-title"),
-                        url: "#",
+                        url: "/about/access",
                     },
                 ]
             },
@@ -166,7 +166,7 @@ export default function Header(props) {
                     </div>
                     <div className="about-item-popup">
                         {items.map((item, idx)=>
-                            <AboutItem {...item}/>
+                            <a href={navigations[0].items.url} key={idx}><AboutItem {...item}/></a>
                         )}
                     </div>
                 </div>
