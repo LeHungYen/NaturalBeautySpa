@@ -73,7 +73,7 @@
   width: calc(100% + 5px);
   left: -3px;
   position: absolute;
-  top: 140px;
+  top: 149px;
   background: white;
   align-items: center;
   justify-content: center;
@@ -126,6 +126,9 @@
       cursor: pointer;
     }
   }
+}
+.intro:hover {
+  display: block !important;
 }
 
 @media (max-width: 1200px) {

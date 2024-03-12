@@ -12,7 +12,7 @@
     padding-top: 20px;
     border: 1px solid #ddd;
     > p{
-      margin-left: 1.5em;
+      margin: 0 1.5em 0 1.5em;
       font-size: 16px;
       line-height: 2;
       a {
@@ -21,7 +21,7 @@
       }
     }
     >img {
-      margin-left: 1.5em ;
+      margin: 0 1.5em 0 1.5em;
       max-width: 253px;
       height: auto;
     }
@@ -94,10 +94,10 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
   .contact {
-    .form {
-      margin: 0 30px;
+    .form, p, .title{
+      margin: 30px;
     }
   }
 }

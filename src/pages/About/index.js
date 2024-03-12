@@ -3,58 +3,6 @@ import PageBanner from "../../components/PageBanner";
 import {getDict} from "../../services/dict";
 import AboutItem from "../../components/AboutItem";
 import {useDispatch} from "react-redux";
-import {useEffect} from "react";
-import post from "../../services/api-call";
-import store from "../../store/store";
-import Loading from "../../components/Loading/loading";
-import {updatePageData} from "../../store/action";
-
-
-const apiData = {
-    dictKeys: [
-        "nav-about-company",
-        "nav-company-profile",
-        "nav-customer-feedback",
-        "nav-product",
-        "nav-reservation",
-        "nav-hair-remover",
-        "messenger-reservation",
-        "about-banner-title1",
-        "about-banner-title2",
-        "about-banner-description1",
-        "about-banner-description2",
-        "about-item-1-title",
-        "about-item-1-sub-title-1st",
-        "about-item-1-sub-title-2nd",
-        "about-item-1-button-caption",
-        "about-item-1-description",
-        "about-item-2-title",
-        "about-item-2-sub-title-1st",
-        "about-item-2-sub-title-2nd",
-        "about-item-2-button-caption",
-        "about-item-2-description",
-        "about-item-3-title",
-        "about-item-3-sub-title-1st",
-        "about-item-3-sub-title-2nd",
-        "about-item-3-button-caption",
-        "about-item-3-description",
-        "about-item-4-title",
-        "about-item-4-sub-title-1st",
-        "about-item-4-sub-title-2nd",
-        "about-item-4-button-caption",
-        "about-item-4-description",
-        "about-item-5-title",
-        "about-item-5-sub-title-1st",
-        "about-item-5-sub-title-2nd",
-        "about-item-5-button-caption",
-        "about-item-5-description",
-        "about-item-6-title",
-        "about-item-6-sub-title-1st",
-        "about-item-6-sub-title-2nd",
-        "about-item-6-button-caption",
-        "about-item-6-description"
-    ]
-}
 
 export function getAboutData() {
     return [

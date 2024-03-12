@@ -87,10 +87,10 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
   .contact {
-    .form {
-      margin: 0 30px;
+    .form, p {
+      margin: 30px;
     }
   }
 }

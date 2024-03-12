@@ -39,8 +39,11 @@
   }
 }
 
-@media (max-width: 1200) {
-  .banner {
-    top: 60px;
+@media (max-width: 600px) {
+  .main {
+    font-size: 16px !important;
+  }
+  .sub {
+    font-size: 12px !important;
   }
 }

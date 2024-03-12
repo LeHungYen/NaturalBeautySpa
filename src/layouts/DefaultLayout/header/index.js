@@ -18,9 +18,6 @@ export default function Header(props) {
         if(show) {
             setShowPopup("block");
         } else {
-            if(e.clientY > 139) {
-                return;
-            }
             setShowPopup("none");
         }
     }
