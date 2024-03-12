@@ -1,0 +1,123 @@
+.contact {
+  margin-bottom: 70px;
+  padding: 0 30px;
+  table {
+    width: 900px;
+    margin: 50px auto;
+    border-collapse: collapse;
+    font-weight: 200;
+    border: 1px solid #ccc;
+    td:first-child {
+      text-align: center;
+    }
+    td {
+      padding: 10px 15px;
+      line-height: 2;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      a {
+        color: #00bfd8;
+        cursor: pointer;
+      }
+    }
+    td.tiltless {
+      border-bottom: none;
+      border-top:none;
+    }
+  }
+  .profile {
+    width: 900px;
+    margin: 40px auto;
+    font-size: 20px;
+    line-height: 2;
+    h3 {
+      color: #2DCCD3;
+      font-size: 22px;
+      font-weight: normal;
+      margin: 0;
+    }
+    p {
+      margin-top: 5px;
+      font-weight: 500;
+    }
+  }
+  .imgs {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    > img {
+      width: calc(50% - 8px);
+      height: auto;
+    }
+
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    .submit {
+      color: white;
+      width: 255px;
+      height: 48px;
+      background-color: #333333;
+      cursor: pointer;
+    }
+    button {
+      color: white;
+      background-color: #fcb900;
+      border-radius: 9999px;
+      padding: 12px 22px;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    h3 {
+      font-weight: 450;
+      font-size: 32px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+    p{
+      font-weight: 250;
+      text-align: center;
+      font-size: 15px;
+      line-height: 2;
+      margin: 5px 0;
+    }
+  }
+  > p {
+    margin: 30px auto;
+    max-width: 900px;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 250;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact {
+    .form {
+      margin: 0 30px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .contact {
+    table {
+      margin: 50px 0px;
+      width: 100%;
+    }
+    .profile {
+      margin: 0 20px;
+    }
+  }
+}

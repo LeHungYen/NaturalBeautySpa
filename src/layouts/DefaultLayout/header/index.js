@@ -28,28 +28,66 @@ export default function Header(props) {
         navigations = [
             {
                 name: getDict("nav-about-company"),
-                url: "/about"
+                url: "/about",
+                items: [
+                    {
+                        caption: getDict("about-item-1-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-2-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-3-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-4-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-5-title"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("about-item-6-title"),
+                        url: "#",
+                    },
+                ]
             },
             {
                 name: getDict("nav-hair-remover"),
                 url: "/",
                 items: [
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-1"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-2"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-3"),
                         url: "#",
                     },
                     {
-                        caption: getDict("error"),
+                        caption: getDict("nav-drawer-sub-2-4"),
                         url: "#",
-                    }
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-5"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-6"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-2-7"),
+                        url: "#",
+                    },
                 ]
             },
             {
@@ -62,30 +100,43 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-company-profile"),
-                url: "/"
+                url: "/company",
+                items: [
+                    {
+                        caption: getDict("nav-drawer-sub-3-1"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-2"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-3"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-4"),
+                        url: "#",
+                    },
+                    {
+                        caption: getDict("nav-drawer-sub-3-5"),
+                        url: "#",
+                    },
+                ]
             },
             {
                 name: getDict("nav-reservation"),
-                url: "/"
+                url: "/reservation"
             }
         ]
-    }
-    const changeLang = function (lang) {
-        changeLanguage(dispatch, lang);
-    }
-    if(store.getState().showLoading) {
-        return <></>
     }
     return (
         <div className={style.header} >
             <div className={style.top}>
                 <div className={style.items}>
-                    <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
-                    <div className={style.btns}>
-                        <button onClick={()=>changeLang("en")}>en</button>
-                        <button onClick={()=>changeLang("jp")}>jp</button>
-                        <button onClick={()=>changeLang("vi")}>vi</button>
-                    </div>
+                    <a href="/">
+                        <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
+                    </a>
                     <div className={style.messenger}>
                         <span>{getDict("messenger-reservation")}</span>
                     </div>

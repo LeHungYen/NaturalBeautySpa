@@ -5,8 +5,13 @@
     font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
 }
 
-/* html {
+html {
     overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }
 
 @media (max-width: 1200px) {
@@ -37,4 +42,4 @@
     #root.disable *:not(#drawer-popup) .disable-background-overlay {
         display: block;
     }
-} */
+}

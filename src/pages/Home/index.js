@@ -9,7 +9,7 @@ import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
-import {setShowLoading, updateDict, updatePageData} from "../../store/action";
+import {updatePageData} from "../../store/action";
 import {getLayoutDict} from "../../services/request-body-for-api";
 import Banner from "./Banner";
 import Loading from "../../components/Loading/loading";
@@ -47,6 +47,18 @@ const apiData = {
         "about-popup-sub-title",
         "about-popup-description",
         "about-popup-btn",
+        "nav-drawer-sub-3-1",
+        "nav-drawer-sub-3-2",
+        "nav-drawer-sub-3-3",
+        "nav-drawer-sub-3-4",
+        "nav-drawer-sub-3-5",
+        "nav-drawer-sub-2-1",
+        "nav-drawer-sub-2-2",
+        "nav-drawer-sub-2-3",
+        "nav-drawer-sub-2-4",
+        "nav-drawer-sub-2-5",
+        "nav-drawer-sub-2-6",
+        "nav-drawer-sub-2-7",
     ]
 }
 export function Home(props) {
@@ -54,16 +66,6 @@ export function Home(props) {
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
     const dispatch = useDispatch();
-
-    useEffect(()=> {
-        const callApi = async function () {
-            setShowLoading(dispatch)
-            const data = await post(apiData, "/home/get-page-data");
-            updatePageData(dispatch, data);
-        }
-        callApi();
-    },[])
-
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -78,12 +80,10 @@ export function Home(props) {
 
     //end
 
-    if(store.getState().showLoading) {
-        return <Loading/>
-    }
     return (
         <div className={style.container}>
             <div>
+                {store.getState().dictLibrary}
                 <Banner/>
             </div>
             <div className={style.service}>
@@ -108,6 +108,9 @@ export function Home(props) {
 
             <div className={style.courseProduct}>
                 <CourseProduct windowWidth={windowWidth} />
+            </div>
+            <div className={style.floating}>
+                脱毛メニュー
             </div>
         </div>
     )

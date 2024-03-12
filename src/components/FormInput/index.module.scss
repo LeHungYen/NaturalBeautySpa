@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+  label {
+    margin-bottom: 3px;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 250;
+    span {
+      margin-left: 3px;
+      color: red;
+    }
+  }
+  :global(.text), :global(.date), select {
+    padding: 8px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+  }
+  textarea {
+    height: 300px;
+  }
+}
+.container:has(:global(.checkbox)) {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+  justify-content: left;
+  font-size: 14px !important;
+}
+

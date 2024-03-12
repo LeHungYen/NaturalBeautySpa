@@ -6,10 +6,8 @@ import { publicRoutes } from './routes/index'
 import DefaultLayout from './layouts/DefaultLayout'
 import {useDispatch, useSelector, useStore} from "react-redux";
 function App() {
-    const {pageData, dictLibrary, showLoading} = useSelector(state => ({
-        pageData: state.pageData,
-        dictLibrary: state.dictLibrary,
-        showLoading: state.showLoading
+    const {lang} = useSelector(state => ({
+        lang: state.lang,
     }))
   return (
     <BrowserRouter>
