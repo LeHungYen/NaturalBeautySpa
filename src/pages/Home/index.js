@@ -9,7 +9,7 @@ import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
-import {showLoading, updateDict, updatePageData} from "../../store/action";
+import {setShowLoading, updateDict, updatePageData} from "../../store/action";
 import {getLayoutDict} from "../../services/request-body-for-api";
 import Banner from "./Banner";
 import Loading from "../../components/Loading/loading";
@@ -57,7 +57,7 @@ export function Home(props) {
 
     useEffect(()=> {
         const callApi = async function () {
-            showLoading(dispatch);
+            setShowLoading(dispatch)
             const data = await post(apiData, "/home/get-page-data");
             updatePageData(dispatch, data);
         }

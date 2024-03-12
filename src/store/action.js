@@ -23,7 +23,7 @@ export function updatePageData(dispatch, pageData) {
     })
 }
 
-export function showLoading(dispatch) {
+export function setShowLoading(dispatch) {
     dispatch({
         type: 'SHOW_LOADING',
         payload: {

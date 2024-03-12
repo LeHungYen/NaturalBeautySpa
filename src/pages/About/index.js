@@ -4,8 +4,10 @@ import {getDict} from "../../services/dict";
 import AboutItem from "../../components/AboutItem";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {showLoading, updatePageData} from "../../store/action";
+import {setShowLoading, updatePageData} from "../../store/action";
 import post from "../../services/api-call";
+import store from "../../store/store";
+import Loading from "../../components/Loading/loading";
 
 const apiData = {
     dictKeys: [
@@ -111,12 +113,15 @@ export function About() {
 
     useEffect(()=> {
         const callApi = async function () {
-            showLoading(dispatch);
+            setShowLoading(dispatch)
             const data = await post(apiData, "/home/get-page-data");
             updatePageData(dispatch, data);
         }
         callApi();
     },[])
+    if(store.getState().showLoading) {
+       return <Loading/>
+    }
     return (
         <div className={style.about}>
             <PageBanner  {...bannerData}/>

@@ -5,11 +5,6 @@ import './App.css';
 import { publicRoutes } from './routes/index'
 import DefaultLayout from './layouts/DefaultLayout'
 import {useDispatch, useSelector, useStore} from "react-redux";
-import post from "./services/api-call";
-import {updatePageData} from "./store/action";
-import Loading from "./components/Loading/loading";
-import store from "./store/store";
-import {useEffect, useState} from "react";
 function App() {
     const {pageData, dictLibrary, showLoading} = useSelector(state => ({
         pageData: state.pageData,
