@@ -8,9 +8,6 @@ import {getDict} from "../../../../services/dict";
 var insideDrawer = false;
 export default function NavigationBarDrawerMode(props) {
     let {navigations} = props;
-    if(!navigations) {
-        navigations = defaultNavigations();
-    }
     const [isOpen, setIsOpen] = useState(false);
     const [isFirstOpen, setFirstOpen] = useState(true);
 
@@ -62,17 +59,4 @@ class NavigationItem {
         this.url = url;
         this.items = items;
     }
-}
-
-const defaultNavigations = function () {
-    return [
-        new NavigationItem(getDict("nav_home"), "/"),
-        new NavigationItem(getDict("nav_introduce"), "/"),
-        new NavigationItem(getDict("nav_doctor"), "/doctor"),
-        new NavigationItem(getDict("nav_service_1"), "/service-group/1"),
-        new NavigationItem(getDict("nav_service_2"), "/service-group/1"),
-        new NavigationItem(getDict("nav_product"), "/product"),
-        new NavigationItem(getDict("nav_news"), "/news"),
-        new NavigationItem(getDict("nav_contact"), "/contact")
-    ]
 }

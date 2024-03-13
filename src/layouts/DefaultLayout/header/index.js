@@ -18,9 +18,6 @@ export default function Header(props) {
         if(show) {
             setShowPopup("block");
         } else {
-            if(e.clientY > 139) {
-                return;
-            }
             setShowPopup("none");
         }
     }
@@ -32,27 +29,27 @@ export default function Header(props) {
                 items: [
                     {
                         caption: getDict("about-item-1-title"),
-                        url: "#",
+                        url: "/about/message",
                     },
                     {
                         caption: getDict("about-item-2-title"),
-                        url: "#",
+                        url: "/about/feature",
                     },
                     {
                         caption: getDict("about-item-3-title"),
-                        url: "#",
+                        url: "/about/important",
                     },
                     {
                         caption: getDict("about-item-4-title"),
-                        url: "#",
+                        url: "/about/academy",
                     },
                     {
                         caption: getDict("about-item-5-title"),
-                        url: "#",
+                        url: "/about/product",
                     },
                     {
                         caption: getDict("about-item-6-title"),
-                        url: "#",
+                        url: "/about/access",
                     },
                 ]
             },
@@ -169,7 +166,9 @@ export default function Header(props) {
                     </div>
                     <div className="about-item-popup">
                         {items.map((item, idx)=>
-                            <AboutItem {...item}/>
+                            <div key={idx} onClick={()=>{window.location.href = item.url}}>
+                                <AboutItem {...item} popup={true}/>
+                            </div>
                         )}
                     </div>
                 </div>
