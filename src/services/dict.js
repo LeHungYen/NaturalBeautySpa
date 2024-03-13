@@ -13,6 +13,30 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    about_access_title_1: {
+        "vi": null,
+        "en": null,
+        "jp": "素肌の美しさにこだわる全ての人へ。",
+        "kr": null,
+    },
+    about_access_title_2: {
+        "vi": null,
+        "en": null,
+        "jp": "完全プライベートサロンで、ご要望にお応えいたします。",
+        "kr": null,
+    },
+    about_access_txt_1: {
+        "vi": null,
+        "en": null,
+        "jp": "各線恵比寿駅から徒歩３分。お車でお越しの際はコインパーキングをご利用下さい。。",
+        "kr": null,
+    },
+    about_access_txt_2: {
+        "vi": null,
+        "en": null,
+        "jp": "ご不明な点がありましたらお気軽にご連絡ください。",
+        "kr": null,
+    },
     about_important_txt_1: {
         "vi": null,
         "en": null,
@@ -144,6 +168,121 @@ const dictLibrary = {
         "jp": "是非一度、あなたのお肌で試してみてください。「mà remove」は、今後も全ての「美肌」の土台づくりのため、様々なアイテムをリリースして参ります。",
         "kr": null,
     },
+    about_academy_txt_1: {
+        "vi": null,
+        "en": null,
+        "jp": "当スクールでは、これまで10万人以上の施術を担当した",
+        "kr": null,
+    },
+    about_academy_txt_2: {
+        "vi": null,
+        "en": null,
+        "jp": "脱毛のプロ・福田麻理から脱毛に関する技術や知識をゼロから学ぶことができます。",
+        "kr": null,
+    },
+    about_academy_txt_3: {
+        "vi": null,
+        "en": null,
+        "jp": "脱毛に「本気」で、「マジメ」なサロンが、全国に増えていくことが私たちの願いです。",
+        "kr": null,
+    },
+    about_academy_txt_4: {
+        "vi": null,
+        "en": null,
+        "jp": "M beauty academyでは、現在、東京、愛知、福岡をはじめスクール生および、",
+        "kr": null,
+    },
+    about_academy_txt_5: {
+        "vi": null,
+        "en": null,
+        "jp": "オンラインスクール生を募集しています。",
+        "kr": null,
+    },
+    about_academy_txt_6: {
+        "vi": null,
+        "en": null,
+        "jp": "サロンオーナー様や開業を目指す方向けに、各種脱毛コースをご用意。部位別のコースに加え、皮膚理論などが学べる座学、開業コース、代表・福田麻理のトータルプロデュースコースなどもご用意しております。",
+        "kr": null,
+    },
+    about_academy_txt_7: {
+        "vi": null,
+        "en": null,
+        "jp": "M beauty academyは独自の技術と理論を基礎から学ぶことができるスクール。講師との距離が近いので、疑問や不明点などはその都度、直接聞くことで解決しましょう。脱毛に関する技術テクニックや知識はもちろん、カウンセリングや衛生管理など開業する上でのポイントについても学べます。",
+        "kr": null,
+    },
+    about_product_txt_1: {
+        "vi": null,
+        "en": null,
+        "jp": "プロデュースアイテムの中でも特にこだわり、１年半以上の期間をかけて開発した「ワックス」。",
+        "kr": null,
+    },
+    about_product_txt_2: {
+        "vi": null,
+        "en": null,
+        "jp": "性別問わず身体の全パーツを施術可能です。",
+        "kr": null,
+    },
+    about_product_txt_3: {
+        "vi": null,
+        "en": null,
+        "jp": "ワックス自体が扱いやすく、お客様の毛質・肌質を選ばず、温度も熱くなりすぎない。",
+        "kr": null,
+    },
+    about_product_txt_4: {
+        "vi": null,
+        "en": null,
+        "jp": "施術者・お客様の両面から「仕上がりが他のワックスと全然違う！」「やみつきになる！」と、",
+        "kr": null,
+    },
+    about_product_txt_5: {
+        "vi": null,
+        "en": null,
+        "jp": "喜びのお声をいただいています。",
+        "kr": null,
+    },
+    about_product_txt_6: {
+        "vi": null,
+        "en": null,
+        "jp": "マリーブでは代表・福田麻理が10万人以上のお客様へ施術を行ってきた経験から、",
+        "kr": null,
+    },
+    about_product_txt_7: {
+        "vi": null,
+        "en": null,
+        "jp": "自身が、そしてプロフェッショナルの方々が納得して使える",
+        "kr": null,
+    },
+    about_product_txt_8: {
+        "vi": null,
+        "en": null,
+        "jp": "「お客様の肌」に本当に良いものを代表自らがプロデュース。",
+        "kr": null,
+    },
+    about_product_txt_9: {
+        "vi": null,
+        "en": null,
+        "jp": "プロ用ワックス、アフターケア専用アイテムなど、プロフェッショナルを養成するスクールでも採用している",
+        "kr": null,
+    },
+    about_product_txt_10: {
+        "vi": null,
+        "en": null,
+        "jp": "高品質のアイテムを現場目線で企画、開発しております。",
+        "kr": null,
+    },
+    about_product_txt_11: {
+        "vi": null,
+        "en": null,
+        "jp": "性別問わず身体の全パーツを、弊社のワックス「màremove(マ・リムーブ)TheOne」で施術が可能。現場のワクサー達の声を最大限に反映したワックスは、どのパーツでも扱いやすく、毛質・肌質を選ばず、誰が塗ってもきれいに仕上がります。",
+        "kr": null,
+    },
+    about_product_txt_12: {
+        "vi": null,
+        "en": null,
+        "jp": "皆様が思い浮かべるワックス脱毛の悪いイメージが覆るほど、痛みを感じづらい仕様。お客様にリラックスしていただくことにより集中できるので、サロンケアのサービスの品質を高めることができます。\n" +
+            "※痛みの感じ方は、施術を受けるお客様によって左右されます。",
+        "kr": null,
+    },
     about_feature_txt_1: {
         "vi": null,
         "en": null,
@@ -204,6 +343,60 @@ const dictLibrary = {
         "vi": null,
         "en": null,
         "jp": "日本中に「脱毛にマジメ」なサロンを",
+        "kr": null,
+    },
+    about_academy_title_4:{
+        "vi": null,
+        "en": null,
+        "jp": "各種コースをご用意",
+        "kr": null,
+    },
+    about_academy_title_5:{
+        "vi": null,
+        "en": null,
+        "jp": "ワックス脱毛をもっと身近に",
+        "kr": null,
+    },
+    about_academy_title_3:{
+        "vi": null,
+        "en": null,
+        "jp": "マジメなサロンを日本中に増やしたい",
+        "kr": null,
+    },
+    about_product_title_1:{
+        "vi": null,
+        "en": null,
+        "jp": "一度使ったら、やみつきになる。",
+        "kr": null,
+    },
+    about_product_title_2:{
+        "vi": null,
+        "en": null,
+        "jp": "プロから愛される極上のワックス",
+        "kr": null,
+    },
+    about_product_title_3:{
+        "vi": null,
+        "en": null,
+        "jp": "フェイス・ボディ・VIO・メンズのヒゲまで全パーツに対応",
+        "kr": null,
+    },
+    about_product_title_4:{
+        "vi": null,
+        "en": null,
+        "jp": "痛みを感じづらい",
+        "kr": null,
+    },
+    about_product_btn_1: {
+        "vi": null,
+        "en": null,
+        "jp": "プロデュースアイテム詳細へ",
+        "kr": null,
+    },
+    about_product_btn_2: {
+        "vi": null,
+        "en": null,
+        "jp": "オンラインショップへ",
         "kr": null,
     },
     about_feature_title_2: {

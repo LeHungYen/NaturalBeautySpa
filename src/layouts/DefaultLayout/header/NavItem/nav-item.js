@@ -59,7 +59,7 @@ export default function NavItem(props) {
                 {items.map((item, idx) => {
                     return (
                         <div className={style.item} key={idx}>
-                            <a className={style.path}>
+                            <a className={style.path} href={item.url}>
                                 <span className={style.caption}>{item.caption}</span>
                             </a>
                         </div>

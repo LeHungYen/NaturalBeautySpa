@@ -166,7 +166,9 @@ export default function Header(props) {
                     </div>
                     <div className="about-item-popup">
                         {items.map((item, idx)=>
-                            <a href={navigations[0].items.url} key={idx}><AboutItem {...item}/></a>
+                            <div key={idx} onClick={()=>{window.location.href = item.url}}>
+                                <AboutItem {...item} popup={true}/>
+                            </div>
                         )}
                     </div>
                 </div>

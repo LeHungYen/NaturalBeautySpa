@@ -331,40 +331,186 @@ export function AboutDetail(props) {
                     title: getDict("about-sub-item-4"),
                     img: "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_27-830x300.jpg",
                 },
+                content: [
+                    {
+                        title: [getDict("about_item_4_sub_title_1st"), getDict("about_item_4_sub_title_2nd")],
+                        imgs: [],
+                        txt: [
+                            {
+                                text: getDict("about_academy_txt_1"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_academy_txt_2"),
+                                center: true
+                            }
+                        ]
+                    },
+                    {
+                        title: [getDict("about-academy-title-1"), getDict("about_academy_title_2")],
+                        imgs: [
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_5.jpg",
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_31.jpg"
+                        ],
+                        txt: [
+                            {
+                                text: getDict("about_academy_txt_3"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_academy_txt_4"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_academy_txt_5"),
+                                center: true
+                            }
+                        ]
+                    },
+                ],
+                cards: [
+                    {
+                        img: "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_16.jpg",
+                        text: getDict("about_academy_txt_6"),
+                        title:getDict("about_academy_title_4"),
+                    },
+                    {
+                        img: "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_35.jpg",
+                        text: getDict("about_academy_txt_7"),
+                        title:getDict("about_academy_title_5"),
+                    },
+                ],
             },
             product : {
                 banner: {
                     title: getDict("about-sub-item-5"),
-                    img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
+                    img: "https://mareve.co.jp/wp-content/uploads/2020/10/110143683-830x300.jpg",
                 },
-                summary: {
-                    title: [],
-                    sub_title: [],
-                }
+                content: [
+                    {
+                        title: [getDict("about_item_5_sub_title_1st"), getDict("about_item_5_sub_title_2nd")],
+                        imgs: [],
+                        txt: [
+                            {
+                                text: getDict("about_product_txt_6"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_7"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_8"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_9"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_10"),
+                                center: true
+                            },
+                        ]
+                    },
+                    {
+                        title: [getDict("about-product-title-1"), getDict("about_product_title_2")],
+                        imgs: [
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/110143659-scaled.jpg",
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/10143656-scaled.jpg"
+                        ],
+                        txt: [
+                            {
+                                text: getDict("about_product_txt_1"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_2"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_3"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_4"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_product_txt_5"),
+                                center: true
+                            },
+                        ]
+                    },
+                ],
+                cards: [
+                    {
+                        img: "https://mareve.co.jp/wp-content/uploads/2020/10/10143684-1024x683.jpg",
+                        text: getDict("about_product_txt_11"),
+                        title:getDict("about_product_title_3"),
+                    },
+                    {
+                        img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_67546207_M-1024x682.jpg",
+                        text: getDict("about_product_txt_12"),
+                        title:getDict("about_product_title_4"),
+                    },
+                ],
+                button: [
+                    {
+                        txt:getDict("about_product_btn_1"),
+                        url:""
+                    },
+                    {
+                        txt:getDict("about_product_btn_2"),
+                        url:""
+                    }
+                ]
             },
             access : {
                 banner: {
                     title: getDict("about-sub-item-6"),
-                    img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_40320731_M-830x300.jpg",
+                    img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_55441626_M-830x300.jpg",
                 },
-                summary: {
-                    title: [],
-                    sub_title: [],
-                }
+                content: [
+                    {
+                        title: [getDict("about_access_title_1"), getDict("about_access_title_2")],
+                        imgs: [],
+                        txt: [
+                            {
+                                text: getDict("about_access_txt_1"),
+                                center: true
+                            },
+                            {
+                                text: getDict("about_access_txt_2"),
+                                center: true
+                            },
+                        ]
+                    },
+                    {
+                        title: [],
+                        imgs: [
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_59385113_M-e1604284822602.jpg",
+                            "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_69923540_M.jpg"
+                        ],
+                        txt: []
+                    },
+                ],
             },
         }
     }
+    let idx = 0;
     const getDetail = function () {
         for(let key of Object.keys(details)) {
             if(url.includes(key)) {
                 return details[key]
             }
+            idx++;
         }
     }
     const detail = getDetail();
 
     const changeItem = function (url) {
-        setUrl(url)
+        // setUrl(url)
         window.location.href = url;
     }
 
@@ -393,22 +539,22 @@ export function AboutDetail(props) {
                     <div className={style.title}>
                         {getDict("nav_about_company")}
                     </div>
-                    <div className={style.item} style={{background: "#f7f7f8"}} onClick={()=> changeItem("/about/message")}>
+                    <div className={style.item} style={{background: "#f7f7f8", color: `${idx === 0?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/message")}>
                         {getDict("about-sub-item-1")}
                     </div>
-                    <div className={style.item} style={{background: "#f1f1f1"}} onClick={()=> changeItem("/about/feature")}>
+                    <div className={style.item} style={{background: "#f1f1f1", color: `${idx === 1?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/feature")}>
                         {getDict("about-sub-item-2")}
                     </div>
-                    <div className={style.item} style={{background: "#f7f7f8"}} onClick={()=> changeItem("/about/important")}>
+                    <div className={style.item} style={{background: "#f7f7f8", color: `${idx === 2?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/important")}>
                         {getDict("about-sub-item-3")}
                     </div>
-                    <div className={style.item} style={{background: "#f1f1f1"}} onClick={()=> changeItem("/about/academy")}>
+                    <div className={style.item} style={{background: "#f1f1f1", color: `${idx === 3?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/academy")}>
                         {getDict("about-sub-item-4")}
                     </div>
-                    <div className={style.item} style={{background: "#f7f7f8"}} onClick={()=> changeItem("/about/product")}>
+                    <div className={style.item} style={{background: "#f7f7f8", color: `${idx === 4?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/product")}>
                         {getDict("about-sub-item-5")}
                     </div>
-                    <div className={style.item} style={{background: "#f1f1f1"}} onClick={()=> changeItem("/about/access")}>
+                    <div className={style.item} style={{background: "#f1f1f1", color: `${idx === 5?'#2dccd3': 'unset'}`}} onClick={()=> changeItem("/about/access")}>
                         {getDict("about-sub-item-6")}
                     </div>
                 </div>
@@ -431,7 +577,7 @@ export function AboutDetail(props) {
                             <div key={"txt" +i} className={style.text} style={{display: `${con.txt.length > 0 ?'unset':'none'}`}}>
                                 {con.txt.map((t, i)=>(
                                     <React.Fragment>
-                                        <p key={i}>
+                                        <p key={i} style={{textAlign: t.center ?"center":"left"}}>
                                             {t.text}
                                         </p>
                                         {t.gap? <br/>: <></>}
@@ -456,13 +602,30 @@ export function AboutDetail(props) {
                                     <div>
                                         <img src={c.img} alt="" />
                                     </div>
-                                    <span>
+                                    <div>
+                                        {c.title?
+                                            <h3>{c.title}</h3>:
+                                            <></>
+                                        }
+                                        <span>
                                         {c.text}
                                     </span>
+                                    </div>
                                 </div>
                             ))
                             :
                             <></>
+                    }
+                    {
+                        detail.button?
+                            <div className={style.buttons}>
+                                {detail.button.map((b, i)=>
+                                    <a href={b.url} key={"button" + i}>
+                                        <button className={style.button}>{b.txt}</button>
+                                    </a>
+                                )}
+                            </div>
+                            :<></>
                     }
                     <div className={style.diviner} />
                 </div>

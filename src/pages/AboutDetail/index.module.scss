@@ -144,9 +144,14 @@
         height: 250px;
       }
       span {
-        padding: 0 60px;
+        padding: 0 30px;
         display: flex;
         align-items: center;
+      }
+      h3 {
+        padding: 0 30px;
+        color: #00abc9;
+        text-align: left;
       }
     }
     .profile {
@@ -160,6 +165,31 @@
         height: 180px;
         width: 180px;
         margin-bottom: 15px;
+      }
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      width: 100%;
+      gap: 138px;
+      :last-child > button {
+        background: #2dccd3;
+        margin-left: auto;
+      }
+      :first-child > button {
+        background: #fcb900;
+        margin-right: auto;
+      }
+      .button {
+        color: white;
+        border: 0;
+        min-width: 350px;
+        max-width: 90%;
+        font-size: 110%;
+        padding: 0.8em 1.5em 0.7em
       }
     }
   }
@@ -188,6 +218,18 @@
       .content {
         margin-right: 60px;
       }
+      .buttons {
+        flex-direction: column;
+        gap: 30px;
+        a {
+
+          display: flex;
+          justify-content: center;
+        }
+        button {
+          margin: auto 0;
+        }
+      }
       .cards {
         grid-template-columns: repeat(1, 100%);
         height: fit-content;
@@ -206,7 +248,10 @@
         }
         span {
           justify-content: center;
-          padding: 30px;
+          padding: 0 0 30px;
+        }
+        h3 {
+          padding: 30px 0 0;
         }
       }
     }
