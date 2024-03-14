@@ -13,6 +13,42 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    product_page_title_1: {
+        "vi": null,
+        "en": null,
+        "jp": "mà remove（マ・リムーブ）は",
+        "kr": null,
+    },
+    product_page_title_2: {
+        "vi": null,
+        "en": null,
+        "jp": "全ての「美肌」の土台づくりを叶えたい",
+        "kr": null,
+    },
+    product_page_txt_3: {
+        "vi": null,
+        "en": null,
+        "jp": "熟練したワクサーの皆様はもちろん、これからワックス脱毛を導入予定のサロン様や、",
+        "kr": null,
+    },
+    product_page_txt_4: {
+        "vi": null,
+        "en": null,
+        "jp": "フェイシェルケアの新メニューとして導入を考えているフェイシャルサロン様など",
+        "kr": null,
+    },
+    product_page_txt_5: {
+        "vi": null,
+        "en": null,
+        "jp": "一人でも多くの人にワックス脱毛のすばらしさを知ってほしいという思いを込めて、",
+        "kr": null,
+    },
+    product_page_txt_6: {
+        "vi": null,
+        "en": null,
+        "jp": "オリジナルブランド・mà remove（マ・リムーブ）は生まれました。",
+        "kr": null,
+    },
     about_access_title_1: {
         "vi": null,
         "en": null,
