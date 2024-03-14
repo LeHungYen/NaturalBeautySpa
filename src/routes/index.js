@@ -10,6 +10,7 @@ import MainMenu from "../pages/Menu/Main";
 import PricacyPolicy from "../pages/PrivacyPolicy";
 import News from "../pages/News";
 import {AboutDetail} from "../pages/AboutDetail";
+import {Product} from "../pages/Product";
 const publicRoutes = [
     { path: routes.home, component: Home },
     { path: routes.about, component: About },
@@ -26,7 +27,7 @@ const publicRoutes = [
     { path: routes.about_access, component: AboutDetail },
     { path: routes.about_important, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
-
+    { path: routes.product, component: Product },
 ]
 
 const privateRoutes = [

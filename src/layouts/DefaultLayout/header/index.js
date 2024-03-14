@@ -89,7 +89,7 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-product"),
-                url: "/"
+                url: "/product"
             },
             {
                 name: getDict("nav-customer-feedback"),
@@ -167,7 +167,7 @@ export default function Header(props) {
                     <div className="about-item-popup">
                         {items.map((item, idx)=>
                             <div key={idx} onClick={()=>{window.location.href = item.url}}>
-                                <AboutItem {...item} popup={true}/>
+                                <AboutItem {...item} popup={true} zoomEffect={true}/>
                             </div>
                         )}
                     </div>

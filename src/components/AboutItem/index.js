@@ -1,10 +1,15 @@
 import style from "./index.module.scss"
 export default function AboutItem(props) {
-    const {src, title, subTitles, description, btn, url} = props
+    const {src, title, subTitles, description, btn, url, zoomEffect} = props
     return (
         <div className={style.container}>
             <div className={style.title}>{title}</div>
-            <img src={src}  alt="alt"/>
+            {zoomEffect?
+                <div className={style.zoom}>
+                    <img src={src}  alt="alt"/>
+                </div>:
+                <img src={src}  alt="alt"/>
+            }
             <div className={style.subs}>
                 {subTitles.map((t, i)=>
                     <div className={style.sub}>{t}</div>

@@ -14,4 +14,5 @@ export const routes = {
     about_academy: "/about/academy",
     about_product: "/about/product",
     about_access: "/about/access",
+    product: "/product",
 }
