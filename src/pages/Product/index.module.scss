@@ -5,51 +5,10 @@
     text-align: center;
     font-weight: 500;
   }
-  .banner {
-    height: 180px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    position: relative;
-    img {
-      width: 100%;
-      height: auto;
-      flex-shrink: 0;
-      filter: brightness(0.7);
-    }
-    span {
-      color: white;
-      position: absolute;
-      top: 85px;
-      left: 30px;
-      font-size: 40px;
-      font-weight: 400;
-    }
-  }
-  .path {
-    font-size: 12px;
-    height: 60px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    > div {
-      width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      span {
-        color: #2dccd3;
-      }
-      a:hover {
-        color: #2dccd3;
-      }
-    }
-  }
   .main {
     display: flex;
-    width: 1200px;
-    margin: 0 auto;
+    width: 900px;
+    margin: 50px auto 0;
     flex-direction: row;
     gap: 30px;
     .menu {
@@ -84,21 +43,15 @@
       flex-direction: column;
       justify-content: center;
       margin-bottom: 60px;
-      .summary {
+      .bimg {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        margin: 30px 40px;
-        h3 {
-          font-size: 32px;
-          line-height: 1.5;
-          font-weight: 500;
-        }
-        p {
-          font-size: 16px;
-          line-height: 2;
-          font-weight: 250;
+        align-items: center;
+        width: 100%;
+        margin: 50px 0;
+        img {
+          height: 100px;
+          width: 69px;
         }
       }
       .imgs {
@@ -129,19 +82,19 @@
       }
     }
     .diviner {
-      position: relative;
-      left: 0;
-      height: 0;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin-bottom: 30px;
+      height: 3px;
     }
     .cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      height: 250px;
       width: 100%;
       margin-bottom: 30px;
       img {
-        width: auto;
-        height: 250px;
+        width: 100%;
+        height: auto;
       }
       span {
         padding: 0 30px;
@@ -195,7 +148,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 950px) {
   :global(#root) {
     .container {
       .path {
@@ -284,10 +237,6 @@
             font-weight: 500;
             font-size: 16px;
           }
-        }
-        .diviner {
-          border-top: 1px solid #ddd;
-          width: 100%;
         }
       }
     }

@@ -458,12 +458,8 @@ export function AboutDetail(props) {
                 button: [
                     {
                         txt:getDict("about_product_btn_1"),
-                        url:""
+                        url:"/product"
                     },
-                    {
-                        txt:getDict("about_product_btn_2"),
-                        url:""
-                    }
                 ]
             },
             access : {

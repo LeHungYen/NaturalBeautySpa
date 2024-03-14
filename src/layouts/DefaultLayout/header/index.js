@@ -89,7 +89,7 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-product"),
-                url: "/"
+                url: "/product"
             },
             {
                 name: getDict("nav-customer-feedback"),
