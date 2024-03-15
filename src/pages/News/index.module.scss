@@ -76,6 +76,10 @@
     text-overflow: ellipsis;
 }
 
+.container .menu ul li:hover {
+    color: #2dccd3 !important;
+}
+
 .container .menu ul li p {
     flex-shrink: 2;
     min-width: auto;
@@ -83,7 +87,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 12px;
-    color: #2dccd3;
+    // color: #2dccd3;
 }
 
 .container .menu ul li .homeIcon {
@@ -190,6 +194,126 @@
     }
 }
 
+.container .body .newDetail {
+    width: 830px;
+}
+
+.container .body .newDetail .title {
+    // height: 66px;
+    border-left: 3px solid #2dccd3;
+    padding: 24px 0px 28px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.container .body .newDetail .title .main {
+    font-size: 38px;
+    line-height: 1.3;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container .body .newDetail .title .sub {
+    font-size: 12px;
+    color: #999;
+}
+
+.container .body .newDetail .img {
+    width: 100%;
+    margin-bottom: 48px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.container .body .newDetail .content {}
+
+.container .body .newDetail .social {
+    margin: 23px auto 55px auto;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+        gap: 10px;
+
+        li {
+            background-color: #fafafa;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            padding: 3px 4px;
+
+            span {
+                white-space: nowrap;
+                font-size: 12px;
+            }
+
+            .icon {
+                font-size: 16px;
+                margin-right: 2px;
+            }
+        }
+    }
+}
+
+
+.container .body .newDetail .notice {
+    background-color: #fafafa;
+    padding: 40px;
+}
+
+.container .body .newDetail .notice .noticeTitle {
+    position: relative;
+    margin-bottom: 30px;
+
+    .main {
+        font-size: 20px;
+        color: #2dccd3;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .noticeList {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 14px;
+    }
+
+    .noticeList:hover {
+        color: #2dccd3;
+    }
+}
+
+.container .body .newDetail .notice .news {
+    ul {
+        list-style: none;
+
+        li {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 30px 30px 25px 30px;
+            border-bottom: none;
+
+            .date {
+                font-size: 14px;
+                color: #2dccd3;
+            }
+        }
+
+        li:last-child {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
 
 @media screen and (max-width:1250px) {
     .container .banner .bannerText .text {
@@ -213,11 +337,16 @@
     }
 
     .container .body .bodyNews,
-    .container .body .bodyMenu {
+    .container .body .bodyMenu,
+    .container .body .newDetail {
         padding: 30px 30px 50px 30px;
     }
 
     .container .body .bodyNews {
+        width: 100%;
+    }
+
+    .container .body .newDetail {
         width: 100%;
     }
 
@@ -255,6 +384,10 @@
     .container .body .bodyMenu ul {
         width: 100%;
     }
+
+    .container .body .newDetail .title .main {
+        font-size: 20px;
+    }
 }
 
 
@@ -280,10 +413,25 @@
     .container .banner .bannerText {
         height: 90px;
     }
+
+    .container .body .newDetail .notice .noticeTitle .noticeList {
+        display: none;
+    }
 }
 
 @media screen and (max-width:493px) {
     .container .banner .bannerText .text {
         padding: 0 20px;
     }
+
+    .container .body .newDetail .social {
+        ul {
+            li {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
 }
