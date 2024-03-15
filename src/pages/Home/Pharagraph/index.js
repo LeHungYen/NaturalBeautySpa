@@ -45,7 +45,7 @@ function Pharagraph({ windowWidth }) {
         <div className={style.container}>
             <div className={style.row1}>
                 <div className={style.logo}>
-                    <img src='https://mareve.co.jp/wp-content/uploads/2020/10/mareve_logo01-e1602492129503.png'></img>
+                    <img src={require('../../../assets/logoWhite.jpg')} alt="logo" />
                 </div>
 
                 <div className={style.title}>

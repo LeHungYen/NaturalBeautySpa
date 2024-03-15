@@ -80,9 +80,12 @@ function Footer() {
             <div className={style.row2}>
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
-                        <div onClick={() => navigate(routes.home)} className={style.logo}>
-                            <img src="https://mareve.co.jp/wp-content/uploads/2020/10/mareve_logo03_140-1.png?1707220383"></img>
-                        </div>
+                        <a href={routes.home}>
+                            <div className={style.logo}>
+                                <img src={require('../../../assets/logoWhite.jpg')} alt="logo" />
+                                <p className={style.logoText}>Natural Beauty</p>
+                            </div>
+                        </a>
 
                         <ul>
                             <li><span>株式会社マリーブ</span></li>
@@ -108,7 +111,7 @@ function Footer() {
                         </ul>
 
                         <div className={style.button}>
-                            <button><a>LINEから予約する</a></button>
+                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a >LINEから予約する</a></button>
                         </div>
                     </div>
 
@@ -124,7 +127,7 @@ function Footer() {
                         </ul>
 
                         <div className={style.button}>
-                            <button><a>アカデミー問い合わせLINE</a></button>
+                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a>アカデミー問い合わせLINE</a></button>
                         </div>
                     </div>
                 </div>
