@@ -1,5 +1,5 @@
 import style from './index.module.scss'
-
+import { routes } from '../../../config/routes';
 function New() {
     return (
         <div className={style.container}>
@@ -27,7 +27,7 @@ function New() {
 
 
             <div className={style.button}>
-                <button>お知らせ一覧へ</button>
+                <button><a href={routes.news}>お知らせ一覧へ</a></button>
             </div>
 
         </div>

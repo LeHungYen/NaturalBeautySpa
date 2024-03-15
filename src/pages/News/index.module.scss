@@ -32,6 +32,7 @@
 }
 
 .container .banner .bannerText .text .title {
+    margin-top: 60px;
     font-size: 32px;
     color: #ffffff;
     line-height: 1, 4;
@@ -194,6 +195,10 @@
     .container .banner .bannerText .text {
         width: 100%;
         padding: 0 30px;
+    }
+
+    .container .banner .bannerText .text .title {
+        margin-top: 0px;
     }
 
     .container .menu ul {
