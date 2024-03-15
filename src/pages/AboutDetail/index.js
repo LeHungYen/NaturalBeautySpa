@@ -347,7 +347,7 @@ export function AboutDetail(props) {
                         ]
                     },
                     {
-                        title: [getDict("about-academy-title-1"), getDict("about_academy_title_2")],
+                        title: [getDict("about-academy-title-1")],
                         imgs: [
                             "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_5.jpg",
                             "https://mareve.co.jp/wp-content/uploads/2020/10/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_31.jpg"
