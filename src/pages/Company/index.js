@@ -65,19 +65,19 @@ export function Company() {
                     </tr>
                     <tr>
                         <td>電話番号</td>
-                        <td>03-6416-3451</td>
+                        <td>0246-6899-303</td>
                     </tr>
                     <tr>
                         <td>FAX</td>
-                        <td>03-6416-3455</td>
+                        <td>0246-6899-303</td>
                     </tr>
                     <tr>
                         <td>予約専用</td>
-                        <td>0120-262-633</td>
+                        <td>0246-6899-303</td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td>info@mareve.co.jp</td>
+                        <td>naturalbeautyjapan24@gmail.com</td>
                     </tr>
                     <tr>
                         <td>URL</td>
