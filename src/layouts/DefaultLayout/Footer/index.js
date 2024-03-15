@@ -6,7 +6,10 @@ import HomeItem from '../../../components/HomeItem';
 import { useState, useEffect } from 'react';
 import store from "../../../store/store";
 import Loading from "../../../components/Loading/loading";
+import { routes } from '../../../config/routes';
+import { useNavigate, Link } from 'react-router-dom';
 function Footer() {
+    const navigate = useNavigate();
     const row1Item = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_69294004_M.jpg",
@@ -72,7 +75,7 @@ function Footer() {
             <div className={style.row2}>
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
-                        <div className={style.logo}>
+                        <div onClick={() => navigate(routes.home)} className={style.logo}>
                             <img src="https://mareve.co.jp/wp-content/uploads/2020/10/mareve_logo03_140-1.png?1707220383"></img>
                         </div>
 
@@ -126,35 +129,35 @@ function Footer() {
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
                         <div className={style.home}>
-                            <ImHome className={style.icon} />
+                            <ImHome className={style.icon} onClick={() => navigate(routes.home)} />
                         </div>
 
                         <ul>
-                            <li><a>ABOUT MAREVE</a></li>
-                            <li><a>脱毛メニュー</a></li>
+                            <li><a href={routes.about}>ABOUT MAREVE</a></li>
+                            <li><a href={routes.mainMenu}>脱毛メニュー</a></li>
                             <li><a>M beauty academy</a></li>
-                            <li><a>プロデュース商品</a></li>
+                            <li><a href={routes.product}>プロデュース商品</a></li>
                             <li><a>お客様の声</a></li>
-                            <li><a>会社概要</a></li>
-                            <li><a>お知らせ</a></li>
-                            <li><a>個人情報保護方針</a></li>
-                            <li><a>MAREVE恵比寿本店アクセス</a></li>
+                            <li><a href={routes.company}>会社概要</a></li>
+                            <li><a href={routes.news}>お知らせ</a></li>
+                            <li><a href={routes.privacyPolicy}>個人情報保護方針</a></li>
+                            <li><a href={routes.about_access}>MAREVE恵比寿本店アクセス</a></li>
                         </ul>
                     </div>
 
                     <div className={style.col2}>
-                        <div className={style.title}>
-                            <p>脱毛メニュー</p>
+                        <div className={style.title} >
+                            <a href={routes.mainMenu}><p>脱毛メニュー</p></a>
                         </div>
 
                         <ul>
-                            <li><a>全身脱毛</a></li>
-                            <li><a>顔</a></li>
-                            <li><a>上半身</a></li>
-                            <li><a>下半身</a></li>
-                            <li><a>デリケートゾーン</a></li>
-                            <li><a>メンズ脱毛</a></li>
-                            <li><a>キッズ脱毛</a></li>
+                            <li><a href={`${routes.menu}?key=0`}>全身脱毛</a></li>
+                            <li><a href={`${routes.menu}?key=1`}>顔</a></li>
+                            <li><a href={`${routes.menu}?key=2`}>上半身</a></li>
+                            <li><a href={`${routes.menu}?key=3`}>下半身</a></li>
+                            <li><a href={`${routes.menu}?key=4`}>デリケートゾーン</a></li>
+                            <li><a href={`${routes.menu}?key=5`}>メンズ脱毛</a></li>
+                            <li><a href={`${routes.menu}?key=6`}>キッズ脱毛</a></li>
                         </ul>
                     </div>
                 </div>

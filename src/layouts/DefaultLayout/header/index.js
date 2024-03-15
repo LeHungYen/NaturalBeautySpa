@@ -1,27 +1,30 @@
 import style from './index.module.scss'
 import NavItem from "./NavItem/nav-item";
 import clsx from "clsx";
-import {getDict} from "../../../services/dict";
-import {useState} from "react";
+import { getDict } from "../../../services/dict";
+import { useState } from "react";
 import NavigationBarDrawerMode from "./drawe/drawer";
 import store from "../../../store/store";
-import {getAboutData} from "../../../pages/About";
+import { getAboutData } from "../../../pages/About";
 import AboutItem from "../../../components/AboutItem";
-import {useDispatch} from "react-redux";
-import {changeLanguage} from "../../../store/action";
+import { useDispatch } from "react-redux";
+import { changeLanguage } from "../../../store/action";
+import { routes } from "../../../config/routes.js"
+import { useNavigate } from 'react-router-dom';
 export default function Header(props) {
-    let {navigations} = props
+    const navigate = useNavigate();
+    let { navigations } = props
     const [showPopup, setShowPopup] = useState("none");
     const items = getAboutData();
     const dispatch = useDispatch();
-    const togglePopup = function(show, e)  {
-        if(show) {
+    const togglePopup = function (show, e) {
+        if (show) {
             setShowPopup("block");
         } else {
             setShowPopup("none");
         }
     }
-    if(!navigations) {
+    if (!navigations) {
         navigations = [
             {
                 name: getDict("nav-about-company"),
@@ -55,35 +58,35 @@ export default function Header(props) {
             },
             {
                 name: getDict("nav-hair-remover"),
-                url: "/",
+                url: routes.mainMenu,
                 items: [
                     {
-                        caption: getDict("nav-drawer-sub-2-1"),
-                        url: "#",
+                        caption: getDict("nav_drawer_sub_2_1"),
+                        url: `${routes.menu}?key=0`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-2"),
-                        url: "#",
+                        url: `${routes.menu}?key=1`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-3"),
-                        url: "#",
+                        url: `${routes.menu}?key=2`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-4"),
-                        url: "#",
+                        url: `${routes.menu}?key=3`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-5"),
-                        url: "#",
+                        url: `${routes.menu}?key=4`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-6"),
-                        url: "#",
+                        url: `${routes.menu}?key=5`,
                     },
                     {
                         caption: getDict("nav-drawer-sub-2-7"),
-                        url: "#",
+                        url: `${routes.menu}?key=6`,
                     },
                 ]
             },
@@ -101,7 +104,7 @@ export default function Header(props) {
                 items: [
                     {
                         caption: getDict("nav-drawer-sub-3-1"),
-                        url: "#",
+                        url: routes.news,
                     },
                     {
                         caption: getDict("nav-drawer-sub-3-2"),
@@ -109,7 +112,7 @@ export default function Header(props) {
                     },
                     {
                         caption: getDict("nav-drawer-sub-3-3"),
-                        url: "#",
+                        url: routes.privacyPolicy,
                     },
                     {
                         caption: getDict("nav-drawer-sub-3-4"),
@@ -132,26 +135,26 @@ export default function Header(props) {
             <div className={style.top}>
                 <div className={style.items}>
                     <a href="/">
-                        <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo"/>
+                        <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo" />
                     </a>
                     <div className={style.messenger}>
                         <span>{getDict("messenger-reservation")}</span>
                     </div>
-                    <NavigationBarDrawerMode navigations={navigations}/>
+                    <NavigationBarDrawerMode navigations={navigations} />
                 </div>
             </div>
             <div className={style.navigation}>
                 <div className={style.container}>
                     {navigations.map((nav, idx) => {
-                            if(idx === 0) return <NavItem {...nav} callBack={togglePopup} index={idx}/>
-                            return <NavItem {...nav} index={idx}/>
-                        }
+                        if (idx === 0) return <NavItem {...nav} callBack={togglePopup} index={idx} />
+                        return <NavItem {...nav} index={idx} />
+                    }
                     )}
                 </div>
             </div>
-            <div className={style.intro} id="about" style={{display: showPopup}}
-                 onMouseEnter={(e)=>togglePopup(true, e)}
-                 onMouseLeave={(e)=>togglePopup(false, e)}
+            <div className={style.intro} id="about" style={{ display: showPopup }}
+                onMouseEnter={(e) => togglePopup(true, e)}
+                onMouseLeave={(e) => togglePopup(false, e)}
             >
                 <div className={style.container}>
                     <div className={style.about}>
@@ -165,9 +168,9 @@ export default function Header(props) {
                         <button>{getDict("about-popup-btn")}</button>
                     </div>
                     <div className="about-item-popup">
-                        {items.map((item, idx)=>
-                            <div key={idx} onClick={()=>{window.location.href = item.url}}>
-                                <AboutItem {...item} popup={true} zoomEffect={true}/>
+                        {items.map((item, idx) =>
+                            <div key={idx} onClick={() => { window.location.href = item.url }}>
+                                <AboutItem {...item} popup={true} zoomEffect={true} />
                             </div>
                         )}
                     </div>

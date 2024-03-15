@@ -33,6 +33,7 @@
 }
 
 .container .banner .bannerText .text .title {
+    margin-top: 60px;
     font-size: 42px;
     color: #ffffff;
     line-height: 1, 4;
@@ -92,6 +93,10 @@
     width: 50%;
 }
 
+.container .menu .linkMenu ul li a:hover {
+    color: #2dccd3;
+}
+
 @media screen and (max-width:1250px) {
     .container .banner {
         height: 480px;
@@ -104,6 +109,10 @@
     .container .banner .bannerText .text {
         width: 100%;
         padding: 0 30px;
+    }
+
+    .container .banner .bannerText .text .title {
+        margin-top: 0;
     }
 
     .container .menu {

@@ -1,5 +1,5 @@
 import style from './index.module.scss'
-
+import { routes } from '../../../config/routes.js'
 function MainMenu() {
     return (
         <div className={style.container}>
@@ -25,13 +25,13 @@ function MainMenu() {
 
                 <div className={style.linkMenu}>
                     <ul>
-                        <li>全身脱毛</li>
-                        <li>上半身</li>
-                        <li>デリケートゾーン</li>
-                        <li>キッズ脱毛</li>
-                        <li>顔</li>
-                        <li>下半身</li>
-                        <li>メンズ脱毛</li>
+                        <li><a href={`${routes.menu}?key=0`}>全身脱毛</a></li>
+                        <li><a href={`${routes.menu}?key=1`}>顔</a></li>
+                        <li><a href={`${routes.menu}?key=2`}>上半身</a></li>
+                        <li><a href={`${routes.menu}?key=3`}>下半身</a></li>
+                        <li><a href={`${routes.menu}?key=4`}>デリケートゾーン</a></li>
+                        <li><a href={`${routes.menu}?key=5`}>メンズ脱毛</a></li>
+                        <li><a href={`${routes.menu}?key=6`}>キッズ脱毛</a></li>
                     </ul>
                 </div>
             </div>

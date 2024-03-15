@@ -33,6 +33,7 @@
 }
 
 .container .banner .bannerText .text p {
+    margin-top: 60px;
     font-size: 32px;
     color: #ffffff;
     font-weight: 500;
@@ -112,6 +113,10 @@
     .container .banner .bannerText .text {
         width: 100%;
         margin: 0 35px;
+    }
+
+    .container .banner .bannerText .text p {
+        margin-top: 0;
     }
 
     .container .menu ul {
