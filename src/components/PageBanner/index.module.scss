@@ -4,7 +4,10 @@
   position: relative;
   max-height: 500px;
   overflow: hidden;
-
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
     filter: brightness(65%);
     width: 100%;
