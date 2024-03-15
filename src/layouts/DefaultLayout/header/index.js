@@ -1,14 +1,11 @@
 import style from './index.module.scss'
 import NavItem from "./NavItem/nav-item";
-import clsx from "clsx";
 import { getDict } from "../../../services/dict";
 import { useState } from "react";
 import NavigationBarDrawerMode from "./drawe/drawer";
-import store from "../../../store/store";
 import { getAboutData } from "../../../pages/About";
 import AboutItem from "../../../components/AboutItem";
 import { useDispatch } from "react-redux";
-import { changeLanguage } from "../../../store/action";
 import { routes } from "../../../config/routes.js"
 import { useNavigate } from 'react-router-dom';
 export default function Header(props) {
@@ -113,14 +110,6 @@ export default function Header(props) {
                     {
                         caption: getDict("nav-drawer-sub-3-3"),
                         url: routes.privacyPolicy,
-                    },
-                    {
-                        caption: getDict("nav-drawer-sub-3-4"),
-                        url: "#",
-                    },
-                    {
-                        caption: getDict("nav-drawer-sub-3-5"),
-                        url: "#",
                     },
                 ]
             },
