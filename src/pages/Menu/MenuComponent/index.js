@@ -140,7 +140,7 @@ function MenuComponent({ setCurrentMenu, menuItem, currentMenuItemIndex, setCurr
                 </div>
 
                 <div className={style.relatedPost}>
-                    <div className={style.title}>
+                    <div className={style.title}> 
                         <p>脱毛</p>
                     </div>
 
