@@ -105,7 +105,7 @@ export default function Header(props) {
                     },
                     {
                         caption: getDict("nav-drawer-sub-3-2"),
-                        url: "#",
+                        url: "/contact",
                     },
                     {
                         caption: getDict("nav-drawer-sub-3-3"),
