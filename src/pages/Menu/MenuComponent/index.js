@@ -6,8 +6,6 @@ import { routes } from '../../../config/routes';
 import { PiCheckSquareLight } from "react-icons/pi";
 function MenuComponent({ setCurrentMenu, menuItem, currentMenuItemIndex, setCurrentMenuItemIndex }) {
     // const [currentMenuItemIndex, setCurrentMenuItemIndex] = useState(key);
-    console.log(currentMenuItemIndex)
-
     return (
         <div className={style.container}>
 
@@ -107,7 +105,7 @@ function MenuComponent({ setCurrentMenu, menuItem, currentMenuItemIndex, setCurr
                     </div> */}
 
                     <div className={style.button}>
-                        <button>予約専用フォームへ</button>
+                        <button><a href={routes.reservation}>予約専用フォームへ</a></button>
                     </div>
                 </div>}
 
@@ -147,82 +145,105 @@ function MenuComponent({ setCurrentMenu, menuItem, currentMenuItemIndex, setCurr
                     </div>
 
                     <ul>
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_10477565_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=0`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_10477565_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>全身脱毛</p>
-                                <p className={style.relatedPostItemSub}>マリーブの確かな技術で、全身のムダ毛をなくします。 他社で満足でき…</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>全身脱毛</p>
+                                    <p className={style.relatedPostItemSub}>マリーブの確かな技術で、全身のムダ毛をなくします。 他社で満足でき…</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_45689954_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=1`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_45689954_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>顔</p>
-                                <p className={style.relatedPostItemSub}>施術後のお肌に感動してください。 すべての美肌の基礎となるお手入れ…</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>顔</p>
+                                    <p className={style.relatedPostItemSub}>施術後のお肌に感動してください。 すべての美肌の基礎となるお手入れ…</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_55082057_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=2`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_55082057_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>上半身</p>
-                                <p className={style.relatedPostItemSub}>ワキ、首、腕、指などの細かなパーツと、他人から一番見られる上半身。 …</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>上半身</p>
+                                    <p className={style.relatedPostItemSub}>ワキ、首、腕、指などの細かなパーツと、他人から一番見られる上半身。 …</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_62874708_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=3`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_62874708_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>下半身</p>
-                                <p className={style.relatedPostItemSub}>脚（太もも、ひざ、すね）、腰回り、ヒップ（VIOを除く）、足の甲や指…</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>下半身</p>
+                                    <p className={style.relatedPostItemSub}>脚（太もも、ひざ、すね）、腰回り、ヒップ（VIOを除く）、足の甲や指…</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_65800245_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=4`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2020/10/1pixta_65800245_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>デリケートゾーン</p>
-                                <p className={style.relatedPostItemSub}>デリケートな部位こそ、お客様の肌、毛の状態を見極めて施術させていただ….</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>デリケートゾーン</p>
+                                    <p className={style.relatedPostItemSub}>デリケートな部位こそ、お客様の肌、毛の状態を見極めて施術させていただ….</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2021/02/1pixta_54718016_M-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=5`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2021/02/1pixta_54718016_M-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>メンズ脱毛</p>
-                                <p className={style.relatedPostItemSub}>全身はもちろん、ヒゲやワキなどの細かい部位や、デリケートゾーンの脱毛…</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>メンズ脱毛</p>
+                                    <p className={style.relatedPostItemSub}>全身はもちろん、ヒゲやワキなどの細かい部位や、デリケートゾーンの脱毛…</p>
+                                </div>
+                            </li>
+                        </a>
 
-                        <li className={style.relatedPostItem}>
-                            <div className={style.img}>
-                                <img src="https://mareve.co.jp/wp-content/uploads/2021/06/kids_L-830x300.jpg"></img>
-                            </div>
+                        <a href={`${routes.menu}?key=6`}>
+                            <li className={style.relatedPostItem}>
+                                <div className={style.img}>
+                                    <img src="https://mareve.co.jp/wp-content/uploads/2021/06/kids_L-830x300.jpg"></img>
+                                </div>
 
-                            <div className={style.text}>
-                                <p className={style.relatedPostItemTitle}>キッズ脱毛</p>
-                                <p className={style.relatedPostItemSub}>お子様も脱毛する方が増えております。 「毛深い」「ムダ毛が気になる…</p>
-                            </div>
-                        </li>
+                                <div className={style.text}>
+                                    <p className={style.relatedPostItemTitle}>キッズ脱毛</p>
+                                    <p className={style.relatedPostItemSub}>お子様も脱毛する方が増えております。 「毛深い」「ムダ毛が気になる…</p>
+                                </div>
+                            </li>
+                        </a>
+
+
+
+
+
+
+
+
+
                     </ul>
                 </div>
 

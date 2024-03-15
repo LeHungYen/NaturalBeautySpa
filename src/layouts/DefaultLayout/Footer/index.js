@@ -13,15 +13,18 @@ function Footer() {
     const row1Item = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_69294004_M.jpg",
-            textBelow: "本店アクセス"
+            textBelow: "本店アクセス",
+            url: routes.about_access
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23376677_M-e1603864881118.jpg",
-            textBelow: "脱毛メニュー"
+            textBelow: "脱毛メニュー",
+            url: routes.mainMenu
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_21787413_M.jpg",
-            textBelow: "会社概要"
+            textBelow: "会社概要",
+            url: routes.company
         }
     ]
 
@@ -65,7 +68,9 @@ function Footer() {
                     {row1Item.map((item, index) => {
                         return (
                             <div key={index} className={style.item}>
-                                <HomeItem infor={item} textBelowH={textBelowH} textBelowFS={row1FS} textBelowC="#2bb8d1" />
+                                <a href={item.url}>
+                                    <HomeItem infor={item} textBelowH={textBelowH} textBelowFS={row1FS} textBelowC="#2bb8d1" />
+                                </a>
                             </div>
                         )
                     })}

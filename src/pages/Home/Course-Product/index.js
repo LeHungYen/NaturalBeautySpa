@@ -3,17 +3,20 @@ import style from './index.module.scss'
 
 import HomeItem from '../../../components/HomeItem';
 import { useState, useEffect } from 'react';
+import { routes } from '../../../config/routes';
 function CourseProduct({ windowWidth }) {
     const items = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2021/01/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_20.jpg",
             textCenter: "技術を学ぶ",
-            textBelow: "M beauty academyについて"
+            textBelow: "M beauty academyについて",
+            url: ""
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/110143683-scaled.jpg",
             textCenter: "商品を見る",
-            textBelow: "福田麻理プロデュースアイテムについて"
+            textBelow: "福田麻理プロデュースアイテムについて",
+            url: routes.product
         },
     ]
 
@@ -48,8 +51,11 @@ function CourseProduct({ windowWidth }) {
                 {items.map((item, index) => {
                     return (
                         <div key={index} className={style.item}>
-                            <HomeItem textCenterW={textCenterW} textCenterH={textCenterH} textCenterFS={textCenterFS} textBelowH={textBelowH} textBelowFS={"16"} infor={item} />
+                            <a href={item.url}>
+                                <HomeItem textCenterW={textCenterW} textCenterH={textCenterH} textCenterFS={textCenterFS} textBelowH={textBelowH} textBelowFS={"16"} infor={item} />
+                            </a>
                         </div>
+
                     )
                 })}
             </div>
