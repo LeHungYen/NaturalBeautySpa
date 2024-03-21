@@ -1,6 +1,7 @@
 import style from "./index.module.scss";
 import PageBanner from "../../components/PageBanner";
 import React from "react";
+import {getDict} from "../../services/dict";
 
 export function Company() {
     const bannerData = {
@@ -13,13 +14,13 @@ export function Company() {
             <PageBanner  {...bannerData}/>
             <div className={style.contact}>
                 <div className={style.title}>
-                    <h3>すべてのムダ毛に、まじめに </h3>
+                    <h3>{getDict("company_content_title_1")}</h3>
                     <p>
-                        株式会社マリーブは、恵比寿に本店を構える脱毛サロン「MAREVE（マリーブ）」の経営をはじめ、<br/>
-                        これまで10万人以上のお客様に施術を行ってきた日本有数のワクサーである代表・福田麻理が<br/>
-                        その技術をお教えし女性の独立を支援する「M beauty academy（エム ビューティー アカデミー）」の運営、<br/>
-                        サロンアイテム「mà remove（マリムーブ）」のプロデュース（商品開発、販売）等、<br/>
-                        年齢性別を問わず「美しい素肌」を求める方のための事業を行っております。
+                        {getDict("company_content_txt_1")}<br/>
+                        {getDict("company_content_txt_2")}<br/>
+                        {getDict("company_content_txt_3")}<br/>
+                        {getDict("company_content_txt_4")}<br/>
+                        {getDict("company_content_txt_5")}
                     </p>
                 </div>
                 <div className={style.imgs}>
@@ -27,7 +28,7 @@ export function Company() {
                     <img src="https://mareve.co.jp/wp-content/uploads/2020/10/110143683-1536x1025.jpg"/>
                 </div>
                 <div className={style.profile}>
-                    <h3>代表紹介</h3>
+                    <h3>{getDict("company_content_title_2")}</h3>
                     <p>
                         株式会社マリーブ<br/>
                         代表取締役<br/>

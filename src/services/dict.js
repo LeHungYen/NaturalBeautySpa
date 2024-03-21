@@ -13,6 +13,48 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    company_content_title_1: {
+        "vi": null,
+        "en": null,
+        "jp": "すべてのムダ毛に、まじめに",
+        "kr": null
+    },
+    company_content_title_2: {
+        "vi": null,
+        "en": null,
+        "jp": "代表紹介",
+        "kr": null
+    },
+    company_content_txt_1: {
+        "vi": null,
+        "en": null,
+        "jp": "株式会社マリーブは、恵比寿に本店を構える脱毛サロン「MAREVE（マリーブ）」の経営をはじめ、",
+        "kr": null
+    },
+    company_content_txt_2: {
+        "vi": null,
+        "en": null,
+        "jp": "これまで10万人以上のお客様に施術を行ってきた日本有数のワクサーである代表・福田麻理が",
+        "kr": null
+    },
+    company_content_txt_3: {
+        "vi": null,
+        "en": null,
+        "jp": "その技術をお教えし女性の独立を支援する「M beauty academy（エム ビューティー アカデミー）」の運営、",
+        "kr": null
+    },
+    company_content_txt_4: {
+        "vi": null,
+        "en": null,
+        "jp": "サロンアイテム「mà remove（マリムーブ）」のプロデュース（商品開発、販売）等、",
+        "kr": null
+    },
+    company_content_txt_51: {
+        "vi": null,
+        "en": null,
+        "jp": "年齢性別を問わず「美しい素肌」を求める方のための事業を行っております。",
+        "kr": null
+    },
     about_academy_title_1: {
         "vi": null,
         "en": null,
