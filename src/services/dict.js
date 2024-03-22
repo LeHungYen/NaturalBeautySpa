@@ -13,6 +13,126 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    form_label_name: {
+        "vi": null,
+        "en": null,
+        "jp": "お名前",
+        "kr": null
+    },
+    form_label_phone: {
+        "vi": null,
+        "en": null,
+        "jp": "電話番号",
+        "kr": null
+    },
+    form_label_email: {
+        "vi": null,
+        "en": null,
+        "jp": "メールアドレス",
+        "kr": null
+    },
+    form_label_contact_time: {
+        "vi": null,
+        "en": null,
+        "jp": "※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）",
+        "kr": null
+    },
+    form_label_furigana: {
+        "vi": null,
+        "en": null,
+        "jp": "フリガナ",
+        "kr": null
+    },
+    form_label_required: {
+        "vi": null,
+        "en": null,
+        "jp": "(必須)",
+        "kr": null
+    },
+    form_label_other_requirement: {
+        "vi": null,
+        "en": null,
+        "jp": "その他ご要望、ご紹介者様のお名前など",
+        "kr": null
+    },
+    form_label_expected_day_1: {
+        "vi": null,
+        "en": null,
+        "jp": "第一希望日時",
+        "kr": null
+    },
+    form_label_expected_day_2: {
+        "vi": null,
+        "en": null,
+        "jp": "第二希望日時",
+        "kr": null
+    },
+    form_label_expected_day_3: {
+        "vi": null,
+        "en": null,
+        "jp": "第三希望日時",
+        "kr": null
+    },
+    form_service_menu_title: {
+        "vi": null,
+        "en": null,
+        "jp": "ご希望のメニュー※複数選択可",
+        "kr": null
+    },
+    form_service_menu_check_1: {
+        "vi": null,
+        "en": null,
+        "jp": "カウンセリング",
+        "kr": null
+    },
+    form_service_menu_check_2: {
+        "vi": null,
+        "en": null,
+        "jp": "フェイシャルワックス",
+        "kr": null
+    },
+    form_service_menu_check_3: {
+        "vi": null,
+        "en": null,
+        "jp": "顔脱毛",
+        "kr": null
+    },
+    form_service_menu_check_4: {
+        "vi": null,
+        "en": null,
+        "jp": "全身脱毛",
+        "kr": null
+    },
+    form_service_menu_check_5: {
+        "vi": null,
+        "en": null,
+        "jp": "パーツ脱毛",
+        "kr": null
+    },
+    form_service_menu_check_6: {
+        "vi": null,
+        "en": null,
+        "jp": "VIO脱毛",
+        "kr": null
+    },
+    form_service_menu_check_7: {
+        "vi": null,
+        "en": null,
+        "jp": "メンズ脱毛",
+        "kr": null
+    },
+    form_service_menu_check_8: {
+        "vi": null,
+        "en": null,
+        "jp": "キッズ脱毛",
+        "kr": null
+    },
+    form_service_menu_check_9: {
+        "vi": null,
+        "en": null,
+        "jp": "その他",
+        "kr": null
+    },
     company_content_title_1: {
         "vi": null,
         "en": null,
@@ -49,10 +169,298 @@ const dictLibrary = {
         "jp": "サロンアイテム「mà remove（マリムーブ）」のプロデュース（商品開発、販売）等、",
         "kr": null
     },
-    company_content_txt_51: {
+    company_content_txt_5: {
         "vi": null,
         "en": null,
         "jp": "年齢性別を問わず「美しい素肌」を求める方のための事業を行っております。",
+        "kr": null
+    },
+    company_content_txt_6: {
+        "vi": null,
+        "en": null,
+        "jp": "株式会社マリーブ",
+        "kr": null
+    },
+    company_content_txt_7: {
+        "vi": null,
+        "en": null,
+        "jp": "代表取締役",
+        "kr": null
+    },
+    company_content_txt_8: {
+        "vi": null,
+        "en": null,
+        "jp": "福田 麻理　Mari Fukuda",
+        "kr": null
+    },
+    company_content_txt_9: {
+        "vi": null,
+        "en": null,
+        "jp": "10万人の施術実績を持ち、その経験と最新の脱毛技術を取り入れた本物の脱毛技術を持った施術者の育成、そして女性の",
+        "kr": null
+    },
+    company_content_txt_10: {
+        "vi": null,
+        "en": null,
+        "jp": "独立支援を目的として立ち上げた脱毛スクール",
+        "kr": null
+    },
+    company_content_txt_11: {
+        "vi": null,
+        "en": null,
+        "jp": "「M beauty academy（エムビューティーアカデミー）」の代表も務める。",
+        "kr": null
+    },
+    company_content_txt_12: {
+        "vi": null,
+        "en": null,
+        "jp": "自身の経験から開発を行ったワックスブランド「mà remove（マリムーブ）」プロデューサー。",
+        "kr": null
+    },
+    company_content_txt_13: {
+        "vi": null,
+        "en": null,
+        "jp": "会社名",
+        "kr": null
+    },
+    company_content_txt_14: {
+        "vi": null,
+        "en": null,
+        "jp": "株式会社マリーブ",
+        "kr": null
+    },
+    company_content_txt_15: {
+        "vi": null,
+        "en": null,
+        "jp": "代表者名",
+        "kr": null
+    },
+    company_content_txt_16: {
+        "vi": null,
+        "en": null,
+        "jp": "福田 麻理",
+        "kr": null
+    },
+    company_content_txt_17: {
+        "vi": null,
+        "en": null,
+        "jp": "設立",
+        "kr": null
+    },
+    company_content_txt_18: {
+        "vi": null,
+        "en": null,
+        "jp": "令和2年9月",
+        "kr": null
+    },
+    company_content_txt_19: {
+        "vi": null,
+        "en": null,
+        "jp": "事業内容",
+        "kr": null
+    },
+    company_content_txt_20: {
+        "vi": null,
+        "en": null,
+        "jp": "・エステティックサロン及びビューティーサロンの経営",
+        "kr": null
+    },
+    company_content_txt_21: {
+        "vi": null,
+        "en": null,
+        "jp": "・美容、健康に関するスクールの運営",
+        "kr": null
+    },
+    company_content_txt_22: {
+        "vi": null,
+        "en": null,
+        "jp": "・美容商品、美容機器の企画、開発、製造、販売、輸出入",
+        "kr": null
+    },
+    company_content_txt_23: {
+        "vi": null,
+        "en": null,
+        "jp": "所在地",
+        "kr": null
+    },
+    company_content_txt_24: {
+        "vi": null,
+        "en": null,
+        "jp": "〒150-0021　東京都渋谷区恵比寿西1-3-10 EBISU. TANAKA. BLDG. 4F",
+        "kr": null
+    },
+    company_content_txt_25: {
+        "vi": null,
+        "en": null,
+        "jp": "電話番号",
+        "kr": null
+    },
+    company_content_txt_26: {
+        "vi": null,
+        "en": null,
+        "jp": "予約専用",
+        "kr": null
+    },
+    company_content_txt_27: {
+        "vi": null,
+        "en": null,
+        "jp": "株式会社 マリーブ",
+        "kr": null
+    },
+    company_content_txt_28: {
+        "vi": null,
+        "en": null,
+        "jp": "オフィシャルサロン一覧",
+        "kr": null
+    },
+    company_content_txt_29: {
+        "vi": null,
+        "en": null,
+        "jp": "オンラインショップ",
+        "kr": null
+    },
+    company_content_txt_30: {
+        "vi": null,
+        "en": null,
+        "jp": "福田麻理 Instagram",
+        "kr": null
+    },
+    company_content_txt_31: {
+        "vi": null,
+        "en": null,
+        "jp": "サロン公式Instagram",
+        "kr": null
+    },
+    company_content_txt_32: {
+        "vi": null,
+        "en": null,
+        "jp": "弊社事業について（脱毛サロン「MAREVE」、M beauty academy、プロデュース商品等）、セミナー、講演、取材のご依頼等のお問。",
+        "kr": null
+    },
+    company_content_txt_33: {
+        "vi": null,
+        "en": null,
+        "jp": "い合わせについては、下記「お問い合わせ」からご連絡いただくようお願い申し上げます。",
+        "kr": null
+    },
+    company_content_txt_34: {
+        "vi": null,
+        "en": null,
+        "jp": "お問い合わせはこちらへ",
+        "kr": null
+    },
+    reservation_banner_title: {
+        "vi": null,
+        "en": null,
+        "jp": "ご予約専用フォーム",
+        "kr": null
+    },
+    reservation_content_1: {
+        "vi": null,
+        "en": null,
+        "jp": "「MAREVE恵比寿本店」ご予約（仮予約）",
+        "kr": null
+    },
+    reservation_content_2: {
+        "vi": null,
+        "en": null,
+        "jp": "下記フォームよりご希望の日時、お名前など必要事項を入力し送信くださいませ。",
+        "kr": null
+    },
+    reservation_content_3: {
+        "vi": null,
+        "en": null,
+        "jp": "店舗の空き状況を確認後、担当者よりご連絡致します。",
+        "kr": null
+    },
+    reservation_content_4: {
+        "vi": null,
+        "en": null,
+        "jp": "※ご予約はお電話、公式LINEアカウント、各種SNSでも承っております。",
+        "kr": null
+    },
+    reservation_content_5: {
+        "vi": null,
+        "en": null,
+        "jp": "※個人情報のお取り扱いについて",
+        "kr": null
+    },
+    reservation_content_6: {
+        "vi": null,
+        "en": null,
+        "jp": " 弊社のご提出いただいた個人情報はお問合せ・ご質問への回答、情報提供のために使用させていただきます。",
+        "kr": null
+    },
+    reservation_content_7: {
+        "vi": null,
+        "en": null,
+        "jp": "ご入力いただいたご本人の個人情報について、開示、訂正、削除をご請求いただけます。",
+        "kr": null
+    },
+    reservation_content_8: {
+        "vi": null,
+        "en": null,
+        "jp": "その際は",
+        "kr": null
+    },
+    reservation_content_9: {
+        "vi": null,
+        "en": null,
+        "jp": "お問い合わせフォーム",
+        "kr": null
+    },
+    reservation_content_10: {
+        "vi": null,
+        "en": null,
+        "jp": "からご連絡ください。",
+        "kr": null
+    },
+    reservation_content_11: {
+        "vi": null,
+        "en": null,
+        "jp": "※このお申し込みは「仮予約」となります。",
+        "kr": null
+    },
+    reservation_content_12: {
+        "vi": null,
+        "en": null,
+        "jp": "担当者から折り返しさせていただき、詳しいご希望、内容の確認・調整ができ次第「予約確定」となります。",
+        "kr": null
+    },
+    reservation_content_13: {
+        "vi": null,
+        "en": null,
+        "jp": "※ご紹介の場合、ご紹介者様のお名前を記載いただくとご案内がスムーズになります。",
+        "kr": null
+    },
+    reservation_content_14: {
+        "vi": null,
+        "en": null,
+        "jp": "※店舗休業日は翌営業日以降の対応となりますのでご了承ください。",
+        "kr": null
+    },
+    reservation_content_15: {
+        "vi": null,
+        "en": null,
+        "jp": "※出来る限り迅速にご対応いたしますが、3営業日を過ぎても何かしらの返信がない場合大変申し訳ございませんが",
+        "kr": null
+    },
+    reservation_content_16: {
+        "vi": null,
+        "en": null,
+        "jp": "MAREVE恵比寿本店（フリーダイヤル：0120-262-633、もしくはTEL：03-6416-3451）へご連絡いただきますようお願いいたします。",
+        "kr": null
+    },
+    reservation_content_17: {
+        "vi": null,
+        "en": null,
+        "jp": "※M beauty academy、プロデュース商品、セミナー、講演、取材のご依頼等のお問い合わせについては、下記「お問い合わせ」からご連絡いただくようお願い申し上げます。",
+        "kr": null
+    },
+    reservation_content_18: {
+        "vi": null,
+        "en": null,
+        "jp": "お問い合わせはこちらへ",
         "kr": null
     },
     about_academy_title_1: {

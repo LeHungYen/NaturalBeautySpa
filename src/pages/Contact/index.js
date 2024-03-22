@@ -1,6 +1,7 @@
 import style from "../Reservation/index.module.scss";
 import PageBanner from "../../components/PageBanner";
 import FormInput from "../../components/FormInput/form-input";
+import {getDict} from "../../services/dict";
 
 export function Contact() {
     const bannerData = {
@@ -20,12 +21,12 @@ export function Contact() {
                 </p>
             </div>
             <form className={style.form}>
-                <FormInput title={"会社名・団体名 "} subTitle={"(必須)"} type={"text"} value={""}/>
+                <FormInput title={"会社名・団体名 "} subTitle={getDict("form_label_required")} type={"text"} value={""}/>
                 <FormInput title={"所属先"} type={"text"} value={""}/>
-                <FormInput title={"担当者様氏名"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"※担当者様フリガナ"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""}/>
+                <FormInput title={"担当者様氏名"} subTitle={getDict("form_label_required")} type={"text"} value={""}/>
+                <FormInput title={"※担当者様フリガナ"} subTitle={getDict("form_label_required")} type={"text"} value={""}/>
+                <FormInput title={"電話番号"} subTitle={getDict("form_label_required")} type={"text"} value={""}/>
+                <FormInput title={getDict("form_label_email")} subTitle={getDict("form_label_required")} type={"text"} value={""}/>
                 <div className={style.control}>
                     お問い合わせ項目※複数選択可
                     <span>(必須)</span>
@@ -35,7 +36,7 @@ export function Contact() {
                     <FormInput title={"取材依頼"} type={"checkbox"} value={0}/>
                     <FormInput title={"その他お問い合わせ"} type={"checkbox"} value={0}/>
                 </div>
-                <FormInput title={"お問い合わせ内容"} subTitle={"(必須)"} type={"textarea"}/>
+                <FormInput title={"お問い合わせ内容"} subTitle={getDict("form_label_required")} type={"textarea"}/>
                 <p>
                     ※個人情報のお取り扱いについて
                     <br/>

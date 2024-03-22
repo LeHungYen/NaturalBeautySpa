@@ -30,42 +30,42 @@ export function Company() {
                 <div className={style.profile}>
                     <h3>{getDict("company_content_title_2")}</h3>
                     <p>
-                        株式会社マリーブ<br/>
-                        代表取締役<br/>
-                        福田 麻理　Mari Fukuda<br/>
+                        {getDict("company_content_txt_6")}<br/>
+                        {getDict("company_content_txt_7")}<br/>
+                        {getDict("company_content_txt_8")}<br/>
                     </p>
                 </div>
-                <p>10万人の施術実績を持ち、その経験と最新の脱毛技術を取り入れた本物の脱毛技術を持った施術者の育成、そして女性の<br/>
-                    独立支援を目的として立ち上げた脱毛スクール<br/>
-                    「M beauty academy（エムビューティーアカデミー）」の代表も務める。<br/>
-                    自身の経験から開発を行ったワックスブランド「mà remove（マリムーブ）」プロデューサー。<br/>
+                <p>{getDict("company_content_txt_9")}<br/>
+                    {getDict("company_content_txt_10")}<br/>
+                    {getDict("company_content_txt_11")}<br/>
+                    {getDict("company_content_txt_12")}<br/>
                 </p>
                 <table>
                     <tr>
-                        <td>会社名</td>
-                        <td>株式会社マリーブ</td>
+                        <td>{getDict("company_content_txt_13")}</td>
+                        <td>{getDict("company_content_txt_14")}</td>
                     </tr>
                     <tr>
-                        <td>代表者名</td>
-                        <td>福田 麻理</td>
+                        <td>{getDict("company_content_txt_15")}</td>
+                        <td>{getDict("company_content_txt_16")}</td>
                     </tr>
                     <tr>
-                        <td>設立</td>
-                        <td>令和2年9月</td>
+                        <td>{getDict("company_content_txt_17")}</td>
+                        <td>{getDict("company_content_txt_18")}</td>
                     </tr>
                     <tr>
-                        <td>事業内容</td>
-                        <td>・エステティックサロン及びビューティーサロンの経営<br/>
-                            ・美容、健康に関するスクールの運営<br/>
-                            ・美容商品、美容機器の企画、開発、製造、販売、輸出入<br/>
+                        <td>{getDict("company_content_txt_19")}</td>
+                        <td>{getDict("company_content_txt_20")}<br/>
+                            {getDict("company_content_txt_21")}<br/>
+                            {getDict("company_content_txt_22")}<br/>
                         </td>
                     </tr>
                     <tr>
-                        <td>所在地</td>
-                        <td>〒150-0021　東京都渋谷区恵比寿西1-3-10 EBISU. TANAKA. BLDG. 4F</td>
+                        <td>{getDict("company_content_txt_23")}</td>
+                        <td>{getDict("company_content_txt_24")}</td>
                     </tr>
                     <tr>
-                        <td>電話番号</td>
+                        <td>{getDict("company_content_txt_25")}</td>
                         <td>0246-6899-303</td>
                     </tr>
                     <tr>
@@ -73,7 +73,7 @@ export function Company() {
                         <td>0246-6899-303</td>
                     </tr>
                     <tr>
-                        <td>予約専用</td>
+                        <td>{getDict("company_content_txt_26")}</td>
                         <td>0246-6899-303</td>
                     </tr>
                     <tr>
@@ -82,34 +82,34 @@ export function Company() {
                     </tr>
                     <tr>
                         <td>URL</td>
-                        <td><a>	株式会社 マリーブ</a></td>
+                        <td><a>	{getDict("company_content_txt_27")}</a></td>
                     </tr>
                     <tr>
                         <td className={style.tiltless}></td>
-                        <td><a>オフィシャルサロン一覧</a></td>
+                        <td><a>{getDict("company_content_txt_28")}</a></td>
                     </tr>
                     <tr>
                         <td className={style.tiltless}></td>
-                        <td><a>オンラインショップ</a></td>
+                        <td><a>{getDict("company_content_txt_29")}</a></td>
                     </tr>
                     <tr>
                         <td className={style.tiltless}></td>
-                        <td><a>福田麻理 Instagram</a></td>
+                        <td><a>{getDict("company_content_txt_30")}</a></td>
                     </tr>
                     <tr>
                         <td className={style.tiltless}></td>
-                        <td><a>サロン公式Instagram</a></td>
+                        <td><a>{getDict("company_content_txt_31")}</a></td>
                     </tr>
                     <tr>
                         <td className={style.tiltless}></td>
                         <td><a>M beauty academy Instagram</a></td>
                     </tr>
                 </table>
-                <p>弊社事業について（脱毛サロン「MAREVE」、M beauty academy、プロデュース商品等）、セミナー、講演、取材のご依頼等のお問。<br/>
-                    い合わせについては、下記「お問い合わせ」からご連絡いただくようお願い申し上げます。<br/>
+                <p>{getDict("company_content_txt_32")}<br/>
+                    {getDict("company_content_txt_33")}<br/>
                 </p>
                 <div className={style.btns}>
-                    <button><a href={"/contact"}>お問い合わせはこちらへ</a></button>
+                    <button><a href={"/contact"}>{getDict("company_content_txt_34")}</a></button>
                 </div>
             </div>
         </React.Fragment>
