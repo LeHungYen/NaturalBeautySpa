@@ -3,43 +3,10 @@ import clsx from 'clsx'
 import HomePharagraphItem from '../../../components/HomePharagraphItem';
 import { routes } from '../../../config/routes';
 import { useState, useEffect } from 'react';
+import { getDict } from '../../../services/dict';
+import React from 'react';
+import { pharagraphs } from '../../../data';
 function Pharagraph({ windowWidth }) {
-    const items = [
-        {
-            img: "https://mareve.co.jp/wp-content/uploads/2020/10/10143620-500x500.jpg",
-            title: "M beauty academy",
-            subTitle: "東京、愛知、福岡。現在３校ある「M beauty academy（エム ビューティー アカデミー）」では、10万人の施術実績をもつ脱毛のスペシャリスト福田麻理が技術のすべてをお教えしています。",
-            reverse: false,
-            url: routes.about_academy
-        },
-        {
-            img: "https://mareve.co.jp/wp-content/uploads/2020/10/10143659.jpg",
-            title: "日本初。肌への優しさ、仕上がりの質、全てにこだわった国産ワックス。",
-            subTitle: "ワックスは施術者の経験・技術が問われる施術。日本でも屈指のワクサーである福田麻理が、「施術者」の扱いやすさと「お客様」の安心と満足を考え、全てにこだわりプロデュースしました。日本のワックス脱毛のレベルを変えます。",
-            reverse: true,
-            url: routes.about_product
-        },
-        {
-            img: "https://mareve.co.jp/wp-content/uploads/2020/10/aiko様-500x500.jpg",
-            title: "マリーブを選んだ「お客様の声」",
-            subTitle: "心を込めた施術で、たくさんのお客様にリピートいただいております。モデル、タレント、プロスポーツ選手など美しさや仕上がりにこだわる「プロフェッショナル」のお客様にもマリーブは選ばれています。",
-            reverse: false,
-            url: ""
-        }
-    ]
-
-    // Update font size based on window width
-    // const [flexDirection, setFlexDirection] = useState("column");
-
-
-    // useEffect(() => {
-    //     if (windowWidth < 1250) {
-    //         setFlexDirection("row")
-    //     } else {
-    //         setFlexDirection("column")
-    //     }
-
-    // }, [windowWidth]);
 
     return (
         <div className={style.container}>
@@ -49,30 +16,48 @@ function Pharagraph({ windowWidth }) {
                 </div>
 
                 <div className={style.title}>
-                    <p>マリーブは日本の「脱毛」のレベルを変えます。</p>
+                    <p>{getDict("home_pharagraph_title")}</p>
                 </div>
 
                 <div className={style.titleMobile}>
-                    <p>マリーブは日本の</p>
-                    <p>「脱毛」のレベルを変えます。</p>
+                    <p>
+                        {getDict("home_pharagraph_titleMobile")?.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
                 </div>
 
+
                 <div className={style.sub}>
-                    <p>10万人の施術実績。女性の独立支援。</p>
-                    <p>マリーブはプロフェッショナルの育成に力を入れています。</p>
+                    <p>
+                        {getDict("home_pharagraph_sub")?.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
                 </div>
 
                 <div className={style.subMobile}>
-                    <p>10万人の施術実績。女性の独立支援。</p>
-                    <p>マリーブはプロフェッショナルの育成に</p>
-                    <p>力を入れています。</p>
+                    <p>
+                        {getDict("home_pharagraph_subMobile")?.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
                 </div>
 
             </div>
 
             <div className={style.row2}>
                 <div className={style.items}>
-                    {items.map((item, index) => {
+                    {pharagraphs.map((item, index) => {
                         return (
                             <div key={index} className={style.item}>
                                 <a href={item.url}>

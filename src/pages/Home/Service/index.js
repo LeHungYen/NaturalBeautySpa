@@ -2,25 +2,26 @@ import style from './index.module.scss'
 import HomeItem from '../../../components/HomeItem';
 import { useState, useEffect } from 'react';
 import { routes } from '../../../config/routes';
+import { getDict } from '../../../services/dict';
 function Service({ windowWidth }) {
 
     const services = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_18087353_M-e1602471243188.jpg",
-            upperLeftCornerMainText: "顔",
-            upperLeftCornerSubText: "FACE",
+            upperLeftCornerMainText: getDict("home_service_mainText_item1"),
+            upperLeftCornerSubText: getDict("home_service_subText_item1"),
             url: `${routes.menu}?key=1`
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_18087337_M-e1602471279127.jpg",
-            upperLeftCornerMainText: "全身",
-            upperLeftCornerSubText: "BODY",
+            upperLeftCornerMainText: getDict("home_service_mainText_item2"),
+            upperLeftCornerSubText: getDict("home_service_subText_item2"),
             url: `${routes.menu}?key=0`
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_66741724_M.jpg",
-            upperLeftCornerMainText: "VIO",
-            upperLeftCornerSubText: "VIO",
+            upperLeftCornerMainText: getDict("home_service_mainText_item3"),
+            upperLeftCornerSubText: getDict("home_service_subText_item3"),
             url: `${routes.menu}?key=4`
         }
     ]

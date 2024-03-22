@@ -1,25 +1,29 @@
+import { getDict } from '../../../services/dict';
 import style from './index.module.scss'
-
+import React from 'react';
 function Instagram() {
     return (
         <div className={style.container}>
 
             <div className={style.instagram}>
-                <p>公式Instagram</p>
+                <p>{getDict("home_instagram_title")}</p>
             </div>
 
             <div className={style.text}>
                 <p>
-                    福田麻理公式Instagram。
-                    <br />
-                    脱毛サービス、セミナー情報、新商品などを
+                    {getDict("home_instagram_text_row1")?.split('\n').map((line, index) => (
+                        <React.Fragment key={index}>
+                            {line}
+                            <br />
+                        </React.Fragment>
+                    ))}
                 </p>
 
-                <p>This template does not exist!</p>
+                <p className={style.textRow2}>{getDict("home_instagram_text_row2")}</p>
             </div>
 
             <div className={style.button}>
-                <button>続きは公式Instagramへ</button>
+                <button>{getDict("home_instagram_button")}</button>
             </div>
 
         </div>

@@ -47,8 +47,9 @@
     max-width: 900px;
 }
 
-.policy p{
-   line-height: 2.4;
+.policy p {
+    line-height: 2.4;
+    white-space: pre-line;
 }
 
 @media screen and (max-width:1250px) {
