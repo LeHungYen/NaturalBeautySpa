@@ -13,6 +13,12 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    about_academy_title_1: {
+        "vi": null,
+        "en": null,
+        "jp": "マジメなサロンを日本中に増やしたい",
+        "kr": null
+    },
     product_page_title_1: {
         "vi": null,
         "en": null,
