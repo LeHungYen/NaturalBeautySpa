@@ -32,6 +32,7 @@ function DefaultLayout({ children }) {
 
     return (
         <div className={style.container}>
+
             <Header />
 
             <div className={style.body}>
@@ -50,6 +51,8 @@ function DefaultLayout({ children }) {
             >
                 <TiArrowUpThick className={style.icon} />
             </div>
+
+         
         </div>
     );
 }
