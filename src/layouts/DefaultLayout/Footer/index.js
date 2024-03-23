@@ -8,22 +8,23 @@ import store from "../../../store/store";
 import Loading from "../../../components/Loading/loading";
 import { routes } from '../../../config/routes';
 import { useNavigate, Link } from 'react-router-dom';
+import { getDict } from '../../../services/dict';
 function Footer() {
     const navigate = useNavigate();
     const row1Item = [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_69294004_M.jpg",
-            textBelow: "本店アクセス",
+            textBelow: getDict("defaultLayout_row1_item1"),
             url: routes.about_access
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_23376677_M-e1603864881118.jpg",
-            textBelow: "脱毛メニュー",
+            textBelow: getDict("defaultLayout_row1_item2"),
             url: routes.mainMenu
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_21787413_M.jpg",
-            textBelow: "会社概要",
+            textBelow: getDict("defaultLayout_row1_item3"),
             url: routes.company
         }
     ]
@@ -80,51 +81,54 @@ function Footer() {
             <div className={style.row2}>
                 <div className={style.displayFlex}>
                     <div className={style.col1}>
-                        <div onClick={() => navigate(routes.home)} className={style.logo}>
-                            <img src="https://mareve.co.jp/wp-content/uploads/2020/10/mareve_logo03_140-1.png?1707220383"></img>
-                        </div>
+                        <a href={routes.home}>
+                            <div className={style.logo}>
+                                <img src={require('../../../assets/logoWhite.jpg')} alt="logo" />
+                                <p className={style.logoText}>Natural Beauty</p>
+                            </div>
+                        </a>
 
                         <ul>
-                            <li><span>株式会社マリーブ</span></li>
-                            <li><span>〒150-0021</span></li>
-                            <li><span>東京都渋谷区恵比寿西1-3-10</span></li>
-                            <li><span>EBISU. TANAKA. BLDG. 4F</span></li>
-                            <li><span>MAREVE 恵比寿本店</span></li>
-                            <li><span>営業時間/11:00〜21:00</span></li>
-                            <li><span>定休日/年末年始</span></li>
-                            <li><span>予約専用フリーダイヤル：0246-6899-303</span></li>
-                            <li><span>TEL：0246-6899-303</span></li>
-                            <li><span>メール: naturalbeautyjapan24@gmail.com</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item1")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item2")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item3")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item4")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item5")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item6")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item7")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item8")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item9")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col1_item10")}</span></li>
                         </ul>
 
                     </div>
 
                     <div className={style.col2}>
-                        <p className={style.title}>ご予約専用LINE</p>
+                        <p className={style.title}>{getDict("defaultLayout_row2_col2_item1")}</p>
 
                         <ul>
-                            <li><span>「MAREVE恵比寿本店」へのご予約（仮予約）はこちらのLINEからお友達追加をお願いします。完全プライベートサロンのため、ご希望の日時をいただいた後に調整を行います。</span></li>
-                            <li><span>まずはお気軽にこちらよりご連絡ください。</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col2_item2")}</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col2_item3")}</span></li>
                         </ul>
 
                         <div className={style.button}>
-                            <button><a>LINEから予約する</a></button>
+                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a >{getDict("defaultLayout_row2_col2_item4")}</a></button>
                         </div>
                     </div>
 
                     <div className={style.col3}>
                         <p className={style.title}>
-                            アカデミー専用
+                        {getDict("defaultLayout_row2_col3_item1")}
                             <br />
-                            お問い合わせLINE
+                            {getDict("defaultLayout_row2_col3_item2")}
                         </p>
 
                         <ul>
-                            <li><span>「M beauty academy」「プロデュース商品」「セミナー、講演、取材のご依頼」等、アカデミー関連へのお問い合わせはこちらのLINEからお友達追加し、ご連絡ください。</span></li>
+                            <li><span>{getDict("defaultLayout_row2_col3_item3")}</span></li>
                         </ul>
 
                         <div className={style.button}>
-                            <button><a>アカデミー問い合わせLINE</a></button>
+                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a>{getDict("defaultLayout_row2_col3_item4")}</a></button>
                         </div>
                     </div>
                 </div>
@@ -138,31 +142,31 @@ function Footer() {
                         </div>
 
                         <ul>
-                            <li><a href={routes.about}>ABOUT MAREVE</a></li>
-                            <li><a href={routes.mainMenu}>脱毛メニュー</a></li>
-                            <li><a>M beauty academy</a></li>
-                            <li><a href={routes.product}>プロデュース商品</a></li>
-                            <li><a>お客様の声</a></li>
-                            <li><a href={routes.company}>会社概要</a></li>
-                            <li><a href={routes.news}>お知らせ</a></li>
-                            <li><a href={routes.privacyPolicy}>個人情報保護方針</a></li>
-                            <li><a href={routes.about_access}>MAREVE恵比寿本店アクセス</a></li>
+                            <li><a href={routes.about}>{getDict("defaultLayout_row3_col1_item1")}</a></li>
+                            <li><a href={routes.mainMenu}>{getDict("defaultLayout_row3_col1_item2")}</a></li>
+                            <li><a>{getDict("defaultLayout_row3_col1_item3")}</a></li>
+                            <li><a href={routes.product}>{getDict("defaultLayout_row3_col1_item4")}</a></li>
+                            <li><a>{getDict("defaultLayout_row3_col1_item5")}</a></li>
+                            <li><a href={routes.company}>{getDict("defaultLayout_row3_col1_item6")}</a></li>
+                            <li><a href={routes.news}>{getDict("defaultLayout_row3_col1_item7")}</a></li>
+                            <li><a href={routes.privacyPolicy}>{getDict("defaultLayout_row3_col1_item8")}</a></li>
+                            <li><a href={routes.about_access}>{getDict("defaultLayout_row3_col1_item9")}</a></li>
                         </ul>
                     </div>
 
                     <div className={style.col2}>
                         <div className={style.title} >
-                            <a href={routes.mainMenu}><p>脱毛メニュー</p></a>
+                            <a href={routes.mainMenu}><p>{getDict("defaultLayout_row3_col2_item1")}</p></a>
                         </div>
 
                         <ul>
-                            <li><a href={`${routes.menu}?key=0`}>全身脱毛</a></li>
-                            <li><a href={`${routes.menu}?key=1`}>顔</a></li>
-                            <li><a href={`${routes.menu}?key=2`}>上半身</a></li>
-                            <li><a href={`${routes.menu}?key=3`}>下半身</a></li>
-                            <li><a href={`${routes.menu}?key=4`}>デリケートゾーン</a></li>
-                            <li><a href={`${routes.menu}?key=5`}>メンズ脱毛</a></li>
-                            <li><a href={`${routes.menu}?key=6`}>キッズ脱毛</a></li>
+                            <li><a href={`${routes.menu}?key=0`}>{getDict("defaultLayout_row3_col2_item2")}</a></li>
+                            <li><a href={`${routes.menu}?key=1`}>{getDict("defaultLayout_row3_col2_item3")}</a></li>
+                            <li><a href={`${routes.menu}?key=2`}>{getDict("defaultLayout_row3_col2_item4")}</a></li>
+                            <li><a href={`${routes.menu}?key=3`}>{getDict("defaultLayout_row3_col2_item5")}</a></li>
+                            <li><a href={`${routes.menu}?key=4`}>{getDict("defaultLayout_row3_col2_item6")}</a></li>
+                            <li><a href={`${routes.menu}?key=5`}>{getDict("defaultLayout_row3_col2_item7")}</a></li>
+                            <li><a href={`${routes.menu}?key=6`}>{getDict("defaultLayout_row3_col2_item8")}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -180,7 +184,7 @@ function Footer() {
                     </div>
 
                     <div className={style.copyright}>
-                        <p>Copyright © 株式会社マリーブ 2020</p>
+                        <p>{getDict("defaultLayout_row4_col2_item1")}</p>
                     </div>
                 </div>
             </div>

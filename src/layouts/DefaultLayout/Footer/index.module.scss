@@ -57,14 +57,30 @@
             padding: 65px 40px 55px 0px;
 
             .logo {
-                width: 200px;
-                height: 57px;
+                // width: 60px;
+                height: 60px;
                 margin-bottom: 20px;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+
                 img {
-                    width: 100%;
-                    height: 100%;
+                    // margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    width: 60px;
+                    height: auto;
                     object-fit: cover;
+                }
+
+                p {
+                    display: flex;
+                    align-items: center;
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: #f378af;
+                    letter-spacing: 0.1px;
+                    font-family: 'Times New Roman', Times, serif;
                 }
             }
         }
@@ -285,10 +301,10 @@
                     border-right: none;
                     padding: 60px 30px 50px 30px;
 
-                    .logo {
-                        width: 176px;
-                        height: 50px;
-                    }
+                    // .logo {
+                    //     width: 60px;
+                    //     height: 60px;
+                    // }
                 }
 
                 .col2,
@@ -465,5 +481,11 @@
                 align-items: center;
             }
         }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .logoText {
+        display: none !important;
     }
 }

@@ -1,13 +1,14 @@
 import style from './index.module.scss'
 import NavItem from "./NavItem/nav-item";
 import { getDict } from "../../../services/dict";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import NavigationBarDrawerMode from "./drawe/drawer";
 import { getAboutData } from "../../../pages/About";
 import AboutItem from "../../../components/AboutItem";
 import { useDispatch } from "react-redux";
 import { routes } from "../../../config/routes.js"
 import { useNavigate } from 'react-router-dom';
+import Login from '../../../components/Login/index.js';
 export default function Header(props) {
     const navigate = useNavigate();
     let { navigations } = props
@@ -119,12 +120,23 @@ export default function Header(props) {
             }
         ]
     }
+
+    const loginRef = useRef(null);
+    const exitLogin = () => {
+        loginRef.current.style.display = "none";
+    }
+    const openLogin = () => {
+        loginRef.current.style.display = "block";
+    }
     return (
         <div className={style.header} >
             <div className={style.top}>
                 <div className={style.items}>
-                    <a href="/">
-                        <img className={style.logo} src={require('../../../assets/logo.png')} alt="logo" />
+                    <a href={routes.home}>
+                        <div className={style.logo}>
+                            <img src={require('../../../assets/logoWhite.jpg')} alt="logo" />
+                            <p className={style.logoText}>Natural Beauty</p>
+                        </div>
                     </a>
                     <div className={style.messenger}>
                         <span>{getDict("messenger-reservation")}</span>
@@ -165,6 +177,11 @@ export default function Header(props) {
                     </div>
                 </div>
             </div>
+
+            <div className={style.login}>
+                <button onClick={openLogin}>Login</button>
+            </div>
+            <Login exitLogin={exitLogin} loginRef={loginRef} />
         </div>
     )
 }

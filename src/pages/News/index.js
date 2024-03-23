@@ -11,33 +11,12 @@ import { IoLogoPinterest } from "react-icons/io5";
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { routes } from '../../config/routes.js'
+import { news } from '../../data/index.js';
+import { getDict } from '../../services/dict.js';
 function News() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');
-
-    const news = [
-        {
-            title: "オフィシャルサロン一覧を公開しました",
-            date: "2024.03.9",
-            img: "https://mareve.co.jp/wp-content/uploads/2020/11/mareve_news-1.png",
-            content: "オフィシャルサロンは、こちらからお探しください."
-        },
-        {
-            title: "コーポレートサイトをオープン致しました",
-            date: "2020.11.24",
-            img: "https://mareve.co.jp/wp-content/uploads/2020/11/mareve_news-1.png",
-            content: `平素は格別のお引き立てを賜り誠にありがとうございます。
-      
-          この度、弊社「株式会社マリーブ」のコーポレートサイトを公開いたしました。
-          今後とも皆様へのサービス向上のため、サイト内のコンテンツ充実に努め、様々な情報を皆様に発信して参ります。
-      
-          なにとぞ、ご活用いただけますよう宜しくお願い申し上げます。
-      
-          株式会社マリーブ
-          福田 麻理`
-        }
-    ];
 
     return (
         <div className={style.container}>
@@ -47,7 +26,7 @@ function News() {
                 </div>
                 <div className={style.bannerText}>
                     <div className={style.text}>
-                        <p className={style.title}>お知らせ</p>
+                        <p className={style.title}>{getDict("news_banner_bannerText_text_title")}</p>
                     </div>
                 </div>
             </div>
@@ -57,9 +36,9 @@ function News() {
                     <div className={style.menuPosition}>
                         <li><a href={routes.home}><ImHome className={style.homeIcon} /></a></li>
                         {!key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>脱毛メニュー</p></li></a>}
+                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_menuPosition_news")}</p></li></a>}
                         {key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p>脱毛メニュー</p></li></a>}
+                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_menuPosition_news")}</p></li></a>}
                         {key && <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>{news[key].title}</p></li>}
                     </div>
                 </ul>
@@ -68,8 +47,8 @@ function News() {
             <div className={style.body}>
                 <div className={style.bodyMenu}>
                     <ul>
-                        <li>キャンペーン記事一覧</li>
-                        <li>公式Instagram</li>
+                        <li>{getDict("news_menu_body_bodyMenu_item1")}</li>
+                        <li>{getDict("news_menu_body_bodyMenu_item2")}</li>
                     </ul>
                 </div>
 
@@ -104,7 +83,7 @@ function News() {
 
                     <div className={style.content}>
                         <p>
-                            {news[key].content.split('\n').map((line, index) => (
+                            {news[key].content?.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
                                     {line}
                                     <br />
@@ -128,9 +107,9 @@ function News() {
 
                     <div className={style.notice}>
                         <div className={style.noticeTitle}>
-                            <p className={style.main}>お知らせ</p>
+                            <p className={style.main}>{getDict("news_menu_body_newDetail_notice_noticeTitle_main")}</p>
                             <a href={routes.news}>
-                                <p className={style.noticeList}>お知らせ一覧</p>
+                                <p className={style.noticeList}>{getDict("news_menu_body_newDetail_notice_noticeTitle_news")}</p>
                             </a>
                         </div>
 

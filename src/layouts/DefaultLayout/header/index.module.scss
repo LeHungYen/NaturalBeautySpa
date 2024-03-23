@@ -15,6 +15,7 @@
   .top {
     width: 100%;
     background: white;
+
     .items {
       max-width: 1200px;
       display: flex;
@@ -23,13 +24,36 @@
       padding: 15px 0;
 
       .logo {
-        margin-right: auto;
-        width: 176px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        img {
+          // margin-top: 20px;
+          display: flex;
+          align-items: center;
+          width: 60px;
+          height: auto;
+          object-fit: cover;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          font-size: 40px;
+          font-weight: bold;
+          color: #f378af;
+          letter-spacing: 0.1px;
+          font-family: 'Times New Roman', Times, serif;
+        }
       }
+
       .btns {
         margin-right: auto;
         z-index: 999;
       }
+
       .messenger {
         position: absolute;
         right: 100px;
@@ -41,7 +65,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+
         span {
           color: white;
           padding: 10px;
@@ -59,7 +83,7 @@
 
     .container {
       position: absolute;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
       width: 100%;
       left: 0;
       top: 0;
@@ -83,6 +107,7 @@
   justify-content: center;
   overflow: hidden;
   display: none;
+
   .container {
     display: flex;
     flex-direction: row;
@@ -91,30 +116,37 @@
     position: relative;
     margin: 0 auto;
     border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;;
+    border-right: 1px solid #ddd;
+    ;
     overflow: hidden;
+
     .about {
       color: #2dccd3;
       padding: 70px 60px;
       width: 394px;
+
       .title {
         color: #2dccd3;
         margin-bottom: 35px;
+
         h3 {
           font-size: 32px;
           margin: 0;
         }
+
         p {
           margin-top: 5px;
           font-size: 14px;
         }
       }
+
       .detail {
         color: #323232;
         font-size: 14px;
         margin-bottom: 34px;
         line-height: 2.6;
       }
+
       button {
         background: #222222;
         display: block;
@@ -131,22 +163,43 @@
         background: #2dccd3;
       }
     }
+
     :global(.about-item-popup) {
       cursor: pointer;
     }
   }
 }
+
 .intro:hover {
   display: block !important;
+}
+
+
+.login {
+  position: absolute;
+  right: 310px;
+  top: 0px;
+
+  button {
+    height: 50px;
+    width: 100px;
+    background-color: #222222;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 1200px) {
   .navigation {
     display: none !important;
   }
+
   .items {
     padding: 5px 20px !important;
   }
+
   .logo {
     height: 50px !important;
   }
@@ -157,7 +210,3 @@
     display: none !important;
   }
 }
-
-
-
-
