@@ -15,4 +15,5 @@ export const routes = {
     about_product: "/about/product",
     about_access: "/about/access",
     product: "/product",
+    authentication_email: "/authentication_email",
 }
