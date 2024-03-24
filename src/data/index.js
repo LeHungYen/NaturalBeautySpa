@@ -1,17 +1,18 @@
 import { getDict } from "../services/dict";
 import { routes } from "../config/routes";
+import logo from '../assets/logo.png'
 
 export const news = [
     {
         title: getDict("news_item1_title"),
         date: getDict("news_item1_date"),
-        img: "https://mareve.co.jp/wp-content/uploads/2020/11/mareve_news-1.png",
+        img: logo,
         content: getDict("news_item1_content"),
     },
     {
         title: getDict("news_item2_title"),
         date: getDict("news_item2_date"),
-        img: "https://mareve.co.jp/wp-content/uploads/2020/11/mareve_news-1.png",
+        img: logo,
         content: getDict("news_item2_content"),
     }
 ];

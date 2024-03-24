@@ -3,37 +3,25 @@ import style from './index.module.scss'
 import { useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios"
-import { UserService } from '../../../../serivces/UserService';
+import { AccountService } from '../../../../services/AccountService';
 import { routes } from '../../../../config/routes';
 export function AuthenticationEmail() {
-    const userService = new UserService();
+    const accountService = new AccountService();
     const navigate = useNavigate();
     // get id from url
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const email = searchParams.get("email");
 
-
     const [code, setCode] = useState("");
     const [message, setMessage] = useState("");
-    const register = () => {
-        const addUser = async () => {
-            try {
-                const response = await axios.post(`http://localhost:8080/api/v1/auth/register/${code}`)
-                await localStorage.setItem("userToken", JSON.stringify(response.data.token))
-                await getUserInfor();
-                navigate(routes.home)
-            } catch (error) {
-                setMessage(error.response.data.message)
-            }
+
+    const authenticationEmail = async () => {
+        try {
+            const response = accountService.emailConfirmation(code);
+        } catch (error) {
+            // setMessage(error.response.data)
         }
-        addUser();
-    }
-
-
-    const getUserInfor = async () => {
-        const response = await userService.getCurrentUser();
-        await localStorage.setItem("user", JSON.stringify(response))
     }
 
     return (
@@ -60,7 +48,7 @@ export function AuthenticationEmail() {
                     <button
                         disabled={code == "" ? true : false}
                         style={{ background: code == "" ? "" : "#0389c9", color: code == "" ? "" : "#ffffff" }}
-                        onClick={register}
+                        onClick={authenticationEmail}
                     >Continue</button>
                 </div>
             </div>

@@ -1,7 +1,28 @@
 import style from './index.module.scss'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { SignUp } from './SignUp';
+import { AccountService } from '../../services/AccountService';
 function Login({ exitLogin, loginRef }) {
+    const accountService = new AccountService();
+    const [loginForm, setLoginForm] = useState(accountService.defaulLogin)
+
+    const handleLoginForm = (name, value) => {
+        setLoginForm(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const login = async () => {
+        try {
+            const response = await accountService.login(loginForm);
+        } catch (error) {
+            console.log(error)
+            // setError(error.response.data);
+        }
+    }
+
+    // ref
     const signUpRef = useRef(null);
     const exitSignUp = () => {
         signUpRef.current.style.display = "none";
@@ -30,18 +51,18 @@ function Login({ exitLogin, loginRef }) {
                     <div className={style.form}>
                         <div className={style.formGroup}>
                             <label>UserName</label>
-                            <input type='text'></input>
+                            <input type='text' value={loginForm.username} onChange={(e) => handleLoginForm("username", e.target.value)}></input>
                         </div>
                         <div className={style.formGroup}>
                             <label>Password</label>
-                            <input type='password'></input>
+                            <input type='password' value={loginForm.password} onChange={(e) => handleLoginForm("password", e.target.value)}></input>
                         </div>
                         <div className={style.remember}>
                             <input type='checkBox' id="remember"></input>
                             <label htmlFor='remember'>Remember me</label>
                         </div>
 
-                        <button>Login</button>
+                        <button onClick={login}>Login</button>
                         {/* <p className={style.text}>ForgotPassword?</p> */}
                     </div>
 
