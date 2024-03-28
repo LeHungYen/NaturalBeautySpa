@@ -13,6 +13,7 @@ import { AboutDetail } from "../pages/AboutDetail";
 import { Product } from "../pages/Product";
 import { AuthenticationEmail } from "../components/Login/SignUp/AuthenticationGmail";
 import { NullLayout } from '../layouts/NullLayout/index.js'
+import Test from "../pages/Test/index.js";
 const publicRoutes = [
     { path: routes.home, component: Home },
     { path: routes.about, component: About },
@@ -29,7 +30,8 @@ const publicRoutes = [
     { path: routes.about_access, component: AboutDetail },
     { path: routes.about_important, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
-    { path: routes.authentication_email, component: AuthenticationEmail, layout: NullLayout }
+    { path: routes.authentication_email, component: AuthenticationEmail, layout: NullLayout },
+    { path: routes.test, component: Test, layout: NullLayout }
 ]
 
 const privateRoutes = [

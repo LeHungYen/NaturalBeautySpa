@@ -18,7 +18,7 @@ export function AuthenticationEmail() {
 
     const authenticationEmail = async () => {
         try {
-            const response = accountService.emailConfirmation(code);
+            const response = accountService.emailConfirmation({ code: code });
         } catch (error) {
             // setMessage(error.response.data)
         }
