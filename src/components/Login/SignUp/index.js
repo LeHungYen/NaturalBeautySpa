@@ -27,7 +27,7 @@ export function SignUp({ exitLogin, signUpRef, openSignIn }) {
     const createAccount = async () => {
         if (agreeTerm) {
             try {
-                const response = await accountService.register(register);
+                const response = await accountService.register({ code: register });
                 setRegister(accountService.defaultRegister)
                 setAgreeTerm(false)
                 openMessage();
