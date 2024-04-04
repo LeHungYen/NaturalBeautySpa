@@ -29,7 +29,6 @@ export function Contact() {
                 <div className={style.control}>
                     お問い合わせ項目※複数選択可
                     <span>(必須)</span>
-                    <FormInput title={"M beauty academyについて"} type={"checkbox"} value={0}/>
                     <FormInput title={"プロデュース商品について"} type={"checkbox"} value={0}/>
                     <FormInput title={"セミナー・講演依頼"} type={"checkbox"} value={0}/>
                     <FormInput title={"取材依頼"} type={"checkbox"} value={0}/>

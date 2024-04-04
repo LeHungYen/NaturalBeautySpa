@@ -6,12 +6,40 @@ import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
 import PageBanner from "../../components/PageBanner";
 import {getDict} from "../../services/dict";
+import getAccessCookie from "../../services/common";
 
 export function Reservation() {
     const bannerData = {
         titles: ["ご予約専用フォーム"],
         subTitles: [],
         image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_68232960_M.jpg",
+    }
+    const isHidden = getAccessCookie();
+    const submit = function (e) {
+        e.preventDefault();
+        const data = getDataFormat();
+        const textInputs = document.querySelectorAll("form input.text");
+        for(let i = 0;i< 5; i++) {
+            data[Object.keys(data)[i]] = textInputs[i].value
+        }
+        const serviceCaptions = document.querySelectorAll("form div:has(input.checkbox) label");
+        const checkboxs = document.querySelectorAll("form input.checkbox");
+        for(let i = 0;i< serviceCaptions.length; i++) {
+            if(checkboxs[i].checked) {
+                data.serviceNames.push(serviceCaptions[i].textContent);
+            }
+        }
+        const availableTime = document.querySelectorAll("form input.date");
+        const availableTimeRange = document.querySelectorAll("form div:has(input.date) select");
+        for(let i = 0;i< availableTime.length; i++) {
+            const time = {
+                date : availableTime[i].value,
+                timeRange : availableTimeRange[i].value
+            }
+            data.availableTimes.push(time);
+        }
+        console.log(data)
+        post(data,"/reserve");
     }
     return (
         <div className={style.contact}>
@@ -25,17 +53,17 @@ export function Reservation() {
                 </p>
                 <p>※ご予約はお電話、公式LINEアカウント、各種SNSでも承っております。</p>
             </div>
-            <form className={style.form}>
+            <form className={style.form} onSubmit={(e)=>{submit(e)}}>
                 <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"/>
-                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""}/>
-                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""}/>
+                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
+                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
+                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
+                <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""} />
+                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
-                    <FormInput title={"カウンセリング"} type={"checkbox"} value={0}/>
+                    <FormInput name={""} title={"カウンセリング"} type={"checkbox"} value={0}/>
                     <FormInput title={"フェイシャルワックス"} type={"checkbox"} value={0}/>
                     <FormInput title={"顔脱毛"} type={"checkbox"} value={0}/>
                     <FormInput title={"全身脱毛"} type={"checkbox"} value={0}/>
@@ -75,4 +103,17 @@ export function Reservation() {
             </div>
         </div>
     )
+}
+
+function getDataFormat() {
+    return {
+        firstName: "",
+        lastName: "",
+        phone: "",
+        note :"",
+        email: "",
+        username: "",
+        serviceNames: [],
+        availableTimes: []
+    }
 }
