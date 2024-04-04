@@ -2,7 +2,7 @@ import style from "./index.module.scss"
 import React from "react";
 
 export default function FormInput(props) {
-    let {title, subTitle, type, value, time, row} = props;
+    let {title, subTitle, type, value, time, isHidden} = props;
     if(!time) {
         time = [
             "11:00 ~ 13:00",
@@ -19,7 +19,7 @@ export default function FormInput(props) {
                 <div>
                     <select name={"date_" + type}>
                         {time.map((t,i)=>
-                            <option value={i}>{t}</option>
+                            <option value={t}>{t}</option>
                         )}
                     </select>
                 </div>
@@ -41,12 +41,12 @@ export default function FormInput(props) {
     }
     return (
         <React.Fragment>
-            <div className={style.container}>
+            <div className={style.container} style={{display: `${isHidden?'none':'flex'}`}}>
                 <label>
                     {title}
                     <span>{subTitle}</span>
                 </label>
-                <input className={type} type={type} value={value}/>
+                <input name={""} className={type} type={type} />
                 {dateCbx()}
             </div>
         </React.Fragment>
