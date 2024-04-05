@@ -1,0 +1,61 @@
+.icon {
+  display: none;
+  font-size: 30px;
+  margin-left: auto;
+  margin-top: 7px;
+}
+:global(.drawer) {
+  visibility: hidden;
+  position: absolute;
+  width: 400px;
+  max-width: calc(100vw*8/10);
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background: #222222;
+  color: #ffffff ;
+  font-weight: 200;
+  font-size: 16px;
+  z-index: 999;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:global(.drawer.in.clicked) {
+  animation: slide-in 0.5s ease;
+}
+
+:global(.drawer.out.clicked) {
+  animation: slide-out 0.5s ease;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@media (max-width: 1200px) {
+  .icon {
+    display: block !important;
+  }
+  :global(.drawer) {
+    visibility: unset;
+  }
+}
