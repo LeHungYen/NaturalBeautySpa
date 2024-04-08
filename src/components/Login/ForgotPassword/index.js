@@ -1,76 +1,50 @@
 import { useState, useRef, useEffect, useContext } from "react"
 import { Link, json, parsePath, useLocation, useParams, useNavigate } from 'react-router-dom'
-import clsx from "clsx"
 import style from './index.module.scss'
+import { routes } from '../../../config/routes';
+// import { AccountService } from "../../../services/AccountService"
+import { ApiService } from "../../../services/ApiService";
+import { baseUrl, accountServiceUrl } from "../../../config/link";
+export function ForgotPassword({ exitLogin, forgotPasswordRef, openSignIn }) {
+    const navigate = useNavigate();
+    const apiService = new ApiService(baseUrl);
+    const [email, setEmail] = useState('')
+    const [agreeTerm, setAgreeTerm] = useState(false)
+    const [error, setError] = useState();
 
-function ForgotPassword({ value }) {
-
-
-    // thoát
-    const btnExit = () => {
-        value.displayForgotPassword.current.style.display = "none"
-        value.setShowForgotPassword(false);
+    const resetPassword = async () => {
+        try {
+            const response = await apiService.postData(accountServiceUrl.sendMailforgotPassword, { username: email }, {}, true)
+            // setRegister(accountService.defaultRegister)
+            // setAgreeTerm(false)
+            navigate(routes.resetPassword)
+        } catch (error) {
+            setError(error.response.data);
+        }
     }
 
     return (
-        <div className={style.formLogin}>
-
-
-            <button onClick={btnExit} className={style.btnExit}><i className="fa-solid fa-x"></i></button>
-
-
-            <div className={style.rowSignUp}>
-                <div className={style.col2}>
-                    <p className={style.title}>Password reset</p>
-                    <div className={style.form}>
-
-                        <div>
-
-
-                            <div className={style.formGroup}>
-                                <div className={style.inputWithIcon}>
-                                    <div className={style.iconLeft}> <i className="fa-solid fa-user"></i></div>
-                                    <input placeholder="Email" />
-                                    <div className={style.iconRightWrong}><i className="fa-solid fa-xmark"></i></div>
-                                </div>
-                            </div>
-
-
-                            <div className={style.formGroup}>
-                                <div className={style.inputWithIcon}>
-                                    <div className={style.iconLeft}> <i className="fa-solid fa-lock"></i> </div>
-                                    <input placeholder="Mật khẩu mới" />
-                                    <div className={style.iconRightPassword} >
-                                        <i className={`fa-solid ${true ? 'fa-eye-slash' : 'fa-eye'}`}></i>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className={style.formGroup}>
-                                <div className={style.inputWithIcon}>
-                                    <div className={style.iconLeft}> <i className="fa-solid fa-lock"></i> </div>
-                                    <input placeholder="Xác nhận mật khẩu" />
-                                    <div className={style.iconRightPassword}>
-                                        <i className={`fa-solid ${true ? 'fa-eye-slash' : 'fa-eye'}`}></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div className={style.formGroupBtn}>
-                            <button >Lấy mã otp</button>
-                        </div>
+        <div className={style.container} ref={forgotPasswordRef}>
+            <div className={style.overlay} onClick={exitLogin}>
+                <div className={style.signUp} onClick={(e) => e.stopPropagation()} >
+                    <div className={style.title}>
+                        <p className={style.main}>Forgot Password</p>
+                        <p className={style.sub}>Enter your email to reset your password</p>
                     </div>
 
+                    <div className={style.form}>
+                        <div className={style.formGroup}>
+                            {error?.email && <p className={style.error}>{error.email}</p>}
+                            <label>Email</label>
+                            <input type='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        </div>
+                        <button onClick={resetPassword}>Reset password</button>
+                    </div>
+
+                    <p className={style.text}> <a onClick={openSignIn}>Log in?</a></p>
                 </div>
 
-
             </div>
-
-        </div>
+        </div >
     );
 }
-export default ForgotPassword

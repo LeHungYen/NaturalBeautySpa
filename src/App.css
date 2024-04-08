@@ -19,12 +19,12 @@ a {
         overflow: hidden;
     }
 
-    #root.disable
-    {
+    #root.disable {
         pointer-events: none;
     }
 
-    #root.disable .drawer *, #root.disable .drawer {
+    #root.disable .drawer *,
+    #root.disable .drawer {
         pointer-events: auto;
     }
 

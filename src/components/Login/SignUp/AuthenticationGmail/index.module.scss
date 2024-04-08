@@ -39,21 +39,30 @@
 
                 input {
                     width: 200px;
-                    padding: 13px 35px;
+                    padding: 13px 55px;
                 }
             }
 
-            .message{
+            .message {
                 padding: 0px 20px;
                 font-size: 14px;
                 color: red;
             }
 
             .resendEmail {
-                padding: 20px;
-                color: blue;
+                padding: 10px 20px;
+                color: #576aff;
                 font-size: 15px;
-                cursor: pointer;
+
+                span {
+                    cursor: pointer;
+
+                }
+
+                span:hover {
+                    cursor: pointer;
+                    color: #3037ff;
+                }
             }
         }
 
@@ -64,13 +73,69 @@
             justify-content: end;
             gap: 10px;
 
-            button{
+            button {
                 padding: 10px 20px;
                 border-radius: 8px;
                 border: none;
                 cursor: pointer;
                 font-weight: 500;
             }
+        }
+    }
+
+    .popupMessage {
+        position: relative;
+
+        .title {
+            font-size: 25px;
+            font-weight: 500;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 17px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            color: #656565;
+
+            span {
+                margin-top: 20px;
+                font-size: 17px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500;
+                color: #464646;
+            }
+        }
+
+        button {
+            margin-top: 10px;
+            float: right;
+            background-color: #0d6efd;
+            border: none;
+            padding: 7px 20px;
+            color: white;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+
+            background-color: #0c5ae9;
+        }
+
+        .iconExit {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            color: #989898;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .iconExit:hover {
+            color: #7c7c7c;
         }
     }
 }

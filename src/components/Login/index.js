@@ -1,10 +1,20 @@
 import style from './index.module.scss'
 import { useRef, useState } from 'react';
 import { SignUp } from './SignUp';
+import { ForgotPassword } from './ForgotPassword';
 import { AccountService } from '../../services/AccountService';
+import { ApiService } from '../../services/ApiService';
+import { baseUrl, accountServiceUrl } from '../../config/link';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../config/routes';
 function Login({ exitLogin, loginRef }) {
-    const accountService = new AccountService();
-    const [loginForm, setLoginForm] = useState(accountService.defaulLogin)
+    const navigate = useNavigate();
+    const apiService = new ApiService(baseUrl);
+    const [loginForm, setLoginForm] = useState({
+        username: '',
+        password: '',
+    })
+    const [message, setMessage] = useState('');
 
     const handleLoginForm = (name, value) => {
         setLoginForm(prevState => ({
@@ -15,14 +25,21 @@ function Login({ exitLogin, loginRef }) {
 
     const login = async () => {
         try {
-            const response = await accountService.login(loginForm);
+            const response = await apiService.postData(accountServiceUrl.login, loginForm, {}, true);
+            setMessage('')
+            exitLogin();
         } catch (error) {
-            console.log(error)
-            // setError(error.response.data);
+            if (error.response.data.error == 'email is not confirmed') {
+                navigate(routes.authentication_email)
+            }
+            if (error.response.status == 403) {
+                setMessage('Incorrect username or password')
+            }
         }
     }
 
-    // ref
+
+    // sign up ref
     const signUpRef = useRef(null);
     const exitSignUp = () => {
         signUpRef.current.style.display = "none";
@@ -39,7 +56,20 @@ function Login({ exitLogin, loginRef }) {
     const openSignIn = () => {
         signInRef.current.style.display = "block";
         exitSignUp();
+        exitForgotPass();
     }
+
+    // forgot pass ref
+    const forgotPasswordRef = useRef(null);
+    const exitForgotPass = () => {
+        forgotPasswordRef.current.style.display = "none";
+    }
+    const openForgotPass = () => {
+        forgotPasswordRef.current.style.display = "block";
+        exitSignIn();
+    }
+
+
     return (
         <div className={style.container} ref={loginRef}>
             <div className={style.overlay} onClick={exitLogin} ref={signInRef}>
@@ -50,27 +80,35 @@ function Login({ exitLogin, loginRef }) {
                     </div>
                     <div className={style.form}>
                         <div className={style.formGroup}>
-                            <label>UserName</label>
+                            <label>UserName or email address</label>
                             <input type='text' value={loginForm.username} onChange={(e) => handleLoginForm("username", e.target.value)}></input>
                         </div>
                         <div className={style.formGroup}>
                             <label>Password</label>
                             <input type='password' value={loginForm.password} onChange={(e) => handleLoginForm("password", e.target.value)}></input>
+                            <div className={style.error}>
+                                {message && <p>{message}</p>}
+                            </div>
                         </div>
-                        <div className={style.remember}>
+
+                        {/* <div className={style.remember}>
                             <input type='checkBox' id="remember"></input>
                             <label htmlFor='remember'>Remember me</label>
-                        </div>
+                        </div> */}
 
                         <button onClick={login}>Login</button>
                         {/* <p className={style.text}>ForgotPassword?</p> */}
                     </div>
 
-                    <p className={style.text}>Don't have account? <a onClick={openSignUp}>Create an account</a></p>
+                    <div className={style.text}>
+                        <p >Forgot password? <a onClick={openForgotPass}>Click here to reset it</a></p>
+                        <p >Don't have account? <a onClick={openSignUp}>Create an account</a></p>
+                    </div>
                 </div>
             </div>
 
             <SignUp exitLogin={exitLogin} signUpRef={signUpRef} openSignIn={openSignIn} />
+            <ForgotPassword exitLogin={exitLogin} forgotPasswordRef={forgotPasswordRef} openSignIn={openSignIn} />
         </div>
     )
 }

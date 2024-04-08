@@ -67,6 +67,11 @@
     user-select: none;
 }
 
+.row3 tr:hover {
+    background-color: lightblue !important;
+    cursor: pointer;
+}
+
 .icon {
     position: absolute;
     top: 50%;
