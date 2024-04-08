@@ -29,6 +29,9 @@
     padding: 20px;
     border-radius: 5px;
     animation: fadeIn 0.2s ease-in-out;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
 }
 
 .login .title {
@@ -80,6 +83,17 @@
         outline: 2px solid #cfe2ff;
     }
 
+}
+
+.error {
+    // margin-top: 5px;
+    // background-color: #dcdcdc;
+    // border-radius: 5px;
+
+    p {
+        padding: 3px 0px;
+        color: red;
+    }
 }
 
 .remember {

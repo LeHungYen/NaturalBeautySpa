@@ -39,6 +39,7 @@ export default function FormInput(props) {
             </div>
         )
     }
+
     return (
         <React.Fragment>
             <div className={style.container}>

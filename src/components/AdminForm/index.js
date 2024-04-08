@@ -306,8 +306,8 @@ const AdminForm = ({ title, fields, onSubmit, formValue, setFormValue, errors, r
                     ))}
 
                     <div className={style.buttons}>
-                        <button className={style.submit} type="submit">Submit</button>
                         <button onClick={handleReset} className={style.reset}>Reset</button>
+                        <button className={style.submit} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

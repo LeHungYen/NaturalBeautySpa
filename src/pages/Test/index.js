@@ -1,6 +1,8 @@
 import AdminTable from "../../components/AdminTable";
 import AdminForm from "../../components/AdminForm";
 import { useState } from "react";
+import { Popup } from "../../components/Popup";
+import { CvForm } from "../CV";
 function Test() {
     const itemsPerPageOptions = [5, 10, 15, 20, 'All'];
     const [keySearch, setKeySearch] = useState('')
@@ -20,6 +22,7 @@ function Test() {
                 firstName: `First Name ${i}2`,
                 lastName: `Last Name ${i}3`,
                 age: `${i}4`,
+                tuoi: `${i}4`,
             });
         }
         return data;
@@ -103,7 +106,7 @@ function Test() {
     }
 
 
-
+    const [popup, setPopup] = useState(true)
     return (
         <div>
             <br />
@@ -117,8 +120,10 @@ function Test() {
                 setSort={setSort}
                 itemsPerPageOptions={itemsPerPageOptions}
             />
+            <AdminForm title={'Form Title'} fields={fields} onSubmit={onSubmit} formValue={formValue} setFormValue={setFormValue} errors={errors} resetValue={resetValue} />
+            {/* <Popup popup={popup} setPopup={setPopup} /> */}
 
-            {<AdminForm title={'Form Title'} fields={fields} onSubmit={onSubmit} formValue={formValue} setFormValue={setFormValue} errors={errors} resetValue={resetValue} />}
+            {/* <CvForm></CvForm> */}
         </div>
     );
 }

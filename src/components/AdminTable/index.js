@@ -3,7 +3,8 @@ import Pagination from '../Pagination';
 import { useState, useEffect } from 'react';
 import { MdOutlineArrowDropUp } from "react-icons/md";
 import { MdOutlineArrowDropDown } from "react-icons/md";
-
+import { Popup } from '../Popup';
+import AdminForm from '../AdminForm';
 // const itemsPerPageOptions = [5, 10, 15, 20, 'All'];
 // const [keySearch, setKeySearch] = useState('')
 
@@ -81,6 +82,90 @@ function AdminTable({ title, tableCols, tableData, itemsPerPageOptions, keySearc
         }
     };
 
+    const rowClick = (formValue) => {
+        setEditPopup(true)
+        setFormValue(formValue)
+        setResetValue(formValue)
+    }
+
+    // edit
+    const [editPopup, setEditPopup] = useState(false);
+
+
+    const fields = [
+        { form: 'input', label: 'ID', type: 'input', name: "id" },
+        { form: 'input', label: 'First name', type: 'input', name: "firstName" },
+        { form: 'input', label: 'Last name', type: 'input', name: "lastName" },
+        { form: 'input', label: 'tuoi', type: 'input', name: "tuoi" },
+        { form: 'input', label: 'email', type: 'email', name: "emailName" },
+        { form: 'select', label: 'select', type: 'select', name: "selectName", options: ['Option 1', 'Option 2', 'Option 3'] },
+        { form: 'radio', label: 'radios', name: "radioName", options: ['Option 1', 'Option 2', 'Option 3'] },
+        { form: 'checkbox', label: 'Checkbox', name: "checkboxName", options: ['Option 1', 'Option 2', 'Option 3'] },
+        { form: 'textarea', label: 'TextArea', name: "textareaName" },
+        [
+            { form: 'input', label: 'input', type: 'input', name: "inputName1" },
+            { form: 'input', label: 'email', type: 'email', name: "emailName1" },
+            { form: 'select', label: 'select', type: 'select', name: "selectName1", options: ['Option 1', 'Option 2', 'Option 3'] },
+            { form: 'radio', label: 'radios', name: "radioName1", options: ['Option 1', 'Option 2', 'Option 3'] },
+            { form: 'checkbox', label: 'Checkbox', name: "checkboxName1", options: ['Option 1', 'Option 2', 'Option 3'] },
+            { form: 'textarea', label: 'TextArea', name: "textareaName1" }
+        ],
+    ];
+
+    const [errors, setErrors] = useState({
+        inputName: "",
+        emailName: "",
+        selectName: "",
+        radioName: "",
+        checkboxName: "",
+        textareaName: "",
+
+        inputName1: "",
+        emailName1: "",
+        selectName1: "",
+        radioName1: "",
+        checkboxName1: "",
+        textareaName1: ""
+    });
+
+    const [formValue, setFormValue] = useState({
+        inputName: "",
+        emailName: "",
+        selectName: "",
+        radioName: "",
+        checkboxName: "",
+        textareaName: "",
+
+        inputName1: "",
+        emailName1: "",
+        selectName1: "",
+        radioName1: "",
+        checkboxName1: "",
+        textareaName1: ""
+    });
+
+    const [resetValue, setResetValue] = useState({
+        inputName: "",
+        emailName: "",
+        selectName: "",
+        radioName: "",
+        checkboxName: "",
+        textareaName: "",
+
+        inputName1: "",
+        emailName1: "",
+        selectName1: "",
+        radioName1: "",
+        checkboxName1: "",
+        textareaName1: ""
+    });
+
+    const onSubmit = () => {
+        setErrors({
+            inputName: "inputName",
+        })
+    }
+
     return (
         <div className={style.container}>
             <div className={style.row1}>
@@ -127,7 +212,7 @@ function AdminTable({ title, tableCols, tableData, itemsPerPageOptions, keySearc
                     </thead>
                     <tbody>
                         {displayedData.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
+                            <tr key={rowIndex} onClick={() => rowClick(row)}>
                                 {Object.keys(tableCols).map((colKey, colIndex) => (
                                     <td key={colIndex}>{row[colKey]}</td>
                                 ))}
@@ -147,6 +232,12 @@ function AdminTable({ title, tableCols, tableData, itemsPerPageOptions, keySearc
                     <Pagination pageCount={totalPages} onPageChange={handlePageChange} />
                 </div>
             </div>
+
+            <Popup popup={editPopup} setPopup={setEditPopup}>
+                <div style={{ width: '80vw' }}>
+                    <AdminForm title={'Form Title'} fields={fields} onSubmit={onSubmit} formValue={formValue} setFormValue={setFormValue} errors={errors} resetValue={resetValue} />
+                </div>
+            </Popup>
         </div>
     );
 }
