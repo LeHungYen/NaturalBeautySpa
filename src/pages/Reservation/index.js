@@ -26,7 +26,7 @@ export function Reservation() {
         const checkboxs = document.querySelectorAll("form input.checkbox");
         for(let i = 0;i< serviceCaptions.length; i++) {
             if(checkboxs[i].checked) {
-                data.serviceNames.push(serviceCaptions[i].textContent);
+                data.serviceNames += serviceCaptions[i].textContent + ",";
             }
         }
         const availableTime = document.querySelectorAll("form input.date");
@@ -113,7 +113,7 @@ function getDataFormat() {
         note :"",
         email: "",
         username: "",
-        serviceNames: [],
+        serviceNames:"",
         availableTimes: []
     }
 }
