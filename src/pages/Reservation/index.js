@@ -26,7 +26,7 @@ export function Reservation() {
         const checkboxs = document.querySelectorAll("form input.checkbox");
         for(let i = 0;i< serviceCaptions.length; i++) {
             if(checkboxs[i].checked) {
-                data.serviceNames += serviceCaptions[i].textContent + ",";
+                data.serviceNames += i + ",";
             }
         }
         const availableTime = document.querySelectorAll("form input.date");
@@ -63,15 +63,15 @@ export function Reservation() {
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
-                    <FormInput name={""} title={"カウンセリング"} type={"checkbox"} value={0}/>
-                    <FormInput title={"フェイシャルワックス"} type={"checkbox"} value={0}/>
-                    <FormInput title={"顔脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"全身脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"パーツ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"VIO脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"メンズ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"キッズ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"その他"} type={"checkbox"} value={0}/>
+                    <FormInput name={""} title={getDict("service_counseling")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_facial_wax")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_facial_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_body_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_part_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_VIO_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_men_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_kid_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_other")} type={"checkbox"} value={0}/>
                 </div>
                 <FormInput title={"第一希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>
                 <FormInput title={"第二希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>

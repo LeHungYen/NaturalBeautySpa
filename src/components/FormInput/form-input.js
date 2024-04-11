@@ -10,7 +10,7 @@ export default function FormInput(props) {
             "15:00 ~ 17:00",
             "17:00 ~ 19:00",
             "19:00 ~ 21:00",
-            "11:00〜21:00"
+            "11:00 ~ 21:00"
         ]
     }
     const dateCbx = function () {

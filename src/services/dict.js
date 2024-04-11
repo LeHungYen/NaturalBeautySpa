@@ -13,6 +13,60 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    service_counseling: {
+        "vi": "Tư vấn",
+        "en": null,
+        "jp": "カウンセリング",
+        "kr": null
+    },
+    service_facial_wax: {
+        "vi": "Sáp mặt",
+        "en": null,
+        "jp": "フェイシャルワックス",
+        "kr": null
+    },
+    service_facial_hair_removal: {
+        "vi": "Triệt lông mặt",
+        "en": null,
+        "jp": "顔脱毛",
+        "kr": null
+    },
+    service_body_hair_removal: {
+        "vi": "Triệt lông toàn thân",
+        "en": null,
+        "jp": "全身脱毛",
+        "kr": null
+    },
+    service_part_hair_removal: {
+        "vi": "Triệt lông từng phần",
+        "en": null,
+        "jp": "パーツ脱毛",
+        "kr": null
+    },
+    service_VIO_hair_removal: {
+        "vi": "Triệt lông VIO",
+        "en": null,
+        "jp": "VIO脱毛",
+        "kr": null
+    },
+    service_men_hair_removal: {
+        "vi": "Triệt lông cho nam giới",
+        "en": null,
+        "jp": "メンズ脱毛",
+        "kr": null
+    },
+    service_kid_hair_removal: {
+        "vi": "Triệt lông cho trẻ nhỏ",
+        "en": null,
+        "jp": "キッズ脱毛",
+        "kr": null
+    },
+    service_other: {
+        "vi": "Dịch vụ khác",
+        "en": null,
+        "jp": "キッズ脱毛",
+        "kr": null
+    },
     about_academy_title_1: {
         "vi": null,
         "en": null,
@@ -3176,7 +3230,7 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    menu_item7_priceList_description_item3: {
+    menu_item7_priceList_description_item34: {
         "vi": null,
         "en": null,
         "jp": "※キャンペーンやご紹介等で料金が変動する場合がございます。詳しくはお問い合わせください。",
