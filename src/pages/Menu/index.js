@@ -6,9 +6,10 @@ import { ImHome } from "react-icons/im";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useLocation } from 'react-router-dom';
 import { routes } from '../../config/routes.js'
-import { menu } from '../../data/index.js';
+import { menu as data } from '../../data/index.js';
 import { getDict } from '../../services/dict.js';
 function Menu() {
+    const menu = data();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');

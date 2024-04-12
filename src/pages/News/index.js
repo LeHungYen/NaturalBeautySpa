@@ -4,7 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { routes } from '../../config/routes.js'
-import { news } from '../../data/index.js';
+import { news as data } from '../../data/index.js';
 import { getDict } from '../../services/dict.js';
 import Article from './Articles/index.js';
 import Jobs from './Jobs/index.js';
@@ -12,6 +12,7 @@ import { ApiService } from '../../services/ApiService.js';
 import { baseUrl, recruitmentServiceUrl } from '../../config/link.js';
 import { useState, useEffect } from 'react';
 function News() {
+    const news = data();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');
@@ -37,6 +38,7 @@ function News() {
     useEffect(() => {
         getData();
     }, [])
+
     return (
         <div className={style.container}>
             <div className={style.banner}>
@@ -54,13 +56,31 @@ function News() {
                 <ul>
                     <div className={style.menuPosition}>
                         <li><a href={routes.home}><ImHome className={style.homeIcon} /></a></li>
-                        {!key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_menuPosition_news")}</p></li></a>}
-                        {key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_menuPosition_news")}</p></li></a>}
-                        {/* {key && <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>{news[key].title}</p></li>} */}
+                        {!key && currentPath == routes.news_articles &&
+                            <a href={routes.news_articles}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_body_bodyMenu_item1")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_articles &&
+                            <a href={routes.news_articles}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_body_bodyMenu_item1")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_articles &&
+                            <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>
+                                {news[key].title.length > 10 ? `${news[key].title.substring(0, 20)}...` : news[key].title}
+                            </p></li>
+                        }
 
-                        {/* sửa lại menu tách của jobs và news */}
+                        {!key && currentPath == routes.news_jobs &&
+                            <a href={routes.news_jobs}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_body_bodyMenu_item2")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_jobs &&
+                            <a href={routes.news_jobs}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_body_bodyMenu_item2")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_jobs && jobs[key] &&
+                            <li><MdKeyboardArrowRight className={style.icon} />
+                                <p style={{ color: !key ? "black" : "#2dccd3" }}>
+                                    {jobs[key].title.length > 10 ? `${jobs[key].title.substring(0, 20)}...` : jobs[key].title}
+                                </p>
+                            </li>
+                        }
                     </div>
                 </ul>
             </div>
@@ -68,10 +88,9 @@ function News() {
             <div className={style.body}>
                 <div className={style.bodyMenu}>
                     <ul>
-                        <li>{getDict("news_menu_body_bodyMenu_item1")}</li>
-                        <li><a href={routes.news_articles}> News (test)</a></li>
-                        <li><a href={routes.news_jobs}> Jobs (test)</a></li>
-                        <li>{getDict("news_menu_body_bodyMenu_item2")}</li>
+                        <a href={routes.news_articles}><li>{getDict("news_menu_body_bodyMenu_item1")}</li></a>
+                        <a href={routes.news_jobs}><li>{getDict("news_menu_body_bodyMenu_item2")}</li></a>
+                        <a><li>{getDict("news_menu_body_bodyMenu_item3")}</li></a>
                     </ul>
                 </div>
 

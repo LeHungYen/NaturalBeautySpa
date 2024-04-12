@@ -1772,21 +1772,28 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    news_menu_menuPosition_news: {
-        "vi": null,
-        "en": null,
-        "jp": "脱毛メニュー",
-        "kr": null,
-        "mergeFlag": false
-    },
+    // news_menu_menuPosition_news: {
+    //     "vi": null,
+    //     "en": null,
+    //     "jp": "脱毛メニュー",
+    //     "kr": null,
+    //     "mergeFlag": false
+    // },
     news_menu_body_bodyMenu_item1: {
         "vi": null,
         "en": null,
-        "jp": "キャンペーン記事一覧",
+        "jp": "ニュース",
         "kr": null,
         "mergeFlag": false
     },
     news_menu_body_bodyMenu_item2: {
+        "vi": null,
+        "en": null,
+        "jp": "仕事",
+        "kr": null,
+        "mergeFlag": false
+    },
+    news_menu_body_bodyMenu_item3: {
         "vi": null,
         "en": null,
         "jp": "公式Instagram",
@@ -1884,6 +1891,14 @@ const dictLibrary = {
         電話：03-6416-3451
         E-mail：
         お問い合わせ受付時間：11:00～21:00（年末年始は除く）`,
+        "kr": null,
+        "mergeFlag": false
+    },
+
+    news_no_news_available: {
+        "vi": "Hiện không có tin tức nào.",
+        "en": "No news available at the moment.",
+        "jp": "現在、ニュースはありません。",
         "kr": null,
         "mergeFlag": false
     },

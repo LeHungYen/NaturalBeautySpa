@@ -1,5 +1,5 @@
 import style from './index.module.scss'
-import { news } from '../../../data/index.js';
+// import { news } from '../../../data/index.js';
 import { routes } from '../../../config/routes.js';
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -53,6 +53,7 @@ function Jobs() {
     useEffect(() => {
         setJob(jobs[key])
     }, [key, jobs])
+
     return (
         <div className={style.container}>
             {!key && <div className={style.bodyNews}>
@@ -77,6 +78,14 @@ function Jobs() {
                         </a>
                     )
                 })}
+
+                {jobs.length <= 0 &&
+                    <div className={style.noNewAvailable}>
+                        <div className={style.infor}>
+                            <p className={style.title}>{getDict("news_no_news_available")}</p>
+                        </div>
+                    </div>
+                }
             </div>}
 
             {key && jobs[key] && <div className={style.newDetail}>
@@ -92,7 +101,7 @@ function Jobs() {
                                     <PiCurrencyDollarFill className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Mức lương</p>
+                                    <p className={style.contentTitle}>Pay</p>
                                     <p className={style.contentValue}>{jobs[key].pay}</p>
                                 </div>
                             </li>
@@ -102,8 +111,8 @@ function Jobs() {
                                     <FaLocationDot className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Địa điểm</p>
-                                    <p className={style.contentValue}>Hà Nội</p>
+                                    <p className={style.contentTitle}>Location</p>
+                                    <p className={style.contentValue}>{jobs[key].city}</p>
                                 </div>
                             </li>
 
@@ -112,7 +121,7 @@ function Jobs() {
                                     <BsHourglassSplit className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Kinh nghiệm</p>
+                                    <p className={style.contentTitle}>Experience</p>
                                     <p className={style.contentValue}>{jobs[key].experience}</p>
                                 </div>
                             </li>
@@ -238,8 +247,8 @@ function Jobs() {
 
                     <div className={style.news}>
                         <ul>
-                            {news.map((item, index) => (
-                                <a href={`${routes.news}?key=${index}`}>
+                            {jobs.map((item, index) => (
+                                <a href={`${routes.news_jobs}?key=${index}`}>
                                     <li key={index}>
                                         <p className={style.date}>{item.date}</p>
                                         <p className={style.newsTitle}>{item.title}</p>
