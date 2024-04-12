@@ -8,7 +8,9 @@ import { news } from '../../data/index.js';
 import { getDict } from '../../services/dict.js';
 import Article from './Articles/index.js';
 import Jobs from './Jobs/index.js';
-
+import { ApiService } from '../../services/ApiService.js';
+import { baseUrl, recruitmentServiceUrl } from '../../config/link.js';
+import { useState, useEffect } from 'react';
 function News() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -16,6 +18,25 @@ function News() {
 
     const currentPath = location.pathname;
 
+
+    ///
+    const apiService = new ApiService(baseUrl);
+
+    const [jobs, setJobs] = useState([])
+
+    // api
+    const getData = async () => {
+        try {
+            const response = await apiService.fetchData(recruitmentServiceUrl.get, {}, {}, true);
+            setJobs(response);
+        } catch (error) {
+            // setMessage(error.response.data.error)
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, [])
     return (
         <div className={style.container}>
             <div className={style.banner}>
@@ -37,7 +58,9 @@ function News() {
                             <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_menuPosition_news")}</p></li></a>}
                         {key &&
                             <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_menuPosition_news")}</p></li></a>}
-                        {key && <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>{news[key].title}</p></li>}
+                        {/* {key && <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>{news[key].title}</p></li>} */}
+
+                        {/* sửa lại menu tách của jobs và news */}
                     </div>
                 </ul>
             </div>

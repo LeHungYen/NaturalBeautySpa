@@ -7,3 +7,17 @@ export const accountServiceUrl = {
     resendEmail: "management/send-email-confirmation",
     sendMailforgotPassword: 'send-forgot-password-confirmation'
 }
+
+export const recruitmentServiceUrl = {
+    save: "management/job-position",
+    get: "job-position",
+    update: "management/job-position",
+    delete: "management/job-position",
+}
+
+export const resumeServiceUrl = {
+    save: "resume",
+    get: "management/resume",
+    update: "management/resume",
+    delete: "management/resume",
+}

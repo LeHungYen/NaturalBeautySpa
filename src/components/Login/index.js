@@ -30,7 +30,7 @@ function Login({ exitLogin, loginRef }) {
             exitLogin();
         } catch (error) {
             if (error.response.data.error == 'email is not confirmed') {
-                navigate(routes.authentication_email)
+                navigate(`${routes.authentication_email}?email=${error.response.data.email}`)
             }
             if (error.response.status == 403) {
                 setMessage('Incorrect username or password')

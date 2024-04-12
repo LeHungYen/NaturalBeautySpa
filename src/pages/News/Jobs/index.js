@@ -10,100 +10,49 @@ import { SiFeedly } from "react-icons/si";
 import { IoLogoPinterest } from "react-icons/io5";
 import { getDict } from '../../../services/dict.js';
 import { useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../../assets/logo.png'
 import { FaLocationDot } from "react-icons/fa6";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 import { BsHourglassSplit } from "react-icons/bs";
+import { ApiService } from '../../../services/ApiService.js';
+import { baseUrl, recruitmentServiceUrl } from '../../../config/link.js';
+// import { ModalDrop } from '../../../components/ModalDrop/index.js';
+import ModalCV from './ModalCV/index.js';
 function Jobs() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');
+    const apiService = new ApiService(baseUrl);
 
-    const [jobs, setJobs] = useState([
-        {
-            id: 1,
-            title: "Quản Lý Spa - Giao Tiếp Tiếng Anh Tốt",
-            description: `Tổ chức và giám sát các dịch vụ spa, bao gồm chăm sóc da, mát-xa, làm đẹp, vv
-            Đảm bảo rằng mọi hoạt động diễn ra theo chuẩn mực chất lượng và dịch vụ
-            Quản lý đội ngũ nhân viên spa, tạo môi trường làm việc tích cực và động viên đội ngũ nhân viên
-            Theo dõi và quản lý ngân sách của Spa, phân tích và báo cáo về hiệu suất tài chính
-            Đảm bảo mọi khách hàng được phục vụ tốt nhất và có trải nghiệm thoải mái và thư giãn.
-            Xử lý mọi phản hồi và khiếu nại của khách hàng một cách chuyên nghiệp và kịp thời.
-            Xây dựng và duy trì mối quan hệ với khách hàng tiềm năng thông qua các hoạt động quảng bá.
-            Đảm bảo rằng các thiết bị và cơ sở vật chất của Spa được bảo trì và vận hành đúng cách.
-            Xác định và giải quyết các vấn đề kỹ thuật một cách nhanh chóng và hiệu quả.
-            Đảm bảo rằng mọi hoạt động của Spa tuân thủ các quy định pháp luật liên quan đến ngành Spa và sức khỏe cộng đồng.`,
-            requirement: `Kinh nghiệm từ 3 năm trong quản lý hoạt động của spa hoặc trong ngành làm đẹp. Ưu tiên ứng viên đã quản lý spa trong khách sạn từ 4 sao hoặc resort
-            Kiến thức vững vàng về các dịch vụ spa và sản phẩm làm đẹp.
-            Kỹ năng lãnh đạo và quản lý nhóm tốt.
-            Sự linh hoạt và khả năng làm việc hiệu quả dưới áp lực.
-            Sẵn lòng làm việc vào cuối tuần và các ngày lễ khi cần thiết.
-            Trình độ tiếng Anh lưu loát`,
-            benefits: `Làm việc trong môi trường khách sạn 4 sao thuộc TOP 1 khu vực Phố Cổ - Hà Nội với nguồn vốn ổn định, tầm nhìn mở rộng chuỗi khách sạn trên khắp cả nước và khu vực Châu Á
-            Mức lương thương lượng + Thưởng service charge hàng tháng cùng kỳ lương
-            Cơ hội chia sẻ lợi nhuận từ các khách sạn trong chuỗi cùng ban lãnh đạo công ty
-            Hỗ trợ ăn trưa tại khách sạn
-            X4 lần lương các ngày lễ (trong trường hợp cần tăng ca)
-            Thưởng sinh nhật, Thưởng doanh thu theo Quý, Thưởng các ngày Lễ Tết, lương tháng 13
-            Gói khám sức khỏe miễn phí định kỳ 1 lần/năm
-            Hưởng 12 ngày nghỉ phép có hưởng lương/năm
-            Tham gia BHXH, BHYT, BHTN theo quy định
-            Team building, du lịch miễn phí 1 lần/năm
-            Cơ hội thăng tiến trong sự nghiệp phát triển chung của tập đoàn`,
-            workLocation: `Hà Nội: 27 Hàng Bài, Hoàn Kiếm`,
-            workTime: `Thứ 2 - Thứ 7 (từ 08:00 đến 17:30)
-            Nghỉ full thứ 7 cuối cùng của tháng và 1 ngày phép trong tháng có lương `,
-            pay: `7 - 10 triệu`,
-            experience: `1 năm`,
-            create_at: `2024-04-08`,
-        },
-        {
-            id: 2,
-            title: "Nhân Viên Telesales/ Kinh Doanh/ Chăm Sóc Khách Hàng - Thu Nhập Từ 15 Đến 30 Triệu - Mảng Spa Tại Hà Nội",
-            description: `
-            Tổ chức và giám sát các dịch vụ spa, bao gồm chăm sóc da, mát-xa, làm đẹp, vv
-            Đảm bảo rằng mọi hoạt động diễn ra theo chuẩn mực chất lượng và dịch vụ
-            Quản lý đội ngũ nhân viên spa, tạo môi trường làm việc tích cực và động viên đội ngũ nhân viên
-            Theo dõi và quản lý ngân sách của Spa, phân tích và báo cáo về hiệu suất tài chính
-            Đảm bảo mọi khách hàng được phục vụ tốt nhất và có trải nghiệm thoải mái và thư giãn.
-            Xử lý mọi phản hồi và khiếu nại của khách hàng một cách chuyên nghiệp và kịp thời.
-            Xây dựng và duy trì mối quan hệ với khách hàng tiềm năng thông qua các hoạt động quảng bá.
-            Đảm bảo rằng các thiết bị và cơ sở vật chất của Spa được bảo trì và vận hành đúng cách.
-            Xác định và giải quyết các vấn đề kỹ thuật một cách nhanh chóng và hiệu quả.
-            Đảm bảo rằng mọi hoạt động của Spa tuân thủ các quy định pháp luật liên quan đến ngành Spa và sức khỏe cộng đồng.
-            `,
-            requirement: `Kinh nghiệm từ 3 năm trong quản lý hoạt động của spa hoặc trong ngành làm đẹp. Ưu tiên ứng viên đã quản lý spa trong khách sạn từ 4 sao hoặc resort
-            Kiến thức vững vàng về các dịch vụ spa và sản phẩm làm đẹp.
-            Kỹ năng lãnh đạo và quản lý nhóm tốt.
-            Sự linh hoạt và khả năng làm việc hiệu quả dưới áp lực.
-            Sẵn lòng làm việc vào cuối tuần và các ngày lễ khi cần thiết.
-            Trình độ tiếng Anh lưu loát
-            `,
-            benefits: `
-            Làm việc trong môi trường khách sạn 4 sao thuộc TOP 1 khu vực Phố Cổ - Hà Nội với nguồn vốn ổn định, tầm nhìn mở rộng chuỗi khách sạn trên khắp cả nước và khu vực Châu Á
-            Mức lương thương lượng + Thưởng service charge hàng tháng cùng kỳ lương
-            Cơ hội chia sẻ lợi nhuận từ các khách sạn trong chuỗi cùng ban lãnh đạo công ty
-            Hỗ trợ ăn trưa tại khách sạn
-            X4 lần lương các ngày lễ (trong trường hợp cần tăng ca)
-            Thưởng sinh nhật, Thưởng doanh thu theo Quý, Thưởng các ngày Lễ Tết, lương tháng 13
-            Gói khám sức khỏe miễn phí định kỳ 1 lần/năm
-            Hưởng 12 ngày nghỉ phép có hưởng lương/năm
-            Tham gia BHXH, BHYT, BHTN theo quy định
-            Team building, du lịch miễn phí 1 lần/năm
-            Cơ hội thăng tiến trong sự nghiệp phát triển chung của tập đoàn
-            `,
-            workLocation: "Hà Nội: 27 Hàng Bài, Hoàn Kiếm",
-            workTime: `
-            Thứ 2 - Thứ 7 (từ 08:00 đến 17:30)
-            Nghỉ full thứ 7 cuối cùng của tháng và 1 ngày phép trong tháng có lương 
-            `,
-            pay: "7 - 10 triệu",
-            experience: "1 năm",
-            create_at: "2024-04-08",
+    const [jobs, setJobs] = useState([])
+
+    // api
+    const getData = async () => {
+        try {
+            const response = await apiService.fetchData(recruitmentServiceUrl.get, {}, {}, true);
+            setJobs(response);
+        } catch (error) {
+            // setMessage(error.response.data.error)
         }
-    ])
+    }
 
+    useEffect(() => {
+        getData();
+    }, [])
+
+
+    // modal send CV
+    const [modalCV, setModalCV] = useState(false);
+
+    const openModal = () => {
+        setModalCV(true)
+    }
+    //
+    const [job, setJob] = useState({});
+    useEffect(() => {
+        setJob(jobs[key])
+    }, [key, jobs])
     return (
         <div className={style.container}>
             {!key && <div className={style.bodyNews}>
@@ -130,7 +79,7 @@ function Jobs() {
                 })}
             </div>}
 
-            {key && <div className={style.newDetail}>
+            {key && jobs[key] && <div className={style.newDetail}>
                 <div className={style.titleInfor}>
                     <div className={style.title}>
                         <p className={style.main}>{jobs[key].title}</p>
@@ -144,7 +93,7 @@ function Jobs() {
                                 </div>
                                 <div className={style.subInfor}>
                                     <p className={style.contentTitle}>Mức lương</p>
-                                    <p className={style.contentValue}>15-25 triệu</p>
+                                    <p className={style.contentValue}>{jobs[key].pay}</p>
                                 </div>
                             </li>
 
@@ -164,14 +113,14 @@ function Jobs() {
                                 </div>
                                 <div className={style.subInfor}>
                                     <p className={style.contentTitle}>Kinh nghiệm</p>
-                                    <p className={style.contentValue}>1 năm</p>
+                                    <p className={style.contentValue}>{jobs[key].experience}</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <div className={style.apply}>
-                        <button>Ứng tuyển ngay</button>
+                        <button onClick={openModal}>Ứng tuyển ngay</button>
                     </div>
 
                 </div>
@@ -261,7 +210,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.buttonApply}>
-                        <button>Ứng tuyển ngay</button>
+                        <button onClick={openModal}>Ứng tuyển ngay</button>
                     </div>
 
                 </div>
@@ -302,6 +251,11 @@ function Jobs() {
 
                 </div>
             </div>}
+
+
+            <ModalCV modal={modalCV} setModal={setModalCV} job={job}>
+
+            </ModalCV>
         </div>
     );
 }

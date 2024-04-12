@@ -20,5 +20,6 @@ export const routes = {
     product: "/product",
     authentication_email: "/authentication_email",
     resetPassword: "/reset_password",
+    // resume: "/resume",
     test: "/test"
 }

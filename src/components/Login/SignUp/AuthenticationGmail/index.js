@@ -49,7 +49,7 @@ export function AuthenticationEmail() {
                 </div>
 
                 <div className={style.body}>
-                    <p className={style.text}>Please let us know this email belongs to you. Please enter the code in the email sent to {email} </p>
+                    <p className={style.text}>Please let us know this email belongs to you. Please enter the code in the email sent to <strong>{email}</strong> </p>
 
                     <div className={style.formInput}>
                         <label>Code:</label>
