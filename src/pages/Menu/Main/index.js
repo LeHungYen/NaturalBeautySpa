@@ -2,8 +2,9 @@ import style from './index.module.scss'
 import { routes } from '../../../config/routes.js'
 import { getDict } from '../../../services/dict.js';
 import React from 'react';
-import { menu } from '../../../data/index.js';
+import { menu as data } from '../../../data/index.js';
 function MainMenu() {
+    const menu = data();
     return (
         <div className={style.container}>
             <div className={style.banner}>

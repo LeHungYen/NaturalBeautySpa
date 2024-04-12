@@ -1,5 +1,5 @@
 import style from './index.module.scss'
-import { news } from '../../../data/index.js';
+import { news as data } from '../../../data/index.js';
 import { routes } from '../../../config/routes';
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -11,15 +11,21 @@ import { IoLogoPinterest } from "react-icons/io5";
 import { getDict } from '../../../services/dict';
 import { useLocation } from 'react-router-dom';
 import React from 'react';
+import logo from '../../../assets/logo.png'
+import { useState } from 'react';
+
+
 function Article() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');
+    const news = data();
+
 
     return (
         <div className={style.container}>
             {!key && <div className={style.bodyNews}>
-                {news.map((item, index) => {
+                {news.length > 0 && news.map((item, index) => {
                     return (
                         <a href={`${routes.news_articles}?key=${index}`}>
                             <div className={style.item} key={index}>
@@ -34,6 +40,15 @@ function Article() {
                         </a>
                     )
                 })}
+
+                {news.length <= 0 &&
+                    <div className={style.noNewAvailable}>
+                        <div className={style.infor}>
+                            <p className={style.title}>{getDict("news_no_news_available")}</p>
+                        </div>
+                    </div>
+                }
+
             </div>}
 
             {key && <div className={style.newDetail}>

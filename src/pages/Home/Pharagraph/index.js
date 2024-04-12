@@ -5,9 +5,9 @@ import { routes } from '../../../config/routes';
 import { useState, useEffect } from 'react';
 import { getDict } from '../../../services/dict';
 import React from 'react';
-import { pharagraphs } from '../../../data';
+import { pharagraphs as data } from '../../../data';
 function Pharagraph({ windowWidth }) {
-
+    const pharagraphs = data();
     return (
         <div className={style.container}>
             <div className={style.row1}>

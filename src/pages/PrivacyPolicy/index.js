@@ -3,7 +3,6 @@ import style from './index.module.scss'
 import React from 'react';
 function PricacyPolicy() {
 
-    const privacyPolicy = getDict("pricacyPolicy_policy_p").replace(/<br\s*\/?>/g, ' ');
     return (
         <div className={style.container}>
             <div className={style.banner}>
@@ -19,14 +18,6 @@ function PricacyPolicy() {
 
             <div className={style.policy}>
                 <p style={{ overflowWrap: 'break-word' }}>{getDict("pricacyPolicy_policy_p")}</p>
-                {/* <div style={{ whiteSpace: 'pre-line' }}>
-                    {privacyPolicy.split('<br/>').map((line, index) => (
-                        <React.Fragment key={index}>
-                            <span>{line}</span>
-                            {index === 0 ? <br style={{ marginTop: '2px' }} /> : <br style={{ marginTop: '5px' }} />}
-                        </React.Fragment>
-                    ))}
-                </div> */}
             </div>
         </div>
     );
