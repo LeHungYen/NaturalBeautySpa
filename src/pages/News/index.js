@@ -1,22 +1,43 @@
 import style from './index.module.scss'
 import { ImHome } from "react-icons/im";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { SiHatenabookmark } from "react-icons/si";
-import { FaGetPocket } from "react-icons/fa6";
-import { IoLogoRss } from "react-icons/io5";
-import { SiFeedly } from "react-icons/si";
-import { IoLogoPinterest } from "react-icons/io5";
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { routes } from '../../config/routes.js'
-import { news } from '../../data/index.js';
+import { news as data } from '../../data/index.js';
 import { getDict } from '../../services/dict.js';
+import Article from './Articles/index.js';
+import Jobs from './Jobs/index.js';
+import { ApiService } from '../../services/ApiService.js';
+import { baseUrl, recruitmentServiceUrl } from '../../config/link.js';
+import { useState, useEffect } from 'react';
 function News() {
+    const news = data();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const key = searchParams.get('key');
+
+    const currentPath = location.pathname;
+
+
+    ///
+    const apiService = new ApiService(baseUrl);
+
+    const [jobs, setJobs] = useState([])
+
+    // api
+    const getData = async () => {
+        try {
+            const response = await apiService.fetchData(recruitmentServiceUrl.get, {}, {}, true);
+            setJobs(response);
+        } catch (error) {
+            // setMessage(error.response.data.error)
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, [])
 
     return (
         <div className={style.container}>
@@ -35,11 +56,31 @@ function News() {
                 <ul>
                     <div className={style.menuPosition}>
                         <li><a href={routes.home}><ImHome className={style.homeIcon} /></a></li>
-                        {!key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_menuPosition_news")}</p></li></a>}
-                        {key &&
-                            <a href={routes.news}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_menuPosition_news")}</p></li></a>}
-                        {key && <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>{news[key].title}</p></li>}
+                        {!key && currentPath == routes.news_articles &&
+                            <a href={routes.news_articles}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_body_bodyMenu_item1")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_articles &&
+                            <a href={routes.news_articles}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_body_bodyMenu_item1")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_articles &&
+                            <li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: !key ? "black" : "#2dccd3" }}>
+                                {news[key].title.length > 10 ? `${news[key].title.substring(0, 20)}...` : news[key].title}
+                            </p></li>
+                        }
+
+                        {!key && currentPath == routes.news_jobs &&
+                            <a href={routes.news_jobs}><li><MdKeyboardArrowRight className={style.icon} /> <p style={{ color: "#2dccd3" }}>{getDict("news_menu_body_bodyMenu_item2")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_jobs &&
+                            <a href={routes.news_jobs}><li><MdKeyboardArrowRight className={style.icon} /> <p>{getDict("news_menu_body_bodyMenu_item2")}</p></li></a>
+                        }
+                        {key && currentPath == routes.news_jobs && jobs[key] &&
+                            <li><MdKeyboardArrowRight className={style.icon} />
+                                <p style={{ color: !key ? "black" : "#2dccd3" }}>
+                                    {jobs[key].title.length > 10 ? `${jobs[key].title.substring(0, 20)}...` : jobs[key].title}
+                                </p>
+                            </li>
+                        }
                     </div>
                 </ul>
             </div>
@@ -47,87 +88,16 @@ function News() {
             <div className={style.body}>
                 <div className={style.bodyMenu}>
                     <ul>
-                        <li>{getDict("news_menu_body_bodyMenu_item1")}</li>
-                        <li>{getDict("news_menu_body_bodyMenu_item2")}</li>
+                        <a href={routes.news_articles}><li>{getDict("news_menu_body_bodyMenu_item1")}</li></a>
+                        <a href={routes.news_jobs}><li>{getDict("news_menu_body_bodyMenu_item2")}</li></a>
+                        <a><li>{getDict("news_menu_body_bodyMenu_item3")}</li></a>
                     </ul>
                 </div>
 
-                {!key && <div className={style.bodyNews}>
-                    {news.map((item, index) => {
-                        return (
-                            <a href={`${routes.news}?key=${index}`}>
-                                <div className={style.item} key={index}>
-                                    <div className={style.img}>
-                                        <img src={item.img}></img>
-                                    </div>
-                                    <div className={style.infor}>
-                                        <p className={style.date}>{item.date}</p>
-                                        <p className={style.title}>{item.title}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        )
-                    })}
-                </div>}
-
-
-                {key && <div className={style.newDetail}>
-                    <div className={style.title}>
-                        <p className={style.main}>{news[key].title}</p>
-                        <p className={style.sub}>{news[key].date}</p>
-                    </div>
-
-                    <div className={style.img}>
-                        <img src={news[key].img} alt="news image" />
-                    </div>
-
-                    <div className={style.content}>
-                        <p>
-                            {news[key].content?.split('\n').map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {line}
-                                    <br />
-                                </React.Fragment>
-                            ))}
-                        </p>
-                    </div>
-
-
-                    <div className={style.social}>
-                        <ul>
-                            <li><FaTwitter className={style.icon} /> <span>Twitter</span></li>
-                            <li><FaFacebookF className={style.icon} /> <span>Share</span></li>
-                            <li><SiHatenabookmark className={style.icon} /> <span>Hatena</span></li>
-                            <li><FaGetPocket className={style.icon} /> <span>Pocket</span></li>
-                            <li><IoLogoRss className={style.icon} /> <span>RSS</span></li>
-                            <li><SiFeedly className={style.icon} /> <span>feedly</span></li>
-                            <li><IoLogoPinterest className={style.icon} /> <span>Pin it</span></li>
-                        </ul>
-                    </div>
-
-                    <div className={style.notice}>
-                        <div className={style.noticeTitle}>
-                            <p className={style.main}>{getDict("news_menu_body_newDetail_notice_noticeTitle_main")}</p>
-                            <a href={routes.news}>
-                                <p className={style.noticeList}>{getDict("news_menu_body_newDetail_notice_noticeTitle_news")}</p>
-                            </a>
-                        </div>
-
-                        <div className={style.news}>
-                            <ul>
-                                {news.map((item, index) => (
-                                    <a href={`${routes.news}?key=${index}`}>
-                                        <li key={index}>
-                                            <p className={style.date}>{item.date}</p>
-                                            <p className={style.newsTitle}>{item.title}</p>
-                                        </li>
-                                    </a>
-                                ))}
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>}
+                <div className={style.bodyNews}>
+                    {currentPath == routes.news_articles && < Article />}
+                    {currentPath == routes.news_jobs && < Jobs />}
+                </div>
             </div>
         </div >
 

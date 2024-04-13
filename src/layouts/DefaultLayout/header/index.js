@@ -117,6 +117,10 @@ export default function Header(props) {
             {
                 name: getDict("nav-reservation"),
                 url: "/reservation"
+            },
+            {
+                name: "ご記入募集フォーム",
+                url: routes.jobApplication
             }
         ]
     }

@@ -1,0 +1,125 @@
+.container {
+    width: 100%;
+    // max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row1 {
+    margin-bottom: 20px;
+}
+
+.titleTable {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container .row2 form .dflex {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    input,
+    select,
+    textarea {
+        margin-top: 5px;
+        border: 1px solid #dcdcdc;
+        padding: 6px 12px;
+        border-radius: 5px;
+    }
+}
+
+.container .row2 form .formInput {
+    flex-grow: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .row2 form .formSelect {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
+}
+
+
+.container .row2 form .formTextarea {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+        resize: vertical;
+    }
+}
+
+.container .row2 form .formRadio,
+.container .row2 form .formCheckbox {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .radioOptions,
+    .checkboxOptions {
+        // border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        input {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+}
+
+.container .row2 form .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .submit {
+        background-color: #0d6efd;
+        color: white;
+        font-weight: bold;
+        padding: 7px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+    }
+
+    .reset {
+        background-color: #6c757d;
+        color: white;
+        padding: 7px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .submit:hover {
+        background-color: #2a91ff;
+    }
+
+    .reset:hover {
+        background-color: #808990;
+    }
+}

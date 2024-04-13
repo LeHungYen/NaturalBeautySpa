@@ -894,7 +894,7 @@ const dictLibrary = {
     about_sub_item_6: {
         "vi": null,
         "en": null,
-        "jp": "MAREVE恵比寿本店アクセス",
+        "jp": "NATURAL BEAUTY恵比寿本店アクセス",
         "kr": null,
     },
     about_banner_description1: {
@@ -1145,7 +1145,7 @@ const dictLibrary = {
     about_item_6_title: {
         "vi": null,
         "en": null,
-        "jp": "MAREVE恵比寿本店アクセス",
+        "jp": "NATURAL BEAUTY恵比寿本店アクセス",
         "kr": null,
         "mergeFlag": false
     },
@@ -1371,7 +1371,7 @@ const dictLibrary = {
     defaultLayout_row2_col1_item5: {
         "vi": null,
         "en": null,
-        "jp": "MAREVE 恵比寿本店",
+        "jp": "NATURAL BEAUTY 恵比寿本店",
         "kr": null,
         "mergeFlag": false
     },
@@ -1421,7 +1421,7 @@ const dictLibrary = {
     defaultLayout_row2_col2_item2: {
         "vi": null,
         "en": null,
-        "jp": "「MAREVE恵比寿本店」へのご予約（仮予約）はこちらのLINEからお友達追加をお願いします。完全プライベートサロンのため、ご希望の日時をいただいた後に調整を行います。",
+        "jp": "「NATURAL BEAUTY恵比寿本店」へのご予約（仮予約）はこちらのLINEからお友達追加をお願いします。完全プライベートサロンのため、ご希望の日時をいただいた後に調整を行います。",
         "kr": null,
         "mergeFlag": false
     },
@@ -1471,7 +1471,7 @@ const dictLibrary = {
     defaultLayout_row3_col1_item1: {
         "vi": null,
         "en": null,
-        "jp": "ABOUT MAREVE",
+        "jp": "ABOUT NATURAL BEAUTY",
         "kr": null,
         "mergeFlag": false
     },
@@ -1528,7 +1528,7 @@ const dictLibrary = {
     defaultLayout_row3_col1_item9: {
         "vi": null,
         "en": null,
-        "jp": "MAREVE恵比寿本店アクセス",
+        "jp": "NATURAL BEAUTY恵比寿本店アクセス",
         "kr": null,
         "mergeFlag": false
     },
@@ -1826,21 +1826,28 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    news_menu_menuPosition_news: {
-        "vi": null,
-        "en": null,
-        "jp": "脱毛メニュー",
-        "kr": null,
-        "mergeFlag": false
-    },
+    // news_menu_menuPosition_news: {
+    //     "vi": null,
+    //     "en": null,
+    //     "jp": "脱毛メニュー",
+    //     "kr": null,
+    //     "mergeFlag": false
+    // },
     news_menu_body_bodyMenu_item1: {
         "vi": null,
         "en": null,
-        "jp": "キャンペーン記事一覧",
+        "jp": "ニュース",
         "kr": null,
         "mergeFlag": false
     },
     news_menu_body_bodyMenu_item2: {
+        "vi": null,
+        "en": null,
+        "jp": "仕事",
+        "kr": null,
+        "mergeFlag": false
+    },
+    news_menu_body_bodyMenu_item3: {
         "vi": null,
         "en": null,
         "jp": "公式Instagram",
@@ -1936,8 +1943,16 @@ const dictLibrary = {
         東京都渋谷区恵比寿西1-3-10 EBISU. TANAKA. BLDG. 4F
         株式会社マリーブ　　個人情報お問い合わせ窓口
         電話：03-6416-3451
-        E-mail：info@mareve.co.jp
+        E-mail：
         お問い合わせ受付時間：11:00～21:00（年末年始は除く）`,
+        "kr": null,
+        "mergeFlag": false
+    },
+
+    news_no_news_available: {
+        "vi": "Hiện không có tin tức nào.",
+        "en": "No news available at the moment.",
+        "jp": "現在、ニュースはありません。",
         "kr": null,
         "mergeFlag": false
     },

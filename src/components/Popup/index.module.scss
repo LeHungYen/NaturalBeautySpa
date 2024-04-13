@@ -1,0 +1,39 @@
+.container {
+    font-family: sans-serif;
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.popup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    animation: fadeIn 0.2s ease-in-out;
+    overflow-y: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

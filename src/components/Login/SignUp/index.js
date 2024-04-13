@@ -10,10 +10,23 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaTransgender } from "react-icons/fa6";
 import { routes } from '../../../config/routes';
 import { AccountService } from "../../../services/AccountService"
-
+import { ApiService } from "../../../services/ApiService"
+import { baseUrl, accountServiceUrl } from "../../../config/link"
 export function SignUp({ exitLogin, signUpRef, openSignIn }) {
-    const accountService = new AccountService();
-    const [register, setRegister] = useState(accountService.defaultRegister)
+    const defaultRegister = {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        gender: '',
+        username: '',
+        password: '',
+    };
+
+
+    const navigate = useNavigate();
+    const apiService = new ApiService(baseUrl)
+    const [register, setRegister] = useState(defaultRegister)
     const [agreeTerm, setAgreeTerm] = useState(false)
     const [error, setError] = useState();
 
@@ -27,15 +40,24 @@ export function SignUp({ exitLogin, signUpRef, openSignIn }) {
     const createAccount = async () => {
         if (agreeTerm) {
             try {
-                const response = await accountService.register(register);
-                setRegister(accountService.defaultRegister)
+                const response = await apiService.postData(accountServiceUrl.register, register, {}, true)
+                setRegister(defaultRegister)
                 setAgreeTerm(false)
-                openMessage();
+                await apiService.postData(accountServiceUrl.login, {
+                    username: register.username,
+                    password: register.password,
+                }, {}, true);
             } catch (error) {
+                if (error.response.data.error == 'email is not confirmed') {
+                    navigate(routes.authentication_email)
+                }
                 setError(error.response.data);
             }
+        } else {
+            setError({ ...error, agreeTerm: "Vui lòng đồng ý điều khoản" });
         }
     }
+
     // ref
     const messageRef = useRef(null)
     const exitMessage = () => {
@@ -71,29 +93,28 @@ export function SignUp({ exitLogin, signUpRef, openSignIn }) {
                     <div className={style.form}>
                         <div className={style.dflex}>
                             <div className={style.formGroup}>
-                                {error?.firstname && <p className={style.error}>{error.firstname}</p>}
                                 <label>First name</label>
                                 <input type='text' value={register.firstname} onChange={(e) => handleRegister('firstname', e.target.value)}></input>
+                                {error?.firstname && <p className={style.error}>{error.firstname}</p>}
                             </div>
                             <div className={style.formGroup}>
-                                {error?.lastname && <p className={style.error}>{error.lastname}</p>}
                                 <label>Last name</label>
                                 <input type='text' value={register.lastname} onChange={(e) => handleRegister('lastname', e.target.value)}></input>
+                                {error?.lastname && <p className={style.error}>{error.lastname}</p>}
                             </div>
                         </div>
                         <div className={style.formGroup}>
-                            {error?.email && <p className={style.error}>{error.email}</p>}
                             <label>Email</label>
                             <input type='email' value={register.email} onChange={(e) => handleRegister('email', e.target.value)}></input>
+                            {error?.email && <p className={style.error}>{error.email}</p>}
                         </div>
                         <div className={style.dflex}>
                             <div className={style.formGroup}>
-                                {error?.phone && <p className={style.error}>{error.phone}</p>}
                                 <label>Phone number</label>
                                 <input type='number' value={register.phone} onChange={(e) => handleRegister('phone', e.target.value)}></input>
+                                {error?.phone && <p className={style.error}>{error.phone}</p>}
                             </div>
                             <div className={style.formGroup}>
-                                {error?.gender && <p className={style.error}>{error.gender}</p>}
                                 <label>Gender</label>
                                 <select value={register.gender} onChange={(e) => handleRegister("gender", e.target.value)}>
                                     <option value="">Select Gender</option>
@@ -101,18 +122,19 @@ export function SignUp({ exitLogin, signUpRef, openSignIn }) {
                                     <option value="FEMALE">Female</option>
                                     <option value="OTHER">Other</option>
                                 </select>
+                                {error?.gender && <p className={style.error}>{error.gender}</p>}
                             </div>
                         </div>
 
                         <div className={style.formGroup}>
-                            {error?.username && <p className={style.error}>{error.username}</p>}
                             <label>UserName</label>
                             <input type='text' value={register.username} onChange={(e) => handleRegister('username', e.target.value)}></input>
+                            {error?.username && <p className={style.error}>{error.username}</p>}
                         </div>
                         <div className={style.formGroup}>
-                            {error?.password && <p className={style.error}>{error.password}</p>}
                             <label>Password</label>
                             <input type='password' value={register.password} onChange={(e) => handleRegister('password', e.target.value)}></input>
+                            {error?.password && <p className={style.error}>{error.password}</p>}
                         </div>
                         <div className={style.agreeTearm}>
                             <input
@@ -122,7 +144,7 @@ export function SignUp({ exitLogin, signUpRef, openSignIn }) {
                             ></input>
                             <label htmlFor='agreeTearm'>I agree and accept the <a onClick={() => window.open(routes.privacyPolicy)}>terms and conditions</a></label>
                         </div>
-
+                        {error?.agreeTerm && <p className={style.error}>{error.agreeTerm}</p>}
                         <button onClick={createAccount}>Create Account</button>
                     </div>
 

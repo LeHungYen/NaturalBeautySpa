@@ -1,0 +1,57 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    user-select: none;
+}
+
+.page_link,
+.prev_link,
+.next_link {
+    padding: 6px 10px;
+    font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+.prev,
+.next,
+.page_item {
+    margin: 0 3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prev:hover,
+.next:hover,
+.page_item:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+.active {
+    font-weight: bold;
+    color: blue;
+    background-color: #e0e0e0;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width:400px) {
+
+    .page_link,
+    .prev_link,
+    .next_link {
+        padding: 6px 5px;
+    }
+}

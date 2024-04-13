@@ -2,12 +2,15 @@ export const routes = {
     home: '/',
     contact: '/contact',
     reservation: '/reservation',
+    jobApplication: '/job_application',
     company: '/company',
     about: '/about',
     menu: '/menu',
     mainMenu: "/mainMenu",
     privacyPolicy: "/privacy-policy",
     news: "/news",
+    news_articles: "/news/articles",
+    news_jobs: "/news/jobs",
     about_message: "/about/message",
     about_feature: "/about/feature",
     about_important: "/about/important",
@@ -16,4 +19,7 @@ export const routes = {
     about_access: "/about/access",
     product: "/product",
     authentication_email: "/authentication_email",
+    resetPassword: "/reset_password",
+    // resume: "/resume",
+    test: "/test"
 }

@@ -64,7 +64,7 @@ export class AccountService {
     emailConfirmation = async (request) => {
         try {
             const response = await axios.post(
-                "http://localhost:8080//email-confirmation",
+                "http://localhost:8080/email-confirmation",
                 request
             );
         } catch (error) {
