@@ -96,7 +96,7 @@
 
 @media (max-width: 960px) {
   .contact {
-    .form, p, .title{
+    .form, >p, .title{
       margin: 30px;
     }
   }

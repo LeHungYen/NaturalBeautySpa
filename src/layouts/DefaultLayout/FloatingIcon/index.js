@@ -1,7 +1,7 @@
 import {IoMdSettings} from "react-icons/io";
 import style from './index.module.scss'
 import {useEffect, useState} from "react";
-import {getResourceImage} from "../../../services/import-resource";
+import {getResourceImage} from "../../../services/common";
 import {useDispatch} from "react-redux";
 import {changeLanguage} from "../../../store/action";
 export default function SettingIcon(props) {

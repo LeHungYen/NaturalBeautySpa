@@ -8,12 +8,12 @@ export class AccountService {
         phone: '',
         gender: '',
         username: '',
-        password: '',
+        password: ''
     };
 
     defaulLogin = {
         username: '',
-        password: '',
+        password: ''
     };
 
     // get user

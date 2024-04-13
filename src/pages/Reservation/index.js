@@ -1,11 +1,13 @@
 import style from "./index.module.scss"
 import FormInput from "../../components/FormInput/form-input";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 import {setShowLoading, updatePageData} from "../../store/action";
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
 import PageBanner from "../../components/PageBanner";
 import {getDict} from "../../services/dict";
+import getAccessCookie from "../../services/common";
+import NotificationPopup from "../../components/NotificationPopup";
 
 export function Reservation() {
     const bannerData = {
@@ -13,8 +15,70 @@ export function Reservation() {
         subTitles: [],
         image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_68232960_M.jpg",
     }
+    const [validError, setValidError] = useState({});
+    const [showPopup, setShowPopup] = useState(false);
+    const message = useRef("");
+
+    const isHidden = getAccessCookie();
+    const submit = function (e) {
+        e.preventDefault();
+        const data = getDataFormat();
+        const textInputs = document.querySelectorAll("form input.text");
+        const err = {};
+        for(let i = 0;i< 5; i++) {
+
+                if(textInputs[i].value == "") {
+                    err[Object.keys(data)[i]] = "error";
+                }
+
+            data[Object.keys(data)[i]] = textInputs[i].value
+        }
+        const serviceCaptions = document.querySelectorAll("form div:has(input.checkbox) label");
+        const checkboxs = document.querySelectorAll("form input.checkbox");
+
+            if(checkboxs.length === 0) {
+                err['service'] = "error";
+            }
+
+        for(let i = 0;i< serviceCaptions.length; i++) {
+            if(checkboxs[i].checked) {
+                data.serviceNames += i + ",";
+            }
+        }
+        const availableTime = document.querySelectorAll("form input.date");
+        const availableTimeRange = document.querySelectorAll("form div:has(input.date) select");
+        for(let i = 0;i< availableTime.length; i++) {
+            const time = {
+                date : availableTime[i].value,
+                timeRange : availableTimeRange[i].value
+            }
+            data.availableTimes.push(time);
+        }
+        data.note = document.querySelector("textarea").value;
+        if(Object.keys(err).length > 0) {
+            setValidError(err);
+            message.current = getDict("reservation_fail_notification");
+            setShowPopup(true);
+            return;
+        }
+        post(data,"/reserve").then((r)=>{
+            if(r.status == 400) {
+                message.current = getDict(r.data.error);
+            } else {
+                message.current = getDict("reservation_success_notification");
+            }
+            setShowPopup(true);
+        });
+    }
     return (
         <div className={style.contact}>
+            <NotificationPopup
+                show={showPopup}
+                setShow={setShowPopup}
+                confirmEvent={()=>{setShowPopup(false)}}
+                message={message.current}
+                singleOption={true}
+            />
             <PageBanner  {...bannerData}/>
             <div className={style.title}>
                 <h3>「MAREVE恵比寿本店」ご予約（仮予約）</h3>
@@ -25,25 +89,24 @@ export function Reservation() {
                 </p>
                 <p>※ご予約はお電話、公式LINEアカウント、各種SNSでも承っております。</p>
             </div>
-            <form className={style.form}>
-                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"/>
-                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""}/>
-                <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""}/>
-                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""}/>
+            <form className={style.form} onSubmit={(e)=>{submit(e)}}>
+                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.firstName?getDict("reserve_error_firstname"):""}/>
+                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.lastName?getDict("reserve_error_lastname"):""}/>
+                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.phone?getDict("reserve_error_phone"):""}/>
+                <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""} />
+                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.email?getDict("reserve_error_email"):""}/>
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
-                    <FormInput title={"カウンセリング"} type={"checkbox"} value={0}/>
-                    <FormInput title={"フェイシャルワックス"} type={"checkbox"} value={0}/>
-                    <FormInput title={"顔脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"全身脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"パーツ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"VIO脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"メンズ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"キッズ脱毛"} type={"checkbox"} value={0}/>
-                    <FormInput title={"その他"} type={"checkbox"} value={0}/>
+                    <FormInput name={""} title={getDict("service_counseling")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_facial_wax")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_facial_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_body_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_part_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_VIO_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_men_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_kid_hair_removal")} type={"checkbox"} value={0}/>
+                    <FormInput title={getDict("service_other")} type={"checkbox"} value={0}/>
                 </div>
                 <FormInput title={"第一希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>
                 <FormInput title={"第二希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>
@@ -75,4 +138,18 @@ export function Reservation() {
             </div>
         </div>
     )
+}
+
+function getDataFormat() {
+    return {
+        firstName: "",
+        lastName: "",
+        phone: "",
+        contactTime :"",
+        email: "",
+        username: "",
+        serviceNames:"",
+        availableTimes: [],
+        note: ""
+    }
 }
