@@ -3276,4 +3276,40 @@ const dictLibrary = {
         "jp": "Please input your email",
         "kr": "Please input your email",
     },
+    confirm: {
+        "vi": "Xác nhận",
+        "en": "Confirm",
+        "jp": "Confirm",
+        "kr": "Confirm",
+    },
+    cancel: {
+        "vi": "Hủy",
+        "en": "cancel",
+        "jp": "cancel",
+        "kr": "cancel",
+    },
+    notification: {
+        "vi": "Thông báo",
+        "en": "notification",
+        "jp": "notification",
+        "kr": "notification",
+    },
+    reservation_success_notification: {
+        "vi": "request has been sent",
+        "en": "request has been sent",
+        "jp": "request has been sent",
+        "kr": "request has been sent",
+    },
+    reservation_fail_notification: {
+        "vi": "please fill the required field",
+        "en": "please fill the required field",
+        "jp": "please fill the required field",
+        "kr": "please fill the required field",
+    },
+    error_actice_request: {
+        "vi": "Can not send more than one request",
+        "en": "Can not send more than one request",
+        "jp": "Can not send more than one request",
+        "kr": "Can not send more than one request",
+    }
 }

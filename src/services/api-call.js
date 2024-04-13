@@ -13,8 +13,8 @@ export default async function post(data, endpoint) {
                 }
             }
         )
-        return response.data;
+        return response;
     } catch (e) {
-        // ex handle
+        return e.response;
     }
 }

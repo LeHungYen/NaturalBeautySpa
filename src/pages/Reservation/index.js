@@ -1,12 +1,13 @@
 import style from "./index.module.scss"
 import FormInput from "../../components/FormInput/form-input";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {setShowLoading, updatePageData} from "../../store/action";
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
 import PageBanner from "../../components/PageBanner";
 import {getDict} from "../../services/dict";
 import getAccessCookie from "../../services/common";
+import NotificationPopup from "../../components/NotificationPopup";
 
 export function Reservation() {
     const bannerData = {
@@ -15,6 +16,8 @@ export function Reservation() {
         image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_68232960_M.jpg",
     }
     const [validError, setValidError] = useState({});
+    const [showPopup, setShowPopup] = useState(false);
+    const message = useRef("");
 
     const isHidden = getAccessCookie();
     const submit = function (e) {
@@ -23,20 +26,20 @@ export function Reservation() {
         const textInputs = document.querySelectorAll("form input.text");
         const err = {};
         for(let i = 0;i< 5; i++) {
-            if(!isHidden) {
+
                 if(textInputs[i].value == "") {
                     err[Object.keys(data)[i]] = "error";
                 }
-            }
+
             data[Object.keys(data)[i]] = textInputs[i].value
         }
         const serviceCaptions = document.querySelectorAll("form div:has(input.checkbox) label");
         const checkboxs = document.querySelectorAll("form input.checkbox");
-        if(!isHidden) {
+
             if(checkboxs.length === 0) {
                 err['service'] = "error";
             }
-        }
+
         for(let i = 0;i< serviceCaptions.length; i++) {
             if(checkboxs[i].checked) {
                 data.serviceNames += i + ",";
@@ -51,19 +54,31 @@ export function Reservation() {
             }
             data.availableTimes.push(time);
         }
+        data.note = document.querySelector("textarea").value;
         if(Object.keys(err).length > 0) {
             setValidError(err);
+            message.current = getDict("reservation_fail_notification");
+            setShowPopup(true);
             return;
         }
-        console.log(data)
-        post(data,"/reserve").then(r=>{
+        post(data,"/reserve").then((r)=>{
             if(r.status == 400) {
-                setValidError(r.data);
+                message.current = getDict(r.data.error);
+            } else {
+                message.current = getDict("reservation_success_notification");
             }
+            setShowPopup(true);
         });
     }
     return (
         <div className={style.contact}>
+            <NotificationPopup
+                show={showPopup}
+                setShow={setShowPopup}
+                confirmEvent={()=>{setShowPopup(false)}}
+                message={message.current}
+                singleOption={true}
+            />
             <PageBanner  {...bannerData}/>
             <div className={style.title}>
                 <h3>「MAREVE恵比寿本店」ご予約（仮予約）</h3>
@@ -75,7 +90,6 @@ export function Reservation() {
                 <p>※ご予約はお電話、公式LINEアカウント、各種SNSでも承っております。</p>
             </div>
             <form className={style.form} onSubmit={(e)=>{submit(e)}}>
-                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"/>
                 <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.firstName?getDict("reserve_error_firstname"):""}/>
                 <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.lastName?getDict("reserve_error_lastname"):""}/>
                 <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.phone?getDict("reserve_error_phone"):""}/>
@@ -135,6 +149,7 @@ function getDataFormat() {
         email: "",
         username: "",
         serviceNames:"",
-        availableTimes: []
+        availableTimes: [],
+        note: ""
     }
 }

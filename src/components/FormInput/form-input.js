@@ -48,7 +48,7 @@ export default function FormInput(props) {
                     <span>{subTitle}</span>
                 </label>
                 <input name={""} className={type} type={type} />
-                <p style={{display:`${error?'block':'none'}`}}>{error}</p>
+                <p style={{display:`${error?'block':'none'}`}} className={style.error}>{error}</p>
                 {dateCbx()}
             </div>
         </React.Fragment>
