@@ -1,6 +1,6 @@
 import style from "./index.module.scss"
 import FormInput from "../../components/FormInput/form-input";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {setShowLoading, updatePageData} from "../../store/action";
 import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
@@ -14,16 +14,29 @@ export function Reservation() {
         subTitles: [],
         image: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_68232960_M.jpg",
     }
+    const [validError, setValidError] = useState({});
+
     const isHidden = getAccessCookie();
     const submit = function (e) {
         e.preventDefault();
         const data = getDataFormat();
         const textInputs = document.querySelectorAll("form input.text");
+        const err = {};
         for(let i = 0;i< 5; i++) {
+            if(!isHidden) {
+                if(textInputs[i].value == "") {
+                    err[Object.keys(data)[i]] = "error";
+                }
+            }
             data[Object.keys(data)[i]] = textInputs[i].value
         }
         const serviceCaptions = document.querySelectorAll("form div:has(input.checkbox) label");
         const checkboxs = document.querySelectorAll("form input.checkbox");
+        if(!isHidden) {
+            if(checkboxs.length === 0) {
+                err['service'] = "error";
+            }
+        }
         for(let i = 0;i< serviceCaptions.length; i++) {
             if(checkboxs[i].checked) {
                 data.serviceNames += i + ",";
@@ -38,8 +51,16 @@ export function Reservation() {
             }
             data.availableTimes.push(time);
         }
+        if(Object.keys(err).length > 0) {
+            setValidError(err);
+            return;
+        }
         console.log(data)
-        post(data,"/reserve");
+        post(data,"/reserve").then(r=>{
+            if(r.status == 400) {
+                setValidError(r.data);
+            }
+        });
     }
     return (
         <div className={style.contact}>
@@ -55,11 +76,11 @@ export function Reservation() {
             </div>
             <form className={style.form} onSubmit={(e)=>{submit(e)}}>
                 <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"/>
-                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
-                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
-                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
+                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.firstName?getDict("reserve_error_firstname"):""}/>
+                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.lastName?getDict("reserve_error_lastname"):""}/>
+                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.phone?getDict("reserve_error_phone"):""}/>
                 <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""} />
-                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden}/>
+                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.email?getDict("reserve_error_email"):""}/>
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
@@ -110,7 +131,7 @@ function getDataFormat() {
         firstName: "",
         lastName: "",
         phone: "",
-        note :"",
+        contactTime :"",
         email: "",
         username: "",
         serviceNames:"",

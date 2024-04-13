@@ -3237,4 +3237,28 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    reserve_error_firstname: {
+        "vi": "Please input your firstname",
+        "en": "Please input your firstname",
+        "jp": "Please input your firstname",
+        "kr": "Please input your firstname",
+    },
+    reserve_error_lastname: {
+        "vi": "Please input your lastname",
+        "en": "Please input your lastname",
+        "jp": "Please input your lastname",
+        "kr": "Please input your lastname",
+    },
+    reserve_error_phone: {
+        "vi": "Please input your phone number",
+        "en": "Please input your phone number",
+        "jp": "Please input your phone number",
+        "kr": "Please input your phone number",
+    },
+    reserve_error_email: {
+        "vi": "Please input your email",
+        "en": "Please input your email",
+        "jp": "Please input your email",
+        "kr": "Please input your email",
+    },
 }
