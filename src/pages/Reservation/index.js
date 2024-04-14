@@ -6,7 +6,7 @@ import post from "../../services/api-call";
 import {useDispatch} from "react-redux";
 import PageBanner from "../../components/PageBanner";
 import {getDict} from "../../services/dict";
-import getAccessCookie from "../../services/common";
+import hasAccessCookie from "../../services/common";
 import NotificationPopup from "../../components/NotificationPopup";
 
 export function Reservation() {
@@ -19,31 +19,37 @@ export function Reservation() {
     const [showPopup, setShowPopup] = useState(false);
     const message = useRef("");
 
-    const isHidden = getAccessCookie();
+    const isHidden = hasAccessCookie();
     const submit = function (e) {
         e.preventDefault();
         const data = getDataFormat();
         const textInputs = document.querySelectorAll("form input.text");
         const err = {};
         for(let i = 0;i< 5; i++) {
-
+            if(!isHidden) {
                 if(textInputs[i].value == "") {
                     err[Object.keys(data)[i]] = "error";
                 }
-
+                if(i === 2 && !/^0\d{9,10}$/.test(textInputs[i].value)) {
+                    err[Object.keys(data)[i]] = "error";
+                }
+                if(i===4 && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(textInputs[i].value)){
+                    err[Object.keys(data)[i]] = "error";
+                }
+            }
             data[Object.keys(data)[i]] = textInputs[i].value
         }
         const serviceCaptions = document.querySelectorAll("form div:has(input.checkbox) label");
         const checkboxs = document.querySelectorAll("form input.checkbox");
-
-            if(checkboxs.length === 0) {
-                err['service'] = "error";
-            }
-
+        let showServiceError = true;
         for(let i = 0;i< serviceCaptions.length; i++) {
             if(checkboxs[i].checked) {
                 data.serviceNames += i + ",";
+                showServiceError = false;
             }
+        }
+        if(showServiceError) {
+            err['service'] = "error";
         }
         const availableTime = document.querySelectorAll("form input.date");
         const availableTimeRange = document.querySelectorAll("form div:has(input.date) select");
@@ -90,11 +96,11 @@ export function Reservation() {
                 <p>※ご予約はお電話、公式LINEアカウント、各種SNSでも承っております。</p>
             </div>
             <form className={style.form} onSubmit={(e)=>{submit(e)}}>
-                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.firstName?getDict("reserve_error_firstname"):""}/>
-                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.lastName?getDict("reserve_error_lastname"):""}/>
-                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.phone?getDict("reserve_error_phone"):""}/>
+                <FormInput title={"お名前"} subTitle={"(必須)"} type={"text"} value={""} isHidden={isHidden} error={validError.firstName?getDict("reserve_error_firstname"):""}/>
+                <FormInput title={"フリガナ"} subTitle={"(必須)"} type={"text"} value={""} isHidden={isHidden} error={validError.lastName?getDict("reserve_error_lastname"):""}/>
+                <FormInput title={"電話番号"} subTitle={"(必須)"} type={"text"} value={""} isHidden={isHidden} error={validError.phone?getDict("reserve_error_phone"):""}/>
                 <FormInput title={"※折り返しのご連絡に都合の良いお時間があればご記入ください。（例：午前中、○時以降など）"} type={"text"} value={""} />
-                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} hidden={isHidden} error={validError.email?getDict("reserve_error_email"):""}/>
+                <FormInput title={"メールアドレス"} subTitle={"(必須)"} type={"text"} value={""} isHidden={isHidden} error={validError.email?getDict("reserve_error_email"):""}/>
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
@@ -108,6 +114,7 @@ export function Reservation() {
                     <FormInput title={getDict("service_kid_hair_removal")} type={"checkbox"} value={0}/>
                     <FormInput title={getDict("service_other")} type={"checkbox"} value={0}/>
                 </div>
+                <p style={{display:`${validError.service?"block":"none"}`}} className={style.error}>{getDict("reserve_error_service")}</p>
                 <FormInput title={"第一希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>
                 <FormInput title={"第二希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>
                 <FormInput title={"第三希望日時"} subTitle={"(必須)"} type={"date"} value={""}/>

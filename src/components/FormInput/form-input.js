@@ -42,7 +42,7 @@ export default function FormInput(props) {
 
     return (
         <React.Fragment>
-            <div className={style.container} style={{display: `${isHidden?'none':'flex'}`}}>
+            <div className={style.container} style={{display: `${isHidden === true?'none':'flex'}`}}>
                 <label>
                     {title}
                     <span>{subTitle}</span>

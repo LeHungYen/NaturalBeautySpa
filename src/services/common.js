@@ -9,14 +9,14 @@ export async function getResourceImage(imageName) {
     }
 }
 
-export default function getAccessCookie() {
+export default function hasAccessCookie() {
     const cookies = document.cookie.split(';');
 
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
 
-        if (cookie.startsWith('access-cookie=')) {
-            return cookie;
+        if (cookie.startsWith('customer-access-cookie=')) {
+            return true;
         }
     }
 

@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { routes } from "../../../config/routes.js"
 import { useNavigate } from 'react-router-dom';
 import Login from '../../../components/Login/index.js';
+import hasAccessCookie from "../../../services/common";
 export default function Header(props) {
     const navigate = useNavigate();
     let { navigations } = props
@@ -132,6 +133,12 @@ export default function Header(props) {
     const openLogin = () => {
         loginRef.current.style.display = "block";
     }
+    const getLabel = () => {
+        if(hasAccessCookie() && window.localStorage.getItem("user")){
+            return window.localStorage.getItem("user");
+        }
+        return "Login";
+    }
     return (
         <div className={style.header} >
             <div className={style.top}>
@@ -183,7 +190,7 @@ export default function Header(props) {
             </div>
 
             <div className={style.login}>
-                <button onClick={openLogin}>Login</button>
+                <button onClick={openLogin}>{getLabel()}</button>
             </div>
             <Login exitLogin={exitLogin} loginRef={loginRef} />
         </div>

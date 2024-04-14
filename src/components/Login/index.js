@@ -26,6 +26,7 @@ function Login({ exitLogin, loginRef }) {
     const login = async () => {
         try {
             const response = await apiService.postData(accountServiceUrl.login, loginForm, {}, true);
+            window.localStorage.setItem("user",response.username)
             setMessage('')
             exitLogin();
         } catch (error) {
@@ -80,7 +81,7 @@ function Login({ exitLogin, loginRef }) {
                     </div>
                     <div className={style.form}>
                         <div className={style.formGroup}>
-                            <label>UserName or email address</label>
+                            <label>UserName</label>
                             <input type='text' value={loginForm.username} onChange={(e) => handleLoginForm("username", e.target.value)}></input>
                         </div>
                         <div className={style.formGroup}>

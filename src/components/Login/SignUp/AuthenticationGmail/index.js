@@ -23,6 +23,7 @@ export function AuthenticationEmail() {
     const authenticationEmail = async () => {
         try {
             const response = await apiService.postData(accountServiceUrl.confirmEmail, { code: code }, {}, true);
+            window.localStorage.setItem("user", response.username);
             navigate(routes.home)
         } catch (error) {
             setMessage(error.response.data.error)

@@ -43,6 +43,7 @@ export class AccountService {
                 request
             );
             console.log(response.data)
+            window.localStorage.setItem("user", response.username);
         } catch (error) {
             throw error;
         }

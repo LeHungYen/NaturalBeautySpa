@@ -94,6 +94,11 @@
   }
 }
 
+.error {
+  font-size: 14px !important;
+  color: red;
+}
+
 @media (max-width: 960px) {
   .contact {
     .form, >p, .title{
