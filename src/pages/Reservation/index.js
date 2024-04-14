@@ -27,6 +27,9 @@ export function Reservation() {
         const err = {};
         for(let i = 0;i< 5; i++) {
             if(!isHidden) {
+                if(i==3) {
+                    continue;
+                }
                 if(textInputs[i].value == "") {
                     err[Object.keys(data)[i]] = "error";
                 }
