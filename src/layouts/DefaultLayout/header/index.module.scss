@@ -209,4 +209,17 @@
   .messenger {
     display: none !important;
   }
+  .logo {
+    p {
+      font-size: 22px !important;
+    }
+  }
+  .login {
+    right: 70px !important;
+    top: 10px;
+    button {
+      height: 40px !important;
+      width: 50px !important;
+    }
+  }
 }
