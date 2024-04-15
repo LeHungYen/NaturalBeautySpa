@@ -28,6 +28,7 @@ const publicRoutes = [
     { path: routes.reservation, component: Reservation },
     { path: routes.contact, component: Contact },
     { path: routes.company, component: Company },
+    { path: routes.product, component: Product},
     { path: routes.about_message, component: AboutDetail },
     { path: routes.about_product, component: AboutDetail },
     { path: routes.about_academy, component: AboutDetail },
