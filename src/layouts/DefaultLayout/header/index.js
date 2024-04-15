@@ -7,7 +7,7 @@ import { getAboutData } from "../../../pages/About";
 import AboutItem from "../../../components/AboutItem";
 import { useDispatch } from "react-redux";
 import { routes } from "../../../config/routes.js"
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import Login from '../../../components/Login/index.js';
 import hasAccessCookie from "../../../services/common";
 export default function Header(props) {
@@ -177,7 +177,7 @@ export default function Header(props) {
                         <div className={style.detail}>
                             {getDict("about-popup-description")}
                         </div>
-                        <button>{getDict("about-popup-btn")}</button>
+                        <a  href={routes.about}><button onClick={()=>setShowPopup("none")}>{getDict("about-popup-btn")}</button></a>
                     </div>
                     <div className="about-item-popup">
                         {items.map((item, idx) =>
