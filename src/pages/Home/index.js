@@ -7,15 +7,15 @@ import Pharagraph from './Pharagraph';
 import CourseProduct from './Course-Product';
 import { useState, useEffect } from 'react';
 import post from "../../services/api-call";
-import {useDispatch} from "react-redux";
-import {updatePageData} from "../../store/action";
-import {getLayoutDict} from "../../services/request-body-for-api";
+import { useDispatch } from "react-redux";
+import { updatePageData } from "../../store/action";
+import { getLayoutDict } from "../../services/request-body-for-api";
 import Banner from "./Banner";
 import Loading from "../../components/Loading/loading";
 import store from "../../store/store";
 
 export function Home(props) {
-    const {layout} = props;
+    const { layout } = props;
     // check window width
     const [windowWidth, setWindowWidth] = useState(null);
     useEffect(() => {
@@ -36,7 +36,7 @@ export function Home(props) {
         <div className={style.container}>
             <div>
                 {store.getState().dictLibrary}
-                <Banner/>
+                <Banner />
             </div>
             <div className={style.service}>
                 <Service windowWidth={windowWidth} />
@@ -47,7 +47,7 @@ export function Home(props) {
             </div>
 
             <div className={style.new}>
-                <New/>
+                <New />
             </div>
 
             <div className={style.instagram}>

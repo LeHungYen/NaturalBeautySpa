@@ -26,7 +26,7 @@ function Login({ exitLogin, loginRef }) {
     const login = async () => {
         try {
             const response = await apiService.postData(accountServiceUrl.login, loginForm, {}, true);
-            window.localStorage.setItem("user",response.username)
+            window.localStorage.setItem("user", response.username)
             setMessage('')
             exitLogin();
         } catch (error) {

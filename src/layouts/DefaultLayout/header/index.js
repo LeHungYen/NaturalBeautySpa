@@ -7,7 +7,7 @@ import { getAboutData } from "../../../pages/About";
 import AboutItem from "../../../components/AboutItem";
 import { useDispatch } from "react-redux";
 import { routes } from "../../../config/routes.js"
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Login from '../../../components/Login/index.js';
 import hasAccessCookie from "../../../services/common";
 export default function Header(props) {
@@ -121,8 +121,8 @@ export default function Header(props) {
             },
             {
                 name: "ご記入募集フォーム",
-                url: routes.jobApplication
-            }
+                url: routes.news_jobs
+            },
         ]
     }
 
@@ -134,7 +134,7 @@ export default function Header(props) {
         loginRef.current.style.display = "block";
     }
     const getLabel = () => {
-        if(hasAccessCookie() && window.localStorage.getItem("user")){
+        if (hasAccessCookie() && window.localStorage.getItem("user")) {
             return window.localStorage.getItem("user");
         }
         return "Login";
@@ -162,6 +162,8 @@ export default function Header(props) {
                         return <NavItem {...nav} index={idx} />
                     }
                     )}
+
+                    {/* <NavItem index={100}    name= "Login" /> */}
                 </div>
             </div>
             <div className={style.intro} id="about" style={{ display: showPopup }}
@@ -171,13 +173,13 @@ export default function Header(props) {
                 <div className={style.container}>
                     <div className={style.about}>
                         <div className={style.title}>
-                            <h3>About Mareve</h3>
+                            <h3>About <br /> Natural Beauty</h3>
                             <p>{getDict("about-popup-sub-title")}</p>
                         </div>
                         <div className={style.detail}>
                             {getDict("about-popup-description")}
                         </div>
-                        <a  href={routes.about}><button onClick={()=>setShowPopup("none")}>{getDict("about-popup-btn")}</button></a>
+                        <a href={routes.about}><button onClick={() => setShowPopup("none")}>{getDict("about-popup-btn")}</button></a>
                     </div>
                     <div className="about-item-popup">
                         {items.map((item, idx) =>

@@ -37,7 +37,6 @@ function DefaultLayout({ children }) {
 
             <div className={style.body}>
                 {children}
-
             </div>
 
             <Footer />
@@ -52,7 +51,7 @@ function DefaultLayout({ children }) {
                 <TiArrowUpThick className={style.icon} />
             </div>
 
-         
+
         </div>
     );
 }
