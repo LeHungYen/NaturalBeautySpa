@@ -15,147 +15,147 @@ export function getDict(key) {
 const dictLibrary = {
     service_counseling: {
         "vi": "Tư vấn",
-        "en": null,
+        "en": "Counsel",
         "jp": "カウンセリング",
-        "kr": null
+        "kr": "권하다",
     },
     service_facial_wax: {
         "vi": "Sáp mặt",
-        "en": null,
+        "en": "Facial Wax",
         "jp": "フェイシャルワックス",
-        "kr": null
+        "kr": "페이셜 왁스",
     },
     service_facial_hair_removal: {
         "vi": "Triệt lông mặt",
-        "en": null,
+        "en": "Facial Fur Removal",
         "jp": "顔脱毛",
-        "kr": null
+        "kr": "얼굴 탈모",
     },
     service_body_hair_removal: {
         "vi": "Triệt lông toàn thân",
-        "en": null,
+        "en": "Full Body Fur Removal",
         "jp": "全身脱毛",
-        "kr": null
+        "kr": "전신 탈모"
     },
     service_part_hair_removal: {
         "vi": "Triệt lông từng phần",
-        "en": null,
+        "en": "Parts Fur Removal",
         "jp": "パーツ脱毛",
-        "kr": null
+        "kr": "부품 탈모",
     },
     service_VIO_hair_removal: {
         "vi": "Triệt lông VIO",
-        "en": null,
+        "en": "VIO Fur Removal",
         "jp": "VIO脱毛",
-        "kr": null
+        "kr": "VIO 제모",
     },
     service_men_hair_removal: {
         "vi": "Triệt lông cho nam giới",
-        "en": null,
+        "en": "Mens Fur Removal",
         "jp": "メンズ脱毛",
-        "kr": null
+        "kr": "남성 제모",
     },
     service_kid_hair_removal: {
         "vi": "Triệt lông cho trẻ nhỏ",
-        "en": null,
+        "en": "Kids Fur Removal",
         "jp": "キッズ脱毛",
-        "kr": null
+        "kr": "어린이 탈모"
     },
     service_other: {
         "vi": "Dịch vụ khác",
-        "en": null,
+        "en": "Kids Fur Removal",
         "jp": "キッズ脱毛",
-        "kr": null
+        "kr": "어린이 탈모"
     },
     about_academy_title_1: {
-        "vi": null,
-        "en": null,
-        "jp": "マジメなサロンを日本中に増やしたい",
-        "kr": null
+        "vi": "Tôi muốn tăng số lượng các thẩm mỹ viện nghiêm túc trên khắp thế giới",
+        "en": "I want to increase the number of serious salons Japan",
+        "jp": "マジメなサロンを世界中に増やしたい",
+        "kr": "진지한 살롱을 전세계에 늘리고 싶습니다",
     },
     product_page_title_1: {
-        "vi": null,
-        "en": null,
-        "jp": "mà remove（マ・リムーブ）は",
-        "kr": null,
+        "vi": "loại bỏ",
+        "en": "remove is",
+        "jp": "remove（マ・リムーブ）は",
+        "kr": "remove(마·리무브)는",
     },
     product_page_title_2: {
-        "vi": null,
-        "en": null,
-        "jp": "全ての「美肌」の土台づくりを叶えたい",
-        "kr": null,
+        "vi": "mong muốn tạo lớp nền cho mọi loại「da đẹp」",
+        "en": "We want to create the foundation for all kinds of 「beautiful skin」”,
+        "jp": ""全ての「美肌」の土台づくりを叶えたい"",
+        "kr": "우리는 모든 종류의 「아름다운 피부」를 위한 기초를 만들고 싶습니다",
     },
     product_page_title_3: {
-        "vi": null,
-        "en": null,
+        "vi": "Để loại bỏ sự lo lắng cho các học viên và khách hàng",
+        "en": "To eliminate anxiety for practitioners and customers",
         "jp": "施術者とお客様の不安を取り除くために",
-        "kr": null,
+        "kr": "시술자와 고객의 불안을 없애기 위해",
     },
     product_page_title_4: {
-        "vi": null,
-        "en": null,
+        "vi": "Hiện nay đã có thể hợp tác tẩy lông bằng máy và sáp",
+        "en": "Collaborative fur removal using machine and wax is now possible",
         "jp": "機械とワックスのコラボ脱毛が可能に",
-        "kr": null,
+        "kr": "기계와 왁스의 협업 제모가 가능",
     },
     product_page_title_5: {
-        "vi": null,
-        "en": null,
+        "vi": "Từ giờ trở đi, tôi sẽ tiếp tục đối mặt với các vấn đề về lông một cách nghiêm túc",
+        "en": "From now on, I will continue to fur seriously",
         "jp": "これからも、マジメに毛と向き合うこと",
-        "kr": null,
+        "kr": "앞으로도 진지하게 머리카락과 마주하는 것",
     },
     product_page_title_6: {
-        "vi": null,
-        "en": null,
+        "vi": "Tẩy lông rất đau?",
+        "en": "Waxing is painful?",
         "jp": "ワックス脱毛は痛い？",
-        "kr": null,
+        "kr": "왁스 제모는 아프다?",
     },
     product_page_title_7: {
-        "vi": null,
-        "en": null,
+        "vi": "Đây là một công việc của sự tự tin sẽ thay đổi sự hiểu biết thông thường",
+        "en": "This is a work of confidence that will change conventional wisdom",
         "jp": "これまでの常識が変わる自信作です",
-        "kr": null,
+        "kr": "지금까지의 상식이 바뀌는 자신작입니다",
     },
     product_page_title_8: {
-        "vi": null,
-        "en": null,
+        "vi": "Một loại “sáp nội địa” đa năng có thể được sử dụng bất kể giới tính hay khu vực điều trị",
+        "en": "A versatile “domestic wax” that can be used regardless of gender or treatment area",
         "jp": "性別も施術箇所も選ばない万能の「国産ワックス」",
-        "kr": null,
+        "kr": "성별도 시술 개소도 가리지 않는 만능의 「국산 왁스」",
     },
     product_page_title_9: {
-        "vi": null,
-        "en": null,
+        "vi": "Hỗ trợ điều trị thư giãn tại salon",
+        "en": "Supporting the relaxing salon treatment",
         "jp": "サロン本来のリラックスした施術をサポート",
-        "kr": null,
+        "kr": "살롱 본래의 릴렉스한 시술을 서포트",
     },
     product_page_title_10: {
-        "vi": null,
-        "en": null,
+        "vi": "Sử dụng nhựa thông không màu, không mùi thơm, không gây dị ứng",
+        "en": "Uses non-colored, non-scented, allergy-free rosin",
         "jp": "無着色・無香料　アレルギーフリーのロジンを使用",
-        "kr": null,
+        "kr": "무착색·무향료 알레르기 프리의 로진을 사용",
     },
     product_page_title_11: {
-        "vi": null,
-        "en": null,
+        "vi": "Triệt lông mặt (waxing mặt) hiện nay rất được ưa chuộng, đặc biệt là ở chị em phụ nữ",
+        "en": "Facial hair removal (facial waxing) is now very popular, especially among women",
         "jp": "今、女性を中心に顔脱毛（フェイシャルワックス）が大人気です",
-        "kr": null,
+        "kr": "지금, 여성을 중심으로 얼굴 탈모(페이셜 왁스)가 대인기입니다",
     },
     product_page_txt_8: {
-        "vi": null,
-        "en": null,
-        "jp": "従来のワックス脱毛は痛みや荒れなどの皮膚トラブルがつきもので、",
-        "kr": null,
+        "vi": "Tẩy lông bằng sáp truyền thống có liên quan đến các vấn đề về da như đau và sưng,",
+        "en": "Traditional waxing hair removal is associated with skin problems such as pain and swelling,",
+        "jp": "従来のワックス脱毛は痛みや腫れなどの皮膚トラブルがつきもので、",
+        "kr": "종래의 왁스 탈모는 통증이나 붓기 등의 피부 트러블이 붙는 것으로,",
     },
     product_page_txt_9: {
-        "vi": null,
-        "en": null,
+        "vi": "việc sử dụng phương pháp tẩy lông cơ học là rất khó khăn.",
+        "en": "collaboration with mechanical hair removal was difficult.",
         "jp": "機械脱毛とのコラボが難しいものでした。",
-        "kr": null,
+        "kr": "기계 탈모와의 협업이 어려웠습니다.",
     },
     product_page_txt_10: {
-        "vi": null,
-        "en": null,
+        "vi": "Tuy nhiên, tẩy lông bằng sáp Mareve có thể kết hợp với tẩy lông cơ học,",
+        "en": "However, Mareve wax hair removal can be combined with mechanical hair removal.",
         "jp": "ですがマリーブのワックス脱毛は機械脱毛とのコラボが可能、",
-        "kr": null,
+        "kr": "하지만 말리브의 왁스 탈모는 기계 탈모와의 콜라보레이션이 가능,",
     },
     product_page_txt_11: {
         "vi": null,
@@ -3145,111 +3145,111 @@ const dictLibrary = {
         "mergeFlag": false
     },
     menu_item6_priceList_item_item6_sub: {
-        "vi": null,
-        "en": null,
+        "vi": "￥99,000",
+        "en": "￥99,000",
         "jp": "￥99,000",
-        "kr": null,
+        "kr": "￥99,000",
         "mergeFlag": false
     },
     menu_item6_priceList_description_item1: {
-        "vi": null,
-        "en": null,
+        "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
+        "en": "*All prices include consumption tax.",
         "jp": "※全て消費税込み。",
-        "kr": null,
+        "kr": "※모두 소비세 포함.",
         "mergeFlag": false
     },
     menu_item6_priceList_description_item2: {
-        "vi": null,
-        "en": null,
+        "vi": "*Ngoài những điều trên còn có giá cố định và menu chi tiết cho từng phần. Xin cứ thoải mái liên lạc với chúng tôi.",
+        "en": "*In addition to the above, there are set prices and detailed menus for each part. Please feel free to contact us.",
         "jp": "※上記の他、セット料金や、細かな部位別のメニューがございます。お気軽にご相談ください。",
-        "kr": null,
+        "kr": "※상기 외, 세트 요금이나, 세세한 부위별의 메뉴가 있습니다. 부담없이 상담해 주십시오.",
         "mergeFlag": false
     },
     menu_item6_priceList_description_item3: {
-        "vi": null,
-        "en": null,
+        "vi": "*Giá có thể thay đổi do các chiến dịch, giới thiệu, v.v. Vui lòng liên hệ với chúng tôi để biết thêm thông tin.",
+        "en": "*Prices may change due to campaigns, introductions, etc. Please contact us for more information.",
         "jp": "※キャンペーンやご紹介等で料金が変動する場合がございます。詳しくはお問い合わせください。",
-        "kr": null,
+        "kr": "※캠페인이나 소개 등으로 요금이 변동하는 경우가 있습니다. 자세한 내용은 문의하십시오.",
         "mergeFlag": false
     },
     //////////////////////////
     //
     menu_item7_titleArea_title: {
-        "vi": null,
-        "en": null,
+        "vi": "tẩy lông trẻ em",
+        "en": "kids fur removal",
         "jp": "キッズ脱毛",
-        "kr": null,
+        "kr": "어린이 탈모",
         "mergeFlag": false
     },
     menu_item7_titleArea_sub_subTitle: {
-        "vi": null,
-        "en": null,
+        "vi": "Có thể thực hành với con của bạn.",
+        "en": "It is possible to practice with your child.",
         "jp": "お子様と一緒に施術可能です。",
-        "kr": null,
+        "kr": "어린이와 함께 시술 가능합니다.",
         "mergeFlag": false
     },
     menu_item7_titleArea_sub_discription_item1: {
-        "vi": null,
-        "en": null,
+        "vi": "Ngày càng có nhiều trẻ em có nhiều lông.",
+        "en": "More and more children are also losing their fur.",
         "jp": "お子様も脱毛する方が増えております。",
-        "kr": null,
+        "kr": 어린이도 탈모하는 것이 증가하고 있습니다,
         "mergeFlag": false
     },
     menu_item7_titleArea_sub_discription_item2: {
-        "vi": null,
-        "en": null,
+        "vi": "Vui lòng tham khảo ý kiến ​​của chúng tôi về các mối quan tâm khác nhau về tóc của con bạn, chẳng hạn như 「nhiều lông 」 hoặc 「lo lắng không mong muốn về lông.」",
+        "en": "Please consult with us about your child's various hair concerns, such as 「hairy」 or 「concerned about unwanted hair」.",
         "jp": "「毛深い」「ムダ毛が気になる」など、お子様の様々な毛の悩みをご相談ください。",
-        "kr": null,
+        "kr": "「털이 많은」 「낭비 머리가 신경이 쓰이는」등, 아이의 다양한 머리의 고민을 상담해 주세요. ",
         "mergeFlag": false
     },
     menu_item7_titleArea_sub_discription_item3: {
-        "vi": null,
-        "en": null,
+        "vi": "'Đừng lo lắng, bạn có thể điều trị bên cạnh bố mẹ mình.',",
+        "en": "'Don't worry, you can have the treatment next to your parents.',",
         "jp": "親御様のお隣でご一緒に施術出来ますので、ご安心ください。",
-        "kr": null,
+        "kr": "'친구님 옆에서 함께 시술할 수 있으니 안심하세요.',",
         "mergeFlag": false
     },
     //-
     menu_item7_priceList_item_item1_title: {
-        "vi": null,
-        "en": null,
+        "vi": "1 phần",
+        "en": "1 Part",
         "jp": "１部位",
-        "kr": null,
+        "kr": "1부위",
         "mergeFlag": false
     },
     menu_item7_priceList_item_item1_sub: {
-        "vi": null,
-        "en": null,
+        "vi": "￥1,100",
+        "en": "￥1,100",
         "jp": "￥1,100",
-        "kr": null,
+        "kr": "￥1,100",
         "mergeFlag": false
     },
     menu_item7_priceList_description_item1: {
-        "vi": null,
-        "en": null,
+        "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
+        "en": "*All prices include consumption tax.",
         "jp": "※全て消費税込み。",
-        "kr": null,
+        "kr": "※모두 소비세 포함.",
         "mergeFlag": false
     },
     menu_item7_priceList_description_item2: {
-        "vi": null,
-        "en": null,
+        "vi": "*Chúng tôi không chấp nhận đặt chỗ chỉ dành cho trẻ em.",
+        "en": "*We do not accept reservations for children only.",
         "jp": "※お子様のみのご予約はご遠慮させていただきます。",
-        "kr": null,
+        "kr": "※아드님의 예약은 삼가해 드립니다.",
         "mergeFlag": false
     },
     menu_item7_priceList_description_item3: {
-        "vi": null,
-        "en": null,
+        "vi": "*Ngoài những điều trên còn có giá cố định và menu chi tiết cho từng phần. Xin cứ thoải mái liên lạc với chúng tôi.",
+        "en": "*In addition to the above, there are set prices and detailed menus for each part. Please feel free to contact us.",
         "jp": "※上記の他、セット料金や、細かな部位別のメニューがございます。お気軽にご相談ください。",
-        "kr": null,
+        "kr": "※상기 외, 세트 요금이나, 세세한 부위별의 메뉴가 있습니다. 부담없이 상담해 주십시오.",
         "mergeFlag": false
     },
     menu_item7_priceList_description_item34: {
-        "vi": null,
-        "en": null,
+        "vi": "*Giá có thể thay đổi do các chiến dịch, giới thiệu, v.v. Vui lòng liên hệ với chúng tôi để biết thêm thông tin.",
+        "en": "*Prices may change due to campaigns, introductions, etc. Please contact us for more information.",
         "jp": "※キャンペーンやご紹介等で料金が変動する場合がございます。詳しくはお問い合わせください。",
-        "kr": null,
+        "kr": "※캠페인이나 소개 등으로 요금이 변동하는 경우가 있습니다. 자세한 내용은 문의하십시오.",
         "mergeFlag": false
     },
     reserve_error_firstname: {
