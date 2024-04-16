@@ -82,7 +82,7 @@ const dictLibrary = {
     product_page_title_2: {
         "vi": "mong muốn tạo lớp nền cho mọi loại「da đẹp」",
         "en": "We want to create the foundation for all kinds of 「beautiful skin」”,
-        "jp": ""全ての「美肌」の土台づくりを叶えたい"",
+        "jp": "全ての「美肌」の土台づくりを叶えたい",
         "kr": "우리는 모든 종류의 「아름다운 피부」를 위한 기초를 만들고 싶습니다",
     },
     product_page_title_3: {
