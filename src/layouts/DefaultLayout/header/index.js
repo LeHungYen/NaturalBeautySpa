@@ -189,9 +189,9 @@ export default function Header(props) {
                 </div>
             </div>
 
-            <div className={style.login}>
-                <button onClick={openLogin}>{getLabel()}</button>
-            </div>
+            {/*<div className={style.login}>*/}
+            {/*    <button onClick={openLogin}>{getLabel()}</button>*/}
+            {/*</div>*/}
             <Login exitLogin={exitLogin} loginRef={loginRef} />
         </div>
     )
