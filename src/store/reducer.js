@@ -6,7 +6,14 @@ const defaultValue = {
     showLoading: true
 }
 
-export function reducer (state = defaultValue, action) {
+const getState = function () {
+    if(window.localStorage.getItem("web-state")===null) {
+        return defaultValue;
+    }
+    return JSON.parse(window.localStorage.getItem("web-state"));
+}
+
+export function reducer (state = getState(), action) {
     switch (action.type) {
         case "CHANGE_LANGUAGE":
             return {

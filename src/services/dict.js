@@ -81,7 +81,7 @@ const dictLibrary = {
     },
     product_page_title_2: {
         "vi": "mong muốn tạo lớp nền cho mọi loại「da đẹp」",
-        "en": "We want to create the foundation for all kinds of 「beautiful skin」”,
+        "en": "We want to create the foundation for all kinds of 「beautiful skin」",
         "jp": "全ての「美肌」の土台づくりを叶えたい",
         "kr": "우리는 모든 종류의 「아름다운 피부」를 위한 기초를 만들고 싶습니다",
     },
@@ -3192,7 +3192,7 @@ const dictLibrary = {
         "vi": "Ngày càng có nhiều trẻ em có nhiều lông.",
         "en": "More and more children are also losing their fur.",
         "jp": "お子様も脱毛する方が増えております。",
-        "kr": 어린이도 탈모하는 것이 증가하고 있습니다,
+        "kr": '어린이도 탈모하는 것이 증가하고 있습니다',
         "mergeFlag": false
     },
     menu_item7_titleArea_sub_discription_item2: {

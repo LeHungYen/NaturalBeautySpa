@@ -30,7 +30,7 @@ export function Reservation() {
                 if(i==3) {
                     continue;
                 }
-                if(textInputs[i].value == "") {
+                if(textInputs[i].value.trim() == "") {
                     err[Object.keys(data)[i]] = "error";
                 }
                 if(i === 2 && !/^0\d{9,10}$/.test(textInputs[i].value)) {
