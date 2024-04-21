@@ -152,8 +152,8 @@ const dictLibrary = {
         "kr": "기계 탈모와의 협업이 어려웠습니다.",
     },
     product_page_txt_10: {
-        "vi": "Tuy nhiên, tẩy lông bằng sáp Mareve có thể kết hợp với tẩy lông cơ học,",
-        "en": "However, Mareve wax hair removal can be combined with mechanical hair removal.",
+        "vi": "Tuy nhiên, tẩy lông bằng sáp Natural Beauty có thể kết hợp với tẩy lông cơ học,",
+        "en": "However, Natural Beauty wax hair removal can be combined with mechanical hair removal.",
         "jp": "ですがマリーブのワックス脱毛は機械脱毛とのコラボが可能、",
         "kr": "하지만 말리브의 왁스 탈모는 기계 탈모와의 콜라보레이션이 가능,",
     },

@@ -2,6 +2,7 @@ export const routes = {
     home: '/',
     contact: '/contact',
     reservation: '/reservation',
+    thankYou: '/thank-you',
     jobApplication: '/job_application',
     company: '/company',
     about: '/about',
