@@ -1,0 +1,149 @@
+.controller {
+    font-family: sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s 0.4s;
+}
+
+.overlay.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s;
+}
+
+.popup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    min-width: 300px;
+    max-width: 90vw;
+    padding: 20px;
+    // opacity: 0;
+
+}
+
+// .popup .iconClose {
+//     position: absolute;
+//     top: 20px;
+//     right: 20px;
+//     font-size: 30px;
+//     cursor: pointer;
+// }
+
+
+.popup .success,
+.popup .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.popup .success .icon,
+.popup .error .icon {
+    font-size: 50px;
+    font-weight: bold;
+    stroke-width: 0.3px;
+}
+
+.popup .success .icon {
+    color: rgba(39, 174, 96, 1);
+}
+
+.popup .error .icon {
+    color: #f32e2e;
+}
+
+
+.popup .success p,
+.popup .error p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.popup .success p {
+    color: rgba(39, 174, 96, 1);
+}
+
+.popup .error p {
+    color: #f32e2e;
+}
+
+.popup .mainText {
+    margin-top: 15px;
+}
+
+.popup .mainText p {
+    font-family: sans-serif;
+    font-size: 17px;
+    user-select: none;
+    text-align: center;
+}
+
+.popup .subText {}
+
+.popup .subText p {
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    user-select: none;
+    text-align: center;
+}
+
+.popup .buttons {
+    padding: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.popup .buttons button {
+    padding: 9px 15px;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+button:hover {
+    // background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
