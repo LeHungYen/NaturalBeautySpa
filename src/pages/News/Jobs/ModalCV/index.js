@@ -98,7 +98,7 @@ function ModalCV({ modal, setModal, job }) {
     }
 
     // message
-    const [popup, setPopup] = useState(true)
+    const [popup, setPopup] = useState(false)
 
     const cancelAction = () => {
         setPopup(false)

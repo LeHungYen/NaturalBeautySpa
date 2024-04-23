@@ -281,6 +281,7 @@ const AdminForm = ({ title, fields, onSubmit, formValue, setFormValue, errors, r
                                                             onChange={handleChange} />
                                                         <label htmlFor={`${field.name}-${index}`}>{option}</label>
                                                     </div>
+
                                                 ))}
                                             </div>
                                             {errors[field.name] && <p className={style.error}>{errors[field.name]}</p>}

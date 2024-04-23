@@ -123,6 +123,11 @@ export default function Header(props) {
                 name: "ご記入募集フォーム",
                 url: routes.news_jobs
             },
+
+            {
+                name: "Product",
+                url: routes.storeProduct
+            },
         ]
     }
 

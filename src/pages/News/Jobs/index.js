@@ -142,7 +142,7 @@ function Jobs() {
 
                 <div className={style.content}>
                     <div className={style.jobDescripton}>
-                        <p className={style.title}>Mô tả công việc</p>
+                        <p className={style.title}>Job descriptions</p>
                         <div className={style.text}>
                             {jobs[key].description.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -155,7 +155,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobRequirement}>
-                        <p className={style.title}>Yêu cầu ứng viên</p>
+                        <p className={style.title}>Requirements</p>
                         <div className={style.text}>
                             {jobs[key].requirement.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -168,7 +168,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobBenefits}>
-                        <p className={style.title}>Quyền lợi</p>
+                        <p className={style.title}>Benefits</p>
                         <div className={style.text}>
                             {jobs[key].benefits.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -181,7 +181,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobLocation}>
-                        <p className={style.title}>Địa điểm làm việc</p>
+                        <p className={style.title}>Work location</p>
                         <div className={style.text}>
                             {jobs[key].workLocation.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -194,7 +194,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobTime}>
-                        <p className={style.title}>Thời gian làm việc</p>
+                        <p className={style.title}>Work time</p>
                         <div className={style.text}>
                             {jobs[key].workTime.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -207,7 +207,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobApply}>
-                        <p className={style.title}>Cách thức ứng tuyển</p>
+                        <p className={style.title}>How to apply</p>
 
                         <div className={style.text}>
                             <React.Fragment>

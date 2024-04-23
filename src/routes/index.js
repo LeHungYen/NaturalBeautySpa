@@ -16,6 +16,8 @@ import { NullLayout } from '../layouts/NullLayout/index.js'
 // import { CvForm } from "../pages/CV/index.js";
 import { ResetPassword } from '../components/Login/ForgotPassword/ResetPassword/index.js';
 import ThankYou from "../pages/Reservation/ThankYou/index.js";
+import StoreProduct from "../pages/StoreProduct/index.js";
+import ProductDetail from "../pages/StoreProduct/ProductDetails/index.js";
 import Test from "../pages/Test/index.js";
 const publicRoutes = [
     { path: routes.home, component: Home },
@@ -38,8 +40,8 @@ const publicRoutes = [
     { path: routes.about_important, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
-    // { path: routes.jobApplication, component: CvForm },
-
+    { path: routes.storeProduct, component: StoreProduct },
+    { path: routes.productDetail, component: ProductDetail },
     { path: routes.resetPassword, component: ResetPassword, layout: NullLayout },
     { path: routes.authentication_email, component: AuthenticationEmail, layout: NullLayout },
     { path: routes.test, component: Test, layout: NullLayout }
