@@ -4,20 +4,22 @@ import logo from '../assets/logo.png'
 
 export const news = () => {
     return [
-        {
-            title: getDict("news_item1_title"),
-            date: getDict("news_item1_date"),
-            img: logo,
-            content: getDict("news_item1_content"),
-        },
-        {
-            title: getDict("news_item2_title"),
-            date: getDict("news_item2_date"),
-            img: logo,
-            content: getDict("news_item2_content"),
-        }
+        // {
+        //     title: getDict("news_item1_title"),
+        //     date: getDict("news_item1_date"),
+        //     img: logo,
+        //     content: getDict("news_item1_content"),
+        // },
+        // {
+        //     title: getDict("news_item2_title"),
+        //     date: getDict("news_item2_date"),
+        //     img: logo,
+        //     content: getDict("news_item2_content"),
+        // }
     ];
 };
+
+// news check lại . chưa xóa dict
 
 export const pharagraphs = () => {
     return [
