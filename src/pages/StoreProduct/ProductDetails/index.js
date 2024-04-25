@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import { routes } from '../../../config/routes';
+import banner from '../../../assets/banner/bannerStoreProduct.jpg'
 function ProductDetail() {
     const items = [
         {
@@ -177,7 +178,7 @@ function ProductDetail() {
         <div className={style.container}>
             <div className={style.banner}>
                 <div className={style.bannerBackground}>
-                    <img src="https://baseec-img-mng.akamaized.net/images/user/logo/180c45ea74bbc6b53b7b0088b9a8ba71.png?imformat=generic&q=90&im=Resize,width=2048,aspect=fit,type=downsize"></img>
+                    <img src={banner}></img>
                 </div>
                 <div className={style.bannerText}>
                     <div className={style.text}>

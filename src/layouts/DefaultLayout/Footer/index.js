@@ -89,10 +89,7 @@ function Footer() {
                         </a>
 
                         <ul>
-                            <li><span>{getDict("defaultLayout_row2_col1_item1")}</span></li>
                             <li><span>{getDict("defaultLayout_row2_col1_item2")}</span></li>
-                            <li><span>{getDict("defaultLayout_row2_col1_item3")}</span></li>
-                            <li><span>{getDict("defaultLayout_row2_col1_item4")}</span></li>
                             <li><span>{getDict("defaultLayout_row2_col1_item5")}</span></li>
                             <li><span>{getDict("defaultLayout_row2_col1_item6")}</span></li>
                             <li><span>{getDict("defaultLayout_row2_col1_item7")}</span></li>
@@ -108,19 +105,16 @@ function Footer() {
 
                         <ul>
                             <li><span>{getDict("defaultLayout_row2_col2_item2")}</span></li>
-                            <li><span>{getDict("defaultLayout_row2_col2_item3")}</span></li>
                         </ul>
 
                         <div className={style.button}>
-                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a >{getDict("defaultLayout_row2_col2_item4")}</a></button>
+                            <button onClick={() => window.open("https://www.facebook.com/naturalbeauty.625/")}><a >{getDict("defaultLayout_row2_col2_item4")}</a></button>
                         </div>
                     </div>
 
                     <div className={style.col3}>
                         <p className={style.title}>
-                        {getDict("defaultLayout_row2_col3_item1")}
-                            <br />
-                            {getDict("defaultLayout_row2_col3_item2")}
+                            {getDict("defaultLayout_row2_col3_item1")}
                         </p>
 
                         <ul>
@@ -128,7 +122,7 @@ function Footer() {
                         </ul>
 
                         <div className={style.button}>
-                            <button onClick={() => window.open("https://line.me/R/ti/p/%40737fasnn")}><a>{getDict("defaultLayout_row2_col3_item4")}</a></button>
+                            <button onClick={() => window.open("https://www.instagram.com/natural.beauty_japan?igsh=NWYzc2QzZjBmcDVk&utm_source=qr")}><a>{getDict("defaultLayout_row2_col3_item4")}</a></button>
                         </div>
                     </div>
                 </div>

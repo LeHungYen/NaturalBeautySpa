@@ -1340,38 +1340,17 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    defaultLayout_row2_col1_item1: {
-        "vi": null,
-        "en": null,
-        "jp": "株式会社マリーブ",
-        "kr": null,
-        "mergeFlag": false
-    },
     defaultLayout_row2_col1_item2: {
         "vi": null,
         "en": null,
-        "jp": "〒150-0021",
-        "kr": null,
-        "mergeFlag": false
-    },
-    defaultLayout_row2_col1_item3: {
-        "vi": null,
-        "en": null,
-        "jp": "東京都渋谷区恵比寿西1-3-10",
-        "kr": null,
-        "mergeFlag": false
-    },
-    defaultLayout_row2_col1_item4: {
-        "vi": null,
-        "en": null,
-        "jp": "EBISU. TANAKA. BLDG. 4F",
+        "jp": "〒150-0021 -  625 Kim Mã, Ba Đình, Hà Nội.",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col1_item5: {
         "vi": null,
         "en": null,
-        "jp": "NATURAL BEAUTY 恵比寿本店",
+        "jp": "NATURAL BEAUTY",
         "kr": null,
         "mergeFlag": false
     },
@@ -1414,56 +1393,42 @@ const dictLibrary = {
     defaultLayout_row2_col2_item1: {
         "vi": null,
         "en": null,
-        "jp": "ご予約専用LINE",
+        "jp": "活躍FACEBOOK",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col2_item2: {
         "vi": null,
         "en": null,
-        "jp": "「NATURAL BEAUTY恵比寿本店」へのご予約（仮予約）はこちらのLINEからお友達追加をお願いします。完全プライベートサロンのため、ご希望の日時をいただいた後に調整を行います。",
-        "kr": null,
-        "mergeFlag": false
-    },
-    defaultLayout_row2_col2_item3: {
-        "vi": null,
-        "en": null,
-        "jp": "まずはお気軽にこちらよりご連絡ください。",
+        "jp": "「NATURAL BEAUTY」Facebookのコミュニティに参加して、最も魅力的なプロモーションを受け取り、アクティビティやミニゲームに参加してください。あなたの幸せは私たちの成功です",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col2_item4: {
         "vi": null,
         "en": null,
-        "jp": "LINEから予約する",
+        "jp": "FACEBOOK 行こう",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col3_item1: {
         "vi": null,
         "en": null,
-        "jp": " アカデミー専用",
-        "kr": null,
-        "mergeFlag": false
-    },
-    defaultLayout_row2_col3_item2: {
-        "vi": null,
-        "en": null,
-        "jp": " お問い合わせLINE",
+        "jp": "活躍INSTARGRAM",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col3_item3: {
         "vi": null,
         "en": null,
-        "jp": " 「M beauty academy」「プロデュース商品」「セミナー、講演、取材のご依頼」等、アカデミー関連へのお問い合わせはこちらのLINEからお友達追加し、ご連絡ください。",
+        "jp": "「NATURAL BEAUTY」インスタグラムには、私たちがどのように行うかの貴重な映像があり、お客様がここに来たときの体験をよりよく理解し、それを経験した有名人とライブで話す機会があります",
         "kr": null,
         "mergeFlag": false
     },
     defaultLayout_row2_col3_item4: {
         "vi": null,
         "en": null,
-        "jp": "アカデミー問い合わせLINE",
+        "jp": "INSTARGRAM行こう",
         "kr": null,
         "mergeFlag": false
     },
