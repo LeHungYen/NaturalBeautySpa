@@ -41,7 +41,7 @@ function DefaultLayout({ children }) {
 
             <Footer />
             <div className="disable-background-overlay" />
-            <SettingIcon />
+            {/*<SettingIcon />*/}
 
             <div
                 className={style.goToTop}
