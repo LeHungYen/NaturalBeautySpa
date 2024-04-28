@@ -40,15 +40,14 @@ const publicRoutes = [
     { path: routes.about_important, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
     { path: routes.about_feature, component: AboutDetail },
-    { path: routes.storeProduct, component: StoreProduct },
-    { path: routes.productDetail, component: ProductDetail },
+    // { path: routes.storeProduct, component: StoreProduct },
+    // { path: routes.productDetail, component: ProductDetail },
     { path: routes.resetPassword, component: ResetPassword, layout: NullLayout },
     { path: routes.authentication_email, component: AuthenticationEmail, layout: NullLayout },
-    { path: routes.test, component: Test, layout: NullLayout }
+    // { path: routes.test, component: Test, layout: NullLayout }
 ]
 
 const privateRoutes = [
-
 ]
 
 export { publicRoutes, privateRoutes }
