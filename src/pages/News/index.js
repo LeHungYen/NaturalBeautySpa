@@ -90,7 +90,9 @@ function News() {
                     <ul>
                         <a href={routes.news_articles}><li>{getDict("news_menu_body_bodyMenu_item1")}</li></a>
                         <a href={routes.news_jobs}><li>{getDict("news_menu_body_bodyMenu_item2")}</li></a>
-                        <a><li>{getDict("news_menu_body_bodyMenu_item3")}</li></a>
+                        <a><li onClick={() => window.open("https://www.instagram.com/natural.beauty_japan/?igsh=NWYzc2QzZjBmcDVk&utm_source=qr")}>{getDict("news_menu_body_bodyMenu_item3")}</li></a>
+                        <a><li onClick={() => window.open("https://line.me/ti/p/7Ns83iPC9j")}>{getDict("news_menu_body_bodyMenu_item4")}</li></a>
+                        <a><li onClick={() => window.open("https://www.tiktok.com/@natural.beauty.jp?_t=8ltwgLLealc&_r=1")}>{getDict("news_menu_body_bodyMenu_item5")}</li></a>
                     </ul>
                 </div>
 

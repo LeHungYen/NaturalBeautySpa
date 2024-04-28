@@ -1873,6 +1873,20 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    news_menu_body_bodyMenu_item4: {
+        "vi": null,
+        "en": null,
+        "jp": "公式Line",
+        "kr": null,
+        "mergeFlag": false
+    },
+    news_menu_body_bodyMenu_item5: {
+        "vi": null,
+        "en": null,
+        "jp": "公式Tiktok",
+        "kr": null,
+        "mergeFlag": false
+    },
     news_menu_body_newDetail_notice_noticeTitle_main: {
         "vi": null,
         "en": null,
