@@ -154,9 +154,9 @@ export default function Header(props) {
                             <p className={style.logoText}>Natural Beauty</p>
                         </div>
                     </a>
-                    <div className={style.messenger}>
-                        <span>{getDict("messenger-reservation")}</span>
-                    </div>
+                    {/*<div className={style.messenger}>*/}
+                    {/*    <span>{getDict("messenger-reservation")}</span>*/}
+                    {/*</div>*/}
                     <NavigationBarDrawerMode navigations={navigations} />
                 </div>
             </div>
@@ -178,7 +178,7 @@ export default function Header(props) {
                 <div className={style.container}>
                     <div className={style.about}>
                         <div className={style.title}>
-                            <h3>About <br /> Natural Beauty</h3>
+                            <h3 style={{textDecoration: 'underline'}}>About <br /> Natural Beauty</h3>
                             <p>{getDict("about-popup-sub-title")}</p>
                         </div>
                         <div className={style.detail}>

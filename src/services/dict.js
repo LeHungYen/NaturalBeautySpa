@@ -13,59 +13,113 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
-    service_counseling: {
-        "vi": "Tư vấn",
-        "en": "Counsel",
-        "jp": "カウンセリング",
-        "kr": "권하다",
-    },
-    service_facial_wax: {
-        "vi": "Sáp mặt",
-        "en": "Facial Wax",
-        "jp": "フェイシャルワックス",
-        "kr": "페이셜 왁스",
-    },
-    service_facial_hair_removal: {
+    face_hair_remover: {
         "vi": "Triệt lông mặt",
-        "en": "Facial Fur Removal",
-        "jp": "顔脱毛",
-        "kr": "얼굴 탈모",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_body_hair_removal: {
-        "vi": "Triệt lông toàn thân",
-        "en": "Full Body Fur Removal",
-        "jp": "全身脱毛",
-        "kr": "전신 탈모"
+    arm_hair_remover: {
+        "vi": "Triệt lông tay và cẳng tay",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_part_hair_removal: {
-        "vi": "Triệt lông từng phần",
-        "en": "Parts Fur Removal",
-        "jp": "パーツ脱毛",
-        "kr": "부품 탈모",
+    forearm_hair_removal: {
+        "vi": "Triệt lông vùng bắp tay",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_VIO_hair_removal: {
-        "vi": "Triệt lông VIO",
-        "en": "VIO Fur Removal",
-        "jp": "VIO脱毛",
-        "kr": "VIO 제모",
+    armpit_hair_removal: {
+        "vi": "Triệt lông vùng nách",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_men_hair_removal: {
-        "vi": "Triệt lông cho nam giới",
-        "en": "Mens Fur Removal",
-        "jp": "メンズ脱毛",
-        "kr": "남성 제모",
+    chest_hair_removal: {
+        "vi": "Triệt lông vùng ngực",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_kid_hair_removal: {
-        "vi": "Triệt lông cho trẻ nhỏ",
-        "en": "Kids Fur Removal",
-        "jp": "キッズ脱毛",
-        "kr": "어린이 탈모"
+    belly_hair_removal: {
+        "vi": "Triệt lông vùng bụng (Không gồm quanh rốn)",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
-    service_other: {
-        "vi": "Dịch vụ khác",
-        "en": "Kids Fur Removal",
-        "jp": "キッズ脱毛",
-        "kr": "어린이 탈모"
+    r_hair_removal: {
+        "vi": "Triệt lông vùng quanh rốn",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    back_hair_removal: {
+        "vi": "Triệt lông vùng lưng",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    back_bell_hair_removal: {
+        "vi": "Triệt lông vùng thắt lưng",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    as_hair_removal: {
+        "vi": "Triệt lông vùng mông",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    upper_knee_hair_removal: {
+        "vi": "Triệt lông vùng đùi trên gối",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    foot_hair_removal: {
+        "vi": "Triệt lông vùng bắp chân, bàn chân",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    all_hair_removal: {
+        "vi": "Triệt lông toàn thân (Không gồm mặt và V.I.O)",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    vio_part: {
+        "vi": "V - I - O* giá từng vùng",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    vio_combo: {
+        "vi": "V - I - O* giá combo",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    weight_reduce: {
+        "vi": "Giảm béo (thu hẹp, khỏe mạnh âm đạo)",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    hydro_service: {
+        "vi": "Phục hồi bằng công nghệ Hydro",
+        "en": "",
+        "jp": "",
+        "kr": "",
+    },
+    book_service: {
+        "vi": "Trẻ hóa da bằng công nghệ ánh sách",
+        "en": "",
+        "jp": "",
+        "kr": "",
     },
     about_academy_title_1: {
         "vi": "Tôi muốn tăng số lượng các thẩm mỹ viện nghiêm túc trên khắp thế giới",
@@ -463,7 +517,7 @@ const dictLibrary = {
         "kr": "후쿠다 마리 대표가 개발한 전문가용 살롱 제품 '마 리무버'는 1년 반에 걸쳐 상품화한 국내 최고의 왁스와 이상적인 조건을 위한 전문가용 애프터 케어 로션을 함유하고 있습니다.",
     },
     about_important_txt_22: {
-        "vi": "Hãy thử trên da bạn một lần nhé. 'maRemove loại bỏ' sẽ tiếp tục tung ra nhiều sản phẩm khác nhau để tạo nên lớp nền cho mọi 'da đẹp'".,
+        "vi": "Hãy thử trên da bạn một lần nhé. 'maRemove loại bỏ' sẽ tiếp tục tung ra nhiều sản phẩm khác nhau để tạo nên lớp nền cho mọi 'da đẹp'",
         "en": "Try it on your skin once. 'maRemove removal' will continue to launch various products to create a foundation for every 'beautiful skin'.",
         "jp": "是非一度、あなたのお肌で試してみてください。「mà remove」は、今後も全ての「美肌」の土台づくりのため、様々なアイテムをリリースして参ります。",
         "kr": "피부에 한 번 사용해보세요. '마리무브 리무브'는 모든 '아름다운 피부'를 위한 기초를 만들어주는 다양한 제품을 계속 출시할 예정입니다.",
@@ -3218,16 +3272,10 @@ const dictLibrary = {
         "mergeFlag": false
     },
     reserve_error_firstname: {
-        "vi": "Please input your firstname",
-        "en": "Please input your firstname",
-        "jp": "Please input your firstname",
-        "kr": "Please input your firstname",
-    },
-    reserve_error_lastname: {
-        "vi": "Please input your lastname",
-        "en": "Please input your lastname",
-        "jp": "Please input your lastname",
-        "kr": "Please input your lastname",
+        "vi": "Please input your name",
+        "en": "Please input your name",
+        "jp": "Please input your name",
+        "kr": "Please input your name",
     },
     reserve_error_phone: {
         "vi": "phone number is not valid",

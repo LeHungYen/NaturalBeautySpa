@@ -1,6 +1,7 @@
 import style from "./index.module.scss";
 import PageBanner from "../../components/PageBanner";
 import React from "react";
+import {getDict} from "../../services/dict";
 
 export function Company() {
     const bannerData = {
@@ -61,7 +62,7 @@ export function Company() {
                     </tr>
                     <tr>
                         <td>所在地</td>
-                        <td>〒150-0021　東京都渋谷区恵比寿西1-3-10 EBISU. TANAKA. BLDG. 4F</td>
+                        <td>{getDict("defaultLayout_row2_col1_item2")}</td>
                     </tr>
                     <tr>
                         <td>電話番号</td>
