@@ -1,4 +1,4 @@
-export const baseUrl = 'https://api.socialsphere.vn';
+export const baseUrl = 'https://api.naturalbeautyjp.com';
 
 export const accountServiceUrl = {
     login: "login",

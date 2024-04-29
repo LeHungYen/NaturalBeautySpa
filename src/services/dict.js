@@ -2230,23 +2230,23 @@ const dictLibrary = {
         "mergeFlag": false
     },
     menu_item1_priceList_item_item1_sub: {
-        "vi": null,
+        "vi": "",
         "en": null,
-        "jp": "通常￥55,000　→お得なキャンペーン中！詳しくはお問い合わせ下さい",
+        "jp": `女性：100万ドン,男性：160万ドン`,
         "kr": null,
         "mergeFlag": false
     },
     menu_item1_priceList_item_item2_title: {
         "vi": null,
         "en": null,
-        "jp": "全身脱毛（６回）",
+        "jp": "全身脱毛（10回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item1_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "¥253,000",
+        "jp": "女性：800万ドン,男性：1500万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -2377,28 +2377,28 @@ const dictLibrary = {
     menu_item2_priceList_item_item1_title: {
         "vi": null,
         "en": null,
-        "jp": "顔脱毛",
+        "jp": "顔脱毛（１回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item2_priceList_item_item1_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥6,600",
+        "jp": "女性：150万ドン,男性：160万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item2_priceList_item_item2_title: {
         "vi": null,
         "en": null,
-        "jp": "フェイシャルワックス",
+        "jp": "顔脱毛（１0回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item2_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥12,000",
+        "jp": "女性：1200万ドン,男性：1500万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -2536,98 +2536,98 @@ const dictLibrary = {
     menu_item3_priceList_item_item1_title: {
         "vi": null,
         "en": null,
-        "jp": "両ワキ（１回）",
+        "jp": "前腕と手",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item1_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥1,100",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item2_title: {
         "vi": null,
         "en": null,
-        "jp": "両ワキ（１年）",
+        "jp": "二頭筋",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥11,000",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item3_title: {
         "vi": null,
         "en": null,
-        "jp": "背中上（１回）",
+        "jp": "腋下",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item3_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥4,400",
+        "jp": "2万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item4_title: {
         "vi": null,
         "en": null,
-        "jp": "胸（１回）",
+        "jp": "胸",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item4_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥3,300",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item5_title: {
         "vi": null,
         "en": null,
-        "jp": "乳りん周り（１回）",
+        "jp": "腹部(へそを除く)",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item5_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥1,100",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item6_title: {
         "vi": null,
         "en": null,
-        "jp": "両ヒジ上（１回）",
+        "jp": "へそ周り",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item6_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥2,200",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item7_title: {
         "vi": null,
         "en": null,
-        "jp": "両手指甲（１回）",
+        "jp": "背中部",
         "kr": null,
         "mergeFlag": false
     },
     menu_item3_priceList_item_item7_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥550",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -2772,70 +2772,56 @@ const dictLibrary = {
     menu_item4_priceList_item_item1_title: {
         "vi": null,
         "en": null,
-        "jp": "腰（１回）",
+        "jp": "腰部",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item1_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥3,300",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item2_title: {
         "vi": null,
         "en": null,
-        "jp": "ヒップ（１回）",
+        "jp": "尻",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥4,400",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item3_title: {
         "vi": null,
         "en": null,
-        "jp": "お腹（１回）",
+        "jp": "膝上の太もも部分",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item3_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥3,300",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item4_title: {
         "vi": null,
         "en": null,
-        "jp": "両ヒザ上（１回）",
+        "jp": "ふくらはぎと足の面積",
         "kr": null,
         "mergeFlag": false
     },
     menu_item4_priceList_item_item4_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥5,500",
-        "kr": null,
-        "mergeFlag": false
-    },
-    menu_item4_priceList_item_item5_title: {
-        "vi": null,
-        "en": null,
-        "jp": "両ヒザ下（１回）",
-        "kr": null,
-        "mergeFlag": false
-    },
-    menu_item4_priceList_item_item5_sub: {
-        "vi": null,
-        "en": null,
-        "jp": "￥4,400",
+        "jp": "15万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -2980,7 +2966,7 @@ const dictLibrary = {
     menu_item5_priceList_item_item1_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥3,300",
+        "jp": "30万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -2994,7 +2980,7 @@ const dictLibrary = {
     menu_item5_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥2,200",
+        "jp": "30万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -3008,7 +2994,7 @@ const dictLibrary = {
     menu_item5_priceList_item_item3_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥2,200",
+        "jp": "30万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -3022,21 +3008,21 @@ const dictLibrary = {
     menu_item5_priceList_item_item4_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥6,600",
+        "jp": "60万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item5_priceList_item_item5_title: {
         "vi": null,
         "en": null,
-        "jp": "VIOセット（６回）",
+        "jp": "VIOセット（10回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item5_priceList_item_item5_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥33,000",
+        "jp": "540万ドン",
         "kr": null,
         "mergeFlag": false
     },
@@ -3110,80 +3096,53 @@ const dictLibrary = {
     menu_item6_priceList_item_item1_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥44,000",
+        "jp": "160万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item2_title: {
         "vi": null,
         "en": null,
-        "jp": "メンズ全身脱毛（６回）",
+        "jp": "メンズ全身脱毛（10回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item2_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥242,000",
+        "jp": "15000万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item3_title: {
         "vi": null,
         "en": null,
-        "jp": "ヒゲ（１回）",
+        "jp": "メンズVIO玉さお（セット１回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item3_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥6,600",
+        "jp": "100万ドン",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item4_title: {
         "vi": null,
         "en": null,
-        "jp": "ヒゲ（６回）",
+        "jp": "メンズVIO玉さお（セット１0回）",
         "kr": null,
         "mergeFlag": false
     },
     menu_item6_priceList_item_item4_sub: {
         "vi": null,
         "en": null,
-        "jp": "￥33,000",
+        "jp": "900万ドン",
         "kr": null,
         "mergeFlag": false
     },
-    menu_item6_priceList_item_item5_title: {
-        "vi": null,
-        "en": null,
-        "jp": "メンズVIO玉さお（セット１回）",
-        "kr": null,
-        "mergeFlag": false
-    },
-    menu_item6_priceList_item_item5_sub: {
-        "vi": null,
-        "en": null,
-        "jp": "￥16,500",
-        "kr": null,
-        "mergeFlag": false
-    },
-    menu_item6_priceList_item_item6_title: {
-        "vi": null,
-        "en": null,
-        "jp": "メンズVIO玉さお（セット６回）",
-        "kr": null,
-        "mergeFlag": false
-    },
-    menu_item6_priceList_item_item6_sub: {
-        "vi": "￥99,000",
-        "en": "￥99,000",
-        "jp": "￥99,000",
-        "kr": "￥99,000",
-        "mergeFlag": false
-    },
+   
     menu_item6_priceList_description_item1: {
         "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
         "en": "*All prices include consumption tax.",
@@ -3210,7 +3169,7 @@ const dictLibrary = {
     menu_item7_titleArea_title: {
         "vi": "tẩy lông trẻ em",
         "en": "kids fur removal",
-        "jp": "キッズ脱毛",
+        "jp": "自然の美しさ",
         "kr": "어린이 탈모",
         "mergeFlag": false
     },
@@ -3246,17 +3205,46 @@ const dictLibrary = {
     menu_item7_priceList_item_item1_title: {
         "vi": "1 phần",
         "en": "1 Part",
-        "jp": "１部位",
+        "jp": "痩身(狭窄、健康な膣) ",
         "kr": "1부위",
         "mergeFlag": false
     },
     menu_item7_priceList_item_item1_sub: {
         "vi": "￥1,100",
         "en": "￥1,100",
-        "jp": "￥1,100",
+        "jp": " 女性：30万ドン,男性：30万ドン",
         "kr": "￥1,100",
         "mergeFlag": false
     },
+    menu_item7_priceList_item_item2_title: {
+        "vi": "1 phần",
+        "en": "1 Part",
+        "jp": "水素技術による回収",
+        "kr": "1부위",
+        "mergeFlag": false
+    },
+    menu_item7_priceList_item_item2_sub: {
+        "vi": "￥1,100",
+        "en": "￥1,100",
+        "jp": " 女性：30万ドン,男性：30万ドン",
+        "kr": "￥1,100",
+        "mergeFlag": false
+    },
+    menu_item7_priceList_item_item3_title: {
+        "vi": "1 phần",
+        "en": "1 Part",
+        "jp": "ライトテクノロジーによる肌の若返り",
+        "kr": "1부위",
+        "mergeFlag": false
+    },
+    menu_item7_priceList_item_item3_sub: {
+        "vi": "￥1,100",
+        "en": "￥1,100",
+        "jp": "女性：30万ドン,男性：30万ドン",
+        "kr": "￥1,100",
+        "mergeFlag": false
+    },
+
     menu_item7_priceList_description_item1: {
         "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
         "en": "*All prices include consumption tax.",

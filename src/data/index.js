@@ -315,10 +315,10 @@ export const menu = () => {
                         title: getDict("menu_item4_priceList_item_item4_title"),
                         sub: getDict("menu_item4_priceList_item_item4_sub")
                     },
-                    {
-                        title: getDict("menu_item4_priceList_item_item5_title"),
-                        sub: getDict("menu_item4_priceList_item_item5_sub")
-                    }
+                    // {
+                    //     title: getDict("menu_item4_priceList_item_item5_title"),
+                    //     sub: getDict("menu_item4_priceList_item_item5_sub")
+                    // }
                 ],
                 description: [
                     getDict("menu_item4_priceList_description_item1"),
@@ -444,14 +444,6 @@ export const menu = () => {
                         title: getDict("menu_item6_priceList_item_item4_title"),
                         sub: getDict("menu_item6_priceList_item_item4_sub")
                     },
-                    {
-                        title: getDict("menu_item6_priceList_item_item5_title"),
-                        sub: getDict("menu_item6_priceList_item_item5_sub")
-                    },
-                    {
-                        title: getDict("menu_item6_priceList_item_item6_title"),
-                        sub: getDict("menu_item6_priceList_item_item6_sub")
-                    }
                 ],
                 description: [
                     getDict("menu_item6_priceList_description_item1"),
@@ -495,6 +487,14 @@ export const menu = () => {
                     {
                         title: getDict("menu_item7_priceList_item_item1_title"),
                         sub: getDict("menu_item7_priceList_item_item1_sub")
+                    },
+                    {
+                        title: getDict("menu_item7_priceList_item_item2_title"),
+                        sub: getDict("menu_item7_priceList_item_item2_sub")
+                    },
+                    {
+                        title: getDict("menu_item7_priceList_item_item3_title"),
+                        sub: getDict("menu_item7_priceList_item_item3_sub")
                     }
                 ],
                 description: [
