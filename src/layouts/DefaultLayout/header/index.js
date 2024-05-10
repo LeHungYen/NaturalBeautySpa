@@ -124,10 +124,10 @@ export default function Header(props) {
                 url: routes.news_jobs
             },
 
-            {
-                name: "Product",
-                url: routes.storeProduct
-            },
+            // {
+            //     name: "Product",
+            //     url: routes.storeProduct
+            // },
         ]
     }
 
@@ -178,7 +178,7 @@ export default function Header(props) {
                 <div className={style.container}>
                     <div className={style.about}>
                         <div className={style.title}>
-                            <h3 style={{textDecoration: 'underline'}}>About <br /> Natural Beauty</h3>
+                            <h3 style={{ textDecoration: 'underline' }}>About <br /> Natural Beauty</h3>
                             <p>{getDict("about-popup-sub-title")}</p>
                         </div>
                         <div className={style.detail}>
