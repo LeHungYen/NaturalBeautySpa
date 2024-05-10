@@ -2,7 +2,7 @@ import style from "./index.module.scss"
 import FormInput from "../../components/FormInput/form-input";
 import { useEffect, useRef, useState } from "react";
 import { setShowLoading, updatePageData } from "../../store/action";
-import post from "../../services/api-call";
+import post, {doGet} from "../../services/api-call";
 import { useDispatch } from "react-redux";
 import PageBanner from "../../components/PageBanner";
 import { getDict } from "../../services/dict";
@@ -14,7 +14,18 @@ import { routes } from "../../config/routes";
 // import NotificationPopup from "../../components/NotificationPopup";
 import { SuccessOrErrorPopup } from "../../components/SuccessOrErrorPopup";
 import store from "../../store/store";
+import {get} from "axios";
 export function Reservation() {
+    const [service, setService] = useState([]);
+
+    const getData = async ()=>{
+        const res = await doGet("service");
+        setService(res.data);
+    }
+    useEffect(()=>{
+        getData();
+    },[])
+
     const bannerData = {
         titles: ["ご予約専用フォーム"],
         subTitles: [],
@@ -25,7 +36,6 @@ export function Reservation() {
     // const message = useRef("");
     const isHidden = hasAccessCookie();
     const state = store.getState();
-    console.log(state.lang == "jp")
     const submit = function (e) {
         e.preventDefault();
         const data = getDataFormat();
@@ -53,7 +63,7 @@ export function Reservation() {
         let showServiceError = true;
         for (let i = 0; i < serviceCaptions.length; i++) {
             if (checkboxs[i].checked) {
-                data.serviceNames += i + ",";
+                data.serviceNames +=  (checkboxs[i].getAttribute("id") + ",");
                 showServiceError = false;
             }
         }
@@ -157,24 +167,9 @@ export function Reservation() {
                 <div className={style.control}>
                     ご希望のメニュー※複数選択可
                     <span>(必須)</span>
-                    <FormInput name={""} title={getDict("face_hair_remover")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("arm_hair_remover")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("forearm_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("armpit_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("chest_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("belly_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("r_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("back_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("back_bell_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("as_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("upper_knee_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("foot_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("all_hair_removal")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("vio_part")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("vio_combo")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("weight_reduce")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("hydro_service")} type={"checkbox"} value={0} />
-                    <FormInput title={getDict("book_service")} type={"checkbox"} value={0} />
+                    {service.map((s)=>
+                        <FormInput title={s[state.lang]} type={"checkbox"} value={0} id={s.id}/>
+                    )}
                 </div>
                 <p style={{ display: `${validError.service ? "block" : "none"}` }} className={style.error}>{getDict("reserve_error_service")}</p>
                 <FormInput title={"第一希望日時"} subTitle={"(必須)"} type={"date"} value={""} />
