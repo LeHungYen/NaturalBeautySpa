@@ -2,7 +2,7 @@ import style from "./index.module.scss"
 import React from "react";
 
 export default function FormInput(props) {
-    let {title, subTitle, type, value, time, isHidden, error} = props;
+    let {title, subTitle, type, value, time, isHidden, error, id} = props;
     if(!time) {
         time = [
             "11:00 ~ 13:00",
@@ -47,7 +47,7 @@ export default function FormInput(props) {
                     {title}
                     <span>{subTitle}</span>
                 </label>
-                <input name={""} className={type} type={type} />
+                <input id={id} name={""} className={type} type={type} />
                 <p style={{display:`${error?'block':'none'}`}} className={style.error}>{error}</p>
                 {dateCbx()}
             </div>
