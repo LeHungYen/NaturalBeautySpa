@@ -93,12 +93,9 @@
 
 .container .item .row1 .img .listImg {
     width: 460px;
-    // height: 82px;
     margin-top: 12px;
-
     padding: 10px 0px;
     height: 102px;
-    // background-color: #f5f5f5;
     background-color: #ffffff;
     position: relative;
 
@@ -111,7 +108,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px 5px;
+        padding: 10px 4px;
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -126,11 +123,11 @@
 
 
     .btnNext {
-        right: -13px;
+        right: -30px;
     }
 
     .btnPrev {
-        left: -13px;
+        left: -30px;
     }
 
     .btnNext:hover,
@@ -167,8 +164,8 @@
     scroll-behavior: smooth;
     transition: transform 0.5s ease;
     height: 82px;
-    margin-left: 25px !important;
-    margin-right: 25px !important;
+    // margin-left: 25px !important;
+    // margin-right: 25px !important;
 }
 
 .carouselImgItem {
