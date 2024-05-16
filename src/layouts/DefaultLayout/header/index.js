@@ -124,10 +124,10 @@ export default function Header(props) {
                 url: routes.news_jobs
             },
 
-            // {
-            //     name: "Product",
-            //     url: routes.storeProduct
-            // },
+            {
+                name: "Product",
+                url: routes.storeProduct
+            },
         ]
     }
 

@@ -6,7 +6,8 @@
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.1);
+    // background-color: rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     padding-bottom: 100px;
 }
 
@@ -59,12 +60,14 @@
 }
 
 .container .item {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 1000px;
     // height: 790px;
     height: 650px;
     margin: 16px auto 40px auto;
     padding: 24px 40px;
     background-color: #ffffff;
+    border-radius: 5px;
 }
 
 .container .item .row1 {
@@ -90,8 +93,47 @@
 
 .container .item .row1 .img .listImg {
     width: 460px;
-    height: 82px;
     margin-top: 12px;
+    padding: 10px 0px;
+    height: 102px;
+    background-color: #ffffff;
+    position: relative;
+
+    .btnPrev,
+    .btnNext {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        // left: -28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 4px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        background-color: #ffffff;
+
+        .icon {
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.5)
+        }
+    }
+
+
+    .btnNext {
+        right: -30px;
+    }
+
+    .btnPrev {
+        left: -30px;
+    }
+
+    .btnNext:hover,
+    .btnPrev:hover {
+        background-color: #dcdcdc;
+    }
 }
 
 .container .item .row1 .img .listImg ul {
@@ -111,6 +153,45 @@
         object-fit: cover;
     }
 }
+
+//
+
+.carouselImg {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    transition: transform 0.5s ease;
+    height: 82px;
+    // margin-left: 25px !important;
+    // margin-right: 25px !important;
+}
+
+.carouselImgItem {
+    width: 82px;
+    height: 82px;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.carouselImgItem img {
+    width: 82px;
+    height: 82px;
+}
+
+.carouselImgItem img:hover {
+    transform: scale(1.1);
+}
+
+
+//
 
 .container .item .row1 .infor {
     width: 420px;
@@ -286,6 +367,115 @@
     background-color: #454545;
 }
 
+/* index.module.scss */
+.zoomImg {
+    display: flex;
+    flex-direction: column;
+    // min-width: 70vw;
+    // max-width: 90vw;
+    width: 70vw;
+    height: 80vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.mainImage {
+    height: calc(100% - 150px - 25px - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    // background-color: #f5f5f5;
+}
+
+.mainImage img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+.mainImage img.zoomed {
+    transform: scale(2);
+    // cursor: zoom-out;
+}
+
+.listImage {
+    margin-top: 25px;
+    padding: 10px 0px;
+    height: 170px;
+    // background-color: #f5f5f5;
+    position: relative;
+
+    .btnPrev,
+    .btnNext {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        // left: -28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 5px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        background-color: #ffffff;
+
+        .icon {
+            font-size: 30px;
+            color: rgba(0, 0, 0, 0.5)
+        }
+    }
+
+    .btnNext {
+        right: -20px;
+    }
+
+    .btnPrev {
+        left: -20px;
+    }
+
+    .btnNext:hover,
+    .btnPrev:hover {
+        background-color: #dcdcdc;
+    }
+}
+
+.carouselImage {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    transition: transform 0.5s ease;
+
+    margin-left: 35px !important;
+    margin-right: 35px !important;
+}
+
+.carouselImageItem {
+    width: 150px;
+    height: 150px;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.carouselImageItem img {
+    width: 150px;
+    height: 150px;
+}
+
+.carouselImageItem img:hover {
+    transform: scale(1.1);
+}
 
 
 @media screen and (max-width:1250px) {

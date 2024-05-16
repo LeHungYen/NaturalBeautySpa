@@ -1,7 +1,7 @@
 import style from './index.module.scss'
 import React from "react";
 import PageBanner from "../../components/PageBanner";
-import {getDict} from "../../services/dict";
+import { getDict } from "../../services/dict";
 
 export function Product() {
     const detail = {
@@ -103,7 +103,7 @@ export function Product() {
                 ],
                 buttons: [
                     {
-                        txt:  getDict("product_btn_txt_1"),
+                        txt: getDict("product_btn_txt_1"),
                         url: "/contact",
                     },
                 ],
@@ -163,22 +163,22 @@ export function Product() {
                     {
                         img: "https://mareve.co.jp/wp-content/uploads/2020/11/pixta_54128602_M-1536x1024.jpg",
                         text: getDict("product_page_txt_24"),
-                        title:getDict("product_page_title_8"),
+                        title: getDict("product_page_title_8"),
                     },
                     {
                         img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_55105556_M-1536x1024.jpg",
                         text: getDict("product_page_txt_25"),
-                        title:getDict("product_page_title_9"),
+                        title: getDict("product_page_title_9"),
                     },
                     {
                         img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_61783866_M-1536x1024.jpg",
                         text: getDict("product_page_txt_26"),
-                        title:getDict("product_page_title_10"),
+                        title: getDict("product_page_title_10"),
                     },
                     {
                         img: "https://mareve.co.jp/wp-content/uploads/2020/10/pixta_53648155_M-1536x1024.jpg",
                         text: getDict("product_page_txt_27"),
-                        title:getDict("product_page_title_11"),
+                        title: getDict("product_page_title_11"),
                     },
                 ]
             },
@@ -197,7 +197,7 @@ export function Product() {
                 ],
                 buttons: [
                     {
-                        txt:  getDict("product_btn_txt_1"),
+                        txt: getDict("product_btn_txt_1"),
                         url: "/contact",
                     },
                 ],
@@ -208,62 +208,63 @@ export function Product() {
 
     return (
         <div className={style.container}>
-            <PageBanner image="https://mareve.co.jp/wp-content/uploads/2020/10/1101417345-scaled.jpg" titles={["プロデュース商品"]} subTitles={[]}/>
+            <PageBanner image="https://mareve.co.jp/wp-content/uploads/2020/10/1101417345-scaled.jpg" titles={["プロデュース商品"]} subTitles={[]} />
             <div className={style.main}>
+           
                 <div className={style.content}>
-                    {detail.content.map((con, i)=>
+                    {detail.content.map((con, i) =>
                         <React.Fragment>
-                            <div key={"img" + i} className={style.imgs} style={{gridTemplateColumns: `repeat(${con.imgs.length}, 1fr`, display: `${con.imgs.length > 0 ?'grid':'none'}`}}>
-                                {con.imgs.map((img, i)=>
-                                    <img key={i} src={img} alt=""/>
+                            <div key={"img" + i} className={style.imgs} style={{ gridTemplateColumns: `repeat(${con.imgs.length}, 1fr`, display: `${con.imgs.length > 0 ? 'grid' : 'none'}` }}>
+                                {con.imgs.map((img, i) =>
+                                    <img key={i} src={img} alt="" />
                                 )}
                             </div>
-                            <div key={"title" +i} className={style.title} style={{display: `${con.title.length > 0 ?'flex':'none'}`}}>
-                                {con.title.map((t, i)=>(
+                            <div key={"title" + i} className={style.title} style={{ display: `${con.title.length > 0 ? 'flex' : 'none'}` }}>
+                                {con.title.map((t, i) => (
                                     <React.Fragment>
                                         <h3 key={i}>{t}</h3>
                                     </React.Fragment>
                                 ))}
                             </div>
-                            <div key={"txt" +i} className={style.text} style={{display: `${con.txt.length > 0 ?'unset':'none'}`}}>
-                                {con.txt.map((t, i)=>(
+                            <div key={"txt" + i} className={style.text} style={{ display: `${con.txt.length > 0 ? 'unset' : 'none'}` }}>
+                                {con.txt.map((t, i) => (
                                     <React.Fragment>
-                                        <p key={i} style={{textAlign: t.center ?"center":"left"}}>
+                                        <p key={i} style={{ textAlign: t.center ? "center" : "left" }}>
                                             {t.text}
                                         </p>
-                                        {t.gap? <br/>: <></>}
+                                        {t.gap ? <br /> : <></>}
                                     </React.Fragment>
                                 ))}
                             </div>
                             {
-                                con.buttons?
+                                con.buttons ?
                                     <div className={style.buttons}>
-                                        {con.buttons.map((b, i)=>
+                                        {con.buttons.map((b, i) =>
                                             <a href={b.url} key={"button" + i}>
                                                 <button className={style.button}>{b.txt}</button>
                                             </a>
                                         )}
                                     </div>
-                                    :<></>
+                                    : <></>
                             }
                             {
-                                con.blockImage?
+                                con.blockImage ?
                                     <div className={style.bimg}>
-                                        <img src={con.blockImage}  alt=""/>
-                                    </div>:
+                                        <img src={con.blockImage} alt="" />
+                                    </div> :
                                     <></>
                             }
                             {
                                 con.cards ?
-                                    con.cards.map((c, i)=>(
+                                    con.cards.map((c, i) => (
                                         <React.Fragment>
-                                            <div key={"card" + i} className={style.cards} style={{background: `${c.background ? c.background : 'none'}`}}>
+                                            <div key={"card" + i} className={style.cards} style={{ background: `${c.background ? c.background : 'none'}` }}>
                                                 <div>
                                                     <img src={c.img} alt="" />
                                                 </div>
                                                 <div>
-                                                    {c.title?
-                                                        <h3>{c.title}</h3>:
+                                                    {c.title ?
+                                                        <h3>{c.title}</h3> :
                                                         <></>
                                                     }
                                                     <span>
@@ -271,7 +272,7 @@ export function Product() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div key={"diviver" + i} className={style.diviner} style={{display:`${i === con.cards.length -1? 'none':'unset'}`}}/>
+                                            <div key={"diviver" + i} className={style.diviner} style={{ display: `${i === con.cards.length - 1 ? 'none' : 'unset'}` }} />
                                         </React.Fragment>
                                     ))
                                     :
@@ -282,23 +283,23 @@ export function Product() {
                     )}
                     {
                         detail.cards ?
-                            detail.cards.map((c, i)=>(
+                            detail.cards.map((c, i) => (
                                 <React.Fragment>
-                                    <div key={"card" + i} className={style.cards} style={{background: `${c.background ? c.background : 'none'}`}}>
+                                    <div key={"card" + i} className={style.cards} style={{ background: `${c.background ? c.background : 'none'}` }}>
                                         <div>
                                             <img src={c.img} alt="" />
                                         </div>
                                         <div>
-                                            {c.title?
-                                                <h3>{c.title}</h3>:
+                                            {c.title ?
+                                                <h3>{c.title}</h3> :
                                                 <></>
                                             }
                                             <span>
-                                        {c.text}
-                                    </span>
+                                                {c.text}
+                                            </span>
                                         </div>
                                     </div>
-                                    <div key={"diviver" + i} className={style.diviner}/>
+                                    <div key={"diviver" + i} className={style.diviner} />
                                 </React.Fragment>
                             ))
                             :
