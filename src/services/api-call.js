@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://api.naturalbeautyjp.com';
+const baseUrl = 'http://localhost:8080';
 export default async function post(data, endpoint) {
     try {
         const response = await axios.post(

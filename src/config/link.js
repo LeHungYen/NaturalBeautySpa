@@ -1,4 +1,4 @@
-export const baseUrl = 'https://api.naturalbeautyjp.com';
+export const baseUrl = 'http://localhost:8080';
 
 export const accountServiceUrl = {
     login: "login",
@@ -20,4 +20,13 @@ export const resumeServiceUrl = {
     get: "management/resume",
     update: "management/resume",
     delete: "management/resume",
+}
+
+export const productServiceUrl = {
+    get: "product",
+    getById: "product/getById",
+}
+
+export const categoryServiceUrl = {
+    get: "category",
 }
