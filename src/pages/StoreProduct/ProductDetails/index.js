@@ -36,7 +36,6 @@ function ProductDetail() {
     }
 
     useEffect(() => {
-
         if (language === languageEnum.VN) {
             let formattedResponse = products.map(item => {
                 if (item.languageVN.enable) {
@@ -54,12 +53,60 @@ function ProductDetail() {
             }).filter(item => !!item);
 
 
-            const repeatTimes = 20;
-            const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
+            // const repeatTimes = 20;
+            // const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
 
-            setItems(repeatedItems);
-            // setItems(formattedResponse)
+            // setItems(repeatedItems);
+            setItems(formattedResponse)
 
+        } else if (language === languageEnum.SK) {
+            let formattedResponse = products.map(item => {
+                if (item.languageSK.enable) {
+                    if (item.id != id && item.languageSK.enable) {
+                        return {
+                            id: item.id,
+                            name: item.languageSK.name,
+                            price: formatCurrency(item.languageSK.price, 'ko-KR', 'KRW'),
+                            img: item.coverImg,
+                            description: item.languageSK.description,
+                            categoryId: item.categoryId
+                        };
+                    }
+                }
+            }).filter(item => !!item);
+            setItems(formattedResponse)
+        } else if (language === languageEnum.EN) {
+            let formattedResponse = products.map(item => {
+                if (item.languageEN.enable) {
+                    if (item.id != id && item.languageEN.enable) {
+                        return {
+                            id: item.id,
+                            name: item.languageEN.name,
+                            price: formatCurrency(item.languageEN.price, 'en-US', 'USD'),
+                            img: item.coverImg,
+                            description: item.languageEN.description,
+                            categoryId: item.categoryId
+                        };
+                    }
+                }
+            }).filter(item => !!item);
+            setItems(formattedResponse)
+        } else if (language === languageEnum.JP) {
+            let formattedResponse = products.map(item => {
+                if (item.languageJP.enable) {
+                    if (item.id != id && item.languageJP.enable) {
+                        return {
+                            id: item.id,
+                            name: item.languageJP.name,
+                            price: formatCurrency(item.languageJP.price, 'ja-JP', 'JPY'),
+                            img: item.coverImg,
+                            description: item.languageJP.description,
+                            categoryId: item.categoryId
+                        };
+                    }
+                }
+            }).filter(item => !!item);
+            setItems(formattedResponse)
         }
     }, [products, id])
 
@@ -88,9 +135,33 @@ function ProductDetail() {
             setItem({
                 name: data.languageVN.name,
                 price: formatCurrency(data.languageVN.price, 'vi-VN', 'VND'),
-                // imgs: data.imgs,
-                imgs: [...data.imgs, ...data.imgs], // Gấp đôi mảng imgs
+                imgs: data.imgs,
+                // imgs: [...data.imgs, ...data.imgs], // Gấp đôi mảng imgs
                 description: data.languageVN.description,
+            })
+            setImgSelected(data.imgs[0].img);
+        } else if (language == languageEnum.SK && data) {
+            setItem({
+                name: data.languageSK.name,
+                price: formatCurrency(data.languageSK.price, 'ko-KR', 'KRW'),
+                imgs: data.imgs,
+                description: data.languageSK.description,
+            })
+            setImgSelected(data.imgs[0].img);
+        } else if (language == languageEnum.JP && data) {
+            setItem({
+                name: data.languageJP.name,
+                price: formatCurrency(data.languageJP.price, 'ja-JP', 'JPY'),
+                imgs: data.imgs,
+                description: data.languageJP.description,
+            })
+            setImgSelected(data.imgs[0].img);
+        } else if (language == languageEnum.EN && data) {
+            setItem({
+                name: data.languageEN.name,
+                price: formatCurrency(data.languageEN.price, 'en-US', 'USD'),
+                imgs: data.imgs,
+                description: data.languageEN.description,
             })
             setImgSelected(data.imgs[0].img);
         }
@@ -128,50 +199,32 @@ function ProductDetail() {
 
     const [item, setItem] = useState(items[0]);
     const carouselRef = useRef(null);
-    function handleNext() {
-        if (carouselRef.current) {
-            carouselRef.current.scrollLeft += 230;
-        }
-    }
-
-    function handlePrev() {
-        if (carouselRef.current) {
-            carouselRef.current.scrollLeft -= 230;
-        }
-    }
-
-
     const carouselImageRef = useRef(null);
-    function handleNext1() {
-        if (carouselImageRef.current) {
-            carouselImageRef.current.scrollLeft += 150;
-        }
-    }
-
-    function handlePrev1() {
-        if (carouselImageRef.current) {
-            carouselImageRef.current.scrollLeft -= 150;
-        }
-    }
-
-
     const carouselImgRef = useRef(null);
-    function handleNext2() {
-        if (carouselImgRef.current) {
-            carouselImgRef.current.scrollLeft += 82;
+    const DIRECTION = {
+        NEXT: 'next',
+        PREV: 'prev'
+    };
+
+    function handleScroll(ref, direction, distance) {
+        if (ref.current) {
+            if (direction === DIRECTION.NEXT) {
+                ref.current.scrollLeft += distance;
+            } else if (direction === DIRECTION.PREV) {
+                ref.current.scrollLeft -= distance;
+            }
         }
     }
 
-    function handlePrev2() {
-        if (carouselImgRef.current) {
-            carouselImgRef.current.scrollLeft -= 82;
-        }
-    }
     // popup
     const [popupZoom, setPopupZoom] = useState(false)
 
-
-
+    //
+    const [showImgButton, setShowImgButton] = useState(false);
+    useEffect(() => {
+        const hasOverflow = carouselImgRef.current.scrollWidth > carouselImgRef.current.clientWidth;
+        setShowImgButton(hasOverflow);
+    }, [item]);
 
     return (
         <div className={style.container}>
@@ -203,9 +256,14 @@ function ProductDetail() {
                                     ><img src={img.img} /></div>
                                 ))}
                             </div>
+                            {showImgButton &&
+                                <button className={style.btnPrev} onClick={() => handleScroll(carouselImgRef, DIRECTION.PREV, 82)}><GrPrevious className={style.icon} /></button>
+                            }
+                            {showImgButton &&
+                                <button className={style.btnNext} onClick={() => handleScroll(carouselImgRef, DIRECTION.NEXT, 82)}><GrNext className={style.icon} /></button>
+                            }
 
-                            <button className={style.btnPrev} onClick={() => handlePrev2()}><GrPrevious className={style.icon} /></button>
-                            <button className={style.btnNext} onClick={() => handleNext2()}><GrNext className={style.icon} /></button>
+
                         </div>
                     </div>
 
@@ -249,8 +307,8 @@ function ProductDetail() {
                         </div>
                     ))}
                 </div>
-                <button className={style.btnPrev} onClick={() => handlePrev()}> <GrPrevious className={style.icon} /></button>
-                <button className={style.btnNext} onClick={() => handleNext()}> <GrNext className={style.icon} /></button>
+                <button className={style.btnPrev} onClick={() => handleScroll(carouselRef, DIRECTION.PREV, 230)}> <GrPrevious className={style.icon} /></button>
+                <button className={style.btnNext} onClick={() => handleScroll(carouselRef, DIRECTION.NEXT, 230)}> <GrNext className={style.icon} /></button>
             </div>
 
             <a href={routes.storeProduct}>
@@ -275,8 +333,8 @@ function ProductDetail() {
                             ))}
                         </div>
 
-                        <button className={style.btnPrev} onClick={() => handlePrev1()}><GrPrevious className={style.icon} /></button>
-                        <button className={style.btnNext} onClick={() => handleNext1()}><GrNext className={style.icon} /></button>
+                        <button className={style.btnPrev} onClick={() => handleScroll(carouselImageRef, DIRECTION.PREV, 150)}><GrPrevious className={style.icon} /></button>
+                        <button className={style.btnNext} onClick={() => handleScroll(carouselImageRef, DIRECTION.NEXT, 150)}><GrNext className={style.icon} /></button>
                     </div>
                 </div>
             </Popup >
