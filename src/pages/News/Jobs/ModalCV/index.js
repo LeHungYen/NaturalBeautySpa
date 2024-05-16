@@ -8,7 +8,8 @@ import { ApiService } from "../../../../services/ApiService";
 import { baseUrl, resumeServiceUrl } from "../../../../config/link";
 import { useLocation } from 'react-router-dom';
 import { SuccessOrErrorPopup } from "../../../../components/SuccessOrErrorPopup";
-function ModalCV({ modal, setModal, job }) {
+import { Popup } from "../../../../components/Popup";
+function ModalCV({ modal, setModal, job, index }) {
     const apiService = new ApiService(baseUrl)
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
