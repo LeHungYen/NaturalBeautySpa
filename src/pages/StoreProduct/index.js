@@ -250,7 +250,7 @@ function StoreProduct() {
             </div>
 
             {
-                items.length > 0 &&
+                products.length > 0 &&
                 <div>
                     <div className={style.productFilter}>
                         <div className={style.filter}>
