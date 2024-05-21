@@ -221,10 +221,22 @@ function ProductDetail() {
 
     //
     const [showImgButton, setShowImgButton] = useState(false);
+
+    const checkCarouselImgRefOverflow = () => {
+        if (carouselImgRef.current) {
+            const hasOverflow = carouselImgRef.current.scrollWidth > carouselImgRef.current.clientWidth;
+            setShowImgButton(hasOverflow);
+        }
+    };
     useEffect(() => {
-        const hasOverflow = carouselImgRef.current.scrollWidth > carouselImgRef.current.clientWidth;
-        setShowImgButton(hasOverflow);
+        checkCarouselImgRefOverflow();
+        window.addEventListener('resize', checkCarouselImgRefOverflow);
+        return () => {
+            window.removeEventListener('resize', checkCarouselImgRefOverflow);
+        };
     }, [item]);
+
+    //        
 
     return (
         <div className={style.container}>
@@ -232,11 +244,11 @@ function ProductDetail() {
                 <div className={style.bannerBackground}>
                     <img src={banner}></img>
                 </div>
-                <div className={style.bannerText}>
+                {/* <div className={style.bannerText}>
                     <div className={style.text}>
-                        {/* <p className={style.title}>個人情報保護方針</p> */}
+                        <p className={style.title}>個人情報保護方針</p>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className={style.item}>
