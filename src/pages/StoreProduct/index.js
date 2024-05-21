@@ -79,11 +79,11 @@ function StoreProduct() {
                 formattedResponse.sort((a, b) => b.price - a.price);
             }
 
-            // const repeatTimes = 19;
-            // const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
+            const repeatTimes = 19;
+            const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
 
-            // setItemsFormated(repeatedItems);
-            setItemsFormated(formattedResponse)
+            setItemsFormated(repeatedItems);
+            // setItemsFormated(formattedResponse)
             // setItemsFormated([])
         } else if (language === languageEnum.SK) {
             let formattedResponse = products.map(item => {
@@ -239,19 +239,20 @@ function StoreProduct() {
         <div className={style.container}>
             <div className={style.banner}>
                 <div className={style.bannerBackground}>
-                    {/* <img src="https://baseec-img-mng.akamaized.net/images/user/logo/180c45ea74bbc6b53b7b0088b9a8ba71.png?imformat=generic&q=90&im=Resize,width=2048,aspect=fit,type=downsize"></img> */}
                     <img src={banner}></img>
                 </div>
-                <div className={style.bannerText}>
+                {/* <div className={style.bannerText}>
                     <div className={style.text}>
-                        {/* <p className={style.title}>個人情報保護方針</p> */}
+                        <p className={style.title}>個人情報保護方針</p>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {
                 products.length > 0 &&
                 <div>
+
+
                     <div className={style.productFilter}>
                         <div className={style.filter}>
                             <select
@@ -297,31 +298,6 @@ function StoreProduct() {
                         </div>
                     </div>
 
-                    {/* <div className={style.products}>
-
-                {items.slice(0, visibleItems).map((item, index) => (
-
-                    <a href={`${routes.productDetail}?id=${item.id}`}>
-                        <div className={style.item} key={index}>
-                            <img src={item.img} />
-
-                            <div className={style.overlay}>
-                                <p className={style.title}>{item.name.length > 25 ? item.name.slice(0, 25) + '...' : item.name}</p>
-                                <p className={style.price}>{item.priceFormated}</p>
-                                <p className={style.description}>{item.description.length > 55 ? item.description.slice(0, 55) + '...' : item.description}</p>
-                            </div>
-                        </div>
-                    </a>
-                ))}
-
-            </div> */}
-
-                    {/* {visibleItems < items.length &&
-                <div className={style.loadMore}>
-                    <button onClick={handleLoadMore}>Load more</button>
-                </div>
-            } */}
-
                     <div className={style.products}>
 
                         {items.map((item, index) => (
@@ -331,7 +307,8 @@ function StoreProduct() {
                                     <img src={item.img} />
 
                                     <div className={style.overlay}>
-                                        <p className={style.title}>{item.name.length > 25 ? item.name.slice(0, 25) + '...' : item.name}</p>
+                                        {/* <p className={style.title}>{item.name.length > 25 ? item.name.slice(0, 25) + '...' : item.name}</p> */}
+                                        <p className={style.title}>{item.name}</p>
                                         <p className={style.price}>{item.priceFormated}</p>
                                         <p className={style.description}>{item.description.length > 55 ? item.description.slice(0, 55) + '...' : item.description}</p>
                                     </div>
