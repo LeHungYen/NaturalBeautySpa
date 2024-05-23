@@ -79,11 +79,11 @@ function StoreProduct() {
                 formattedResponse.sort((a, b) => b.price - a.price);
             }
 
-            const repeatTimes = 19;
-            const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
+            // const repeatTimes = 19;
+            // const repeatedItems = Array.from({ length: repeatTimes }, () => formattedResponse).flat();
 
-            setItemsFormated(repeatedItems);
-            // setItemsFormated(formattedResponse)
+            // setItemsFormated(repeatedItems);
+            setItemsFormated(formattedResponse)
             // setItemsFormated([])
         } else if (language === languageEnum.SK) {
             let formattedResponse = products.map(item => {

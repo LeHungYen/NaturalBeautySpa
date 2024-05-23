@@ -2085,13 +2085,13 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    courseProduct_item1_textCenter: {
-        "vi": null,
-        "en": null,
-        "jp": "技術を学ぶ",
-        "kr": null,
-        "mergeFlag": false
-    },
+    // courseProduct_item1_textCenter: {
+    //     "vi": null,
+    //     "en": null,
+    //     "jp": "技術を学ぶ",
+    //     "kr": null,
+    //     "mergeFlag": false
+    // },
     courseProduct_item1_textBelow: {
         "vi": null,
         "en": null,
@@ -2099,13 +2099,13 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-    courseProduct_item2_textCenter: {
-        "vi": null,
-        "en": null,
-        "jp": "商品を見る",
-        "kr": null,
-        "mergeFlag": false
-    },
+    // courseProduct_item2_textCenter: {
+    //     "vi": null,
+    //     "en": null,
+    //     "jp": "商品を見る",
+    //     "kr": null,
+    //     "mergeFlag": false
+    // },
     courseProduct_item2_textBelow: {
         "vi": null,
         "en": null,

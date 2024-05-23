@@ -51,13 +51,13 @@ export const courseProduct = () => {
     return [
         {
             img: "https://mareve.co.jp/wp-content/uploads/2021/01/c58d3ef034ba53863327adf4365297563_4620693218548729117_210113_20.jpg",
-            textCenter: getDict("courseProduct_item1_textCenter"),
+            // textCenter: getDict("courseProduct_item1_textCenter"),
             textBelow: getDict("courseProduct_item1_textBelow"),
             url: ""
         },
         {
             img: "https://mareve.co.jp/wp-content/uploads/2020/10/110143683-scaled.jpg",
-            textCenter: getDict("courseProduct_item2_textCenter"),
+            // textCenter: getDict("courseProduct_item2_textCenter"),
             textBelow: getDict("courseProduct_item2_textBelow"),
             url: routes.product
         },
