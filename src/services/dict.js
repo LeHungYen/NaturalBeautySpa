@@ -13,6 +13,18 @@ export function getDict(key) {
 }
 
 const dictLibrary = {
+    new_banner_animated_text: {
+        "vi": "人生を豊かにする美しさと自信を",
+        "en": "人生を豊かにする美しさと自信を",
+        "jp": "人生を豊かにする美しさと自信を",
+        "kr": "人生を豊かにする美しさと自信を",
+    },
+    new_banner_subtitle: {
+        "vi": "日本でNo１の美容脱毛の施術を",
+        "en": "日本でNo１の美容脱毛の施術を",
+        "jp": "日本でNo１の美容脱毛の施術を",
+        "kr": "日本でNo１の美容脱毛の施術を",
+    },
     face_hair_remover: {
         "vi": "Triệt lông mặt",
         "en": "Facial hair removal",
@@ -1213,7 +1225,21 @@ const dictLibrary = {
     about_popup_description: {
         "vi": null,
         "en": null,
-        "jp": "株式会社マリーブは、代表がもつ10万人の施術経験を元にしたハイクオリティな脱毛サロンを運営し、トップレベルの脱毛技術が学べるスクール、プロデュース商品など、老若男女問わず「素肌の美しさ」を求める方へのサービスをご提供しております。",
+        "jp": "Natural Beautyは、日本市場のワックスを活用した脱毛施術の第一人者である福田麻理先生の技術を実施するベトナムで唯一のスパです。フェイシャル専用のワックスを利用した美顔と美白が当店の最大の特徴ですが、その他も、全身のあらゆる部位の脱毛施術、機械による痩身、よもぎ蒸しによる体内環境の改善サービスもご提供します。",
+        "kr": null,
+        "mergeFlag": false
+    },
+    about_popup_description1: {
+        "vi": null,
+        "en": null,
+        "jp": "店内は、設備機器と使用する美容商材は全て日本製でご安心いただける施術環境を整えているとともに、美容プロショップ向けの日本製化粧品も各種取り揃えています",
+        "kr": null,
+        "mergeFlag": false
+    },
+    about_popup_description2: {
+        "vi": null,
+        "en": null,
+        "jp": "最高の技術をご体験ください。",
         "kr": null,
         "mergeFlag": false
     },
