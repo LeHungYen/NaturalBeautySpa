@@ -9,25 +9,25 @@ function CourseProduct({ windowWidth }) {
     const courseProduct = data();
 
     // Update font size based on window width
-    const [textCenterFS, setTextCenterFS] = useState(24);
-    const [textCenterW, setTextCenterW] = useState(150);
-    const [textCenterH, setTextCenterH] = useState(150);
+    // const [textCenterFS, setTextCenterFS] = useState(24);
+    // const [textCenterW, setTextCenterW] = useState(150);
+    // const [textCenterH, setTextCenterH] = useState(150);
     const [textBelowH, setTextBelowH] = useState(60)
 
     useEffect(() => {
-        if (windowWidth < 950) {
-            setTextCenterFS(18);
-        } else {
-            setTextCenterFS(24);
-        }
+        // if (windowWidth < 950) {
+        //     setTextCenterFS(18);
+        // } else {
+        //     setTextCenterFS(24);
+        // }
 
         if (windowWidth < 550) {
-            setTextCenterW(100);
-            setTextCenterH(100);
+            // setTextCenterW(100);
+            // setTextCenterH(100);
             setTextBelowH(50);
         } else {
-            setTextCenterW(150);
-            setTextCenterH(150);
+            // setTextCenterW(150);
+            // setTextCenterH(150);
             setTextBelowH(60)
         }
 
@@ -40,7 +40,7 @@ function CourseProduct({ windowWidth }) {
                     return (
                         <div key={index} className={style.item}>
                             <a href={item.url}>
-                                <HomeItem textCenterW={textCenterW} textCenterH={textCenterH} textCenterFS={textCenterFS} textBelowH={textBelowH} textBelowFS={"16"} infor={item} />
+                                <HomeItem  textBelowH={textBelowH} textBelowFS={"16"} infor={item} />
                             </a>
                         </div>
 
