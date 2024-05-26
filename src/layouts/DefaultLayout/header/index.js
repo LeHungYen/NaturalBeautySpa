@@ -125,7 +125,7 @@ export default function Header(props) {
             },
 
             {
-                name: "Product",
+                name: "プロダクト",
                 url: routes.storeProduct
             },
         ]

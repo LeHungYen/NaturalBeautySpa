@@ -1662,28 +1662,28 @@ const dictLibrary = {
     home_product_mainText_item1: {
         "vi": null,
         "en": null,
-        "jp": "学ぶ",
+        "jp": "痩身",
         "kr": null,
         "mergeFlag": false
     },
     home_product_subText_item1: {
         "vi": null,
         "en": null,
-        "jp": "M beauty academy 公式サイト",
+        "jp": " そうしん",
         "kr": null,
         "mergeFlag": false
     },
     home_product_mainText_item2: {
         "vi": null,
         "en": null,
-        "jp": "買う",
+        "jp": "よもぎ蒸し",
         "kr": null,
         "mergeFlag": false
     },
     home_product_subText_item2: {
         "vi": null,
         "en": null,
-        "jp": "オンラインショップ",
+        "jp": "よもぎむし",
         "kr": null,
         "mergeFlag": false
     },
