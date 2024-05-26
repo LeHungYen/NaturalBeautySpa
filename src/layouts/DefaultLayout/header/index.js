@@ -115,10 +115,10 @@ export default function Header(props) {
                     },
                 ]
             },
-            {
-                name: getDict("nav-reservation"),
-                url: "/reservation"
-            },
+            // {
+            //     name: getDict("nav-reservation"),
+            //     url: "/reservation"
+            // },
             {
                 name: "ご記入募集フォーム",
                 url: routes.news_jobs
@@ -179,10 +179,15 @@ export default function Header(props) {
                     <div className={style.about}>
                         <div className={style.title}>
                             <h3 style={{ textDecoration: 'underline' }}>About <br /> Natural Beauty</h3>
-                            <p>{getDict("about-popup-sub-title")}</p>
                         </div>
                         <div className={style.detail}>
                             {getDict("about-popup-description")}
+                        </div>
+                        <div className={style.detail}>
+                            {getDict("about-popup-description1")}
+                        </div>
+                        <div className={style.detail}>
+                            {getDict("about-popup-description2")}
                         </div>
                         <a href={routes.about}><button onClick={() => setShowPopup("none")}>{getDict("about-popup-btn")}</button></a>
                     </div>

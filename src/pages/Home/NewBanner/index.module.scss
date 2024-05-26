@@ -1,0 +1,59 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: white;
+  font-weight: 700;
+  font-size: 22px;
+  .animated{
+    overflow: visible;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px 0px;
+    height: fit-content;
+    div {
+      animation: animation 3s linear infinite;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .img {
+    width: 100%;
+    height: auto;
+  }
+  .subtitle {
+    text-align: center;
+    padding: 5px 20px 20px;
+  }
+}
+
+@keyframes animation {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(110%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    .animated {
+      padding: 20px 20px 10px !important;
+    }
+  }
+}

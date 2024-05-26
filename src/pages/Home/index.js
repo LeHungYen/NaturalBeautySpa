@@ -13,6 +13,7 @@ import { getLayoutDict } from "../../services/request-body-for-api";
 import Banner from "./Banner";
 import Loading from "../../components/Loading/loading";
 import store from "../../store/store";
+import NewBanner from "./NewBanner/NewBanner";
 
 export function Home(props) {
     const { layout } = props;
@@ -34,9 +35,12 @@ export function Home(props) {
 
     return (
         <div className={style.container}>
+            {/*<div>*/}
+            {/*    {store.getState().dictLibrary}*/}
+            {/*    <Banner />*/}
+            {/*</div>*/}
             <div>
-                {store.getState().dictLibrary}
-                <Banner />
+                <NewBanner/>
             </div>
             <div className={style.service}>
                 <Service windowWidth={windowWidth} />
