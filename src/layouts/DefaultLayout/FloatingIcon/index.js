@@ -25,11 +25,17 @@ export default function SettingIcon(props) {
             //do nothing
         });
     }, []);
+
+    const triggerChangeLang = function(key) {
+        changeLang(key);
+        document.documentElement.setAttribute("lang", key);
+    }
+
     return (
         <div className={style.icon}>
             <IoMdSettings />
             <div className={style.language}>
-                {img.map((i, idx) => <img onClick={()=> changeLang(lang[idx])} key={idx} src={i}/>)}
+                {img.map((i, idx) => <img onClick={()=> triggerChangeLang(lang[idx])} key={idx} src={i}/>)}
             </div>
         </div>
     )
