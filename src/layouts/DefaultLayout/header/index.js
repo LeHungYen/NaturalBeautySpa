@@ -102,6 +102,10 @@ export default function Header(props) {
                 url: "/company",
                 items: [
                     {
+                        caption: "プロダクト",
+                        url: routes.storeProduct
+                    },
+                    {
                         caption: getDict("nav-drawer-sub-3-1"),
                         url: routes.news,
                     },
@@ -113,6 +117,7 @@ export default function Header(props) {
                         caption: getDict("nav-drawer-sub-3-3"),
                         url: routes.privacyPolicy,
                     },
+
                 ]
             },
             {
@@ -124,10 +129,7 @@ export default function Header(props) {
                 url: routes.news_jobs
             },
 
-            {
-                name: "Product",
-                url: routes.storeProduct
-            },
+
         ]
     }
 
