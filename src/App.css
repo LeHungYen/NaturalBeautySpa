@@ -2,8 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html[lang="jp"],html[lang="kr"] {
     font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
 }
+
+html[lang="en"],html[lang="vi"] {
+    font-family: "Open Sans", sans-serif;
+}
+
 
 html {
     overflow-x: hidden;

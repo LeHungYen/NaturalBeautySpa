@@ -4,6 +4,7 @@ import Header from "./header";
 import SettingIcon from "./FloatingIcon";
 import { TiArrowUpThick } from "react-icons/ti";
 import React, { useRef, useEffect } from 'react';
+import {getStoredData} from "../../store/store";
 function DefaultLayout({ children }) {
 
     const scrollToTopRef = useRef(null);
@@ -16,6 +17,8 @@ function DefaultLayout({ children }) {
                 scrollToTopRef.current.style.display = 'none';
             }
         };
+
+        document.documentElement.setAttribute("lang", getStoredData("lang"));
 
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -41,7 +44,7 @@ function DefaultLayout({ children }) {
 
             <Footer />
             <div className="disable-background-overlay" />
-            {/*<SettingIcon />*/}
+            <SettingIcon />
 
             <div
                 className={style.goToTop}

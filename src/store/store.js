@@ -9,5 +9,8 @@ const updateState = store => next => action => {
 };
 
 const store = createStore(reducer, applyMiddleware(updateState))
+export function getStoredData(key) {
+    return store.getState()[key];
+}
 
 export default store;
