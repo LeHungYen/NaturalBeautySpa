@@ -117,7 +117,6 @@ export default function Header(props) {
                         caption: getDict("nav-drawer-sub-3-3"),
                         url: routes.privacyPolicy,
                     },
-
                 ]
             },
             {
@@ -129,7 +128,10 @@ export default function Header(props) {
                 url: routes.news_jobs
             },
 
-
+            // {
+            //     name: "プロダクト",
+            //     url: routes.storeProduct
+            // },
         ]
     }
 
