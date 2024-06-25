@@ -259,7 +259,7 @@ function StoreProduct() {
                                 value={categorySelected}
                                 onChange={(e) => setCategorySelected(e.target.value)}>
 
-                                <option value={-1}>Loại sản phẩm</option>
+                                <option value={-1}>{getDict("store_product_category")}</option>
 
                                 {language == languageEnum.VN &&
                                     categorys.map((o, index) => {
@@ -287,9 +287,9 @@ function StoreProduct() {
                                 value={filter}
                                 onChange={(e) => setFilter(e.target.value)}
                             >
-                                <option value={""}>Sắp xếp theo</option>
-                                <option value={"increase"}>Giá tăng dần</option>
-                                <option value={"decrease"}>Giá giảm dần</option>
+                                <option value={""}>{getDict("store_product_arrange")}</option>
+                                <option value={"increase"}>{getDict("store_product_arrange_increase")}</option>
+                                <option value={"decrease"}>{getDict("store_product_arrange_decrease")}</option>
                             </select>
                         </div>
 
@@ -330,7 +330,7 @@ function StoreProduct() {
             {
                 items.length == 0 &&
                 <div className={style.emptyItem}>
-                    <p>Hiện chưa có sản phẩm nào</p>
+                    <p>{getDict("store_product_noProductAvailable")}</p>
                 </div>
             }
 

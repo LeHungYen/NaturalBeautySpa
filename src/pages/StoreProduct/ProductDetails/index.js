@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Popup } from '../../../components/Popup';
+import { getDict } from '../../../services/dict';
 function ProductDetail() {
     const apiService = new ApiService(baseUrl)
     const navigate = useNavigate();
@@ -285,7 +286,7 @@ function ProductDetail() {
                         </div>
 
                         <div className={style.price}>
-                            <p>{item?.price} <span>tax included</span></p>
+                            <p>{item?.price} <span>{getDict("store_productDetail_taxIncluded")}</span></p>
                         </div>
 
                         <div className={style.description}>
@@ -302,13 +303,13 @@ function ProductDetail() {
                         </div>
 
                         <div className={style.button}>
-                            <button>Available in-store only</button>
+                            <button>{getDict("store_productDetail_availableInStoreOnly")}</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <p className={style.titleOtherProduct}>Other products</p>
+            <p className={style.titleOtherProduct}>{getDict("store_productDetail_otherProduct")}</p>
             <div className={style.otherProduct}>
                 <div className={style.carousel} ref={carouselRef}>
                     {items.map((item, index) => (
@@ -324,7 +325,7 @@ function ProductDetail() {
             </div>
 
             <a href={routes.storeProduct}>
-                <button className={style.returnProductList}>Return to product list</button>
+                <button className={style.returnProductList}>{getDict("store_productDetail_returnToProductList")}</button>
             </a>
 
 

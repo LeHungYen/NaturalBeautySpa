@@ -1341,6 +1341,13 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    nav_drawer_sub_3_0: {
+        "vi": null,
+        "en": null,
+        "jp": "プロダクト",
+        "kr": null,
+        "mergeFlag": false
+    },
     nav_drawer_sub_3_1: {
         "vi": null,
         "en": null,
@@ -1394,6 +1401,13 @@ const dictLibrary = {
         "vi": null,
         "en": null,
         "jp": "予約専用フォーム",
+        "kr": null,
+        "mergeFlag": false
+    },
+    nav_news_jobs: {
+        "vi": null,
+        "en": null,
+        "jp": "ご記入募集フォーム",
         "kr": null,
         "mergeFlag": false
     },
@@ -2015,6 +2029,168 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    news_job_pay: {
+        "vi": "Mức lương",
+        "en": "Pay",
+        "jp": "給料",
+        "kr": "급여",
+        "mergeFlag": false
+    },
+    news_job_location: {
+        "vi": "Địa điểm",
+        "en": "Location",
+        "jp": "勤務地",
+        "kr": "위치",
+        "mergeFlag": false
+    },
+    news_job_exp: {
+        "vi": "Kinh nghiệm",
+        "en": "Experience",
+        "jp": "経験",
+        "kr": "경험",
+        "mergeFlag": false
+    },
+    news_job_applyNow: {
+        "vi": "Ứng tuyển ngay",
+        "en": "Apply now",
+        "jp": "今すぐ応募",
+        "kr": "지금 지원하세요",
+        "mergeFlag": false
+    },
+    news_job_jobDescription: {
+        "vi": "Mô tả công việc",
+        "en": "Job descriptions",
+        "jp": "仕事内容",
+        "kr": "직무 설명",
+        "mergeFlag": false
+    },
+    news_job_requirement: {
+        "vi": "Yêu cầu",
+        "en": "Requirements",
+        "jp": "要件",
+        "kr": "요구 사항",
+        "mergeFlag": false
+    },
+    news_job_benefits: {
+        "vi": "Phúc lợi",
+        "en": "Benefits",
+        "jp": "福利厚生",
+        "kr": "복리후생",
+        "mergeFlag": false
+    },
+    news_job_workLocation: {
+        "vi": "Địa điểm làm việc",
+        "en": "Work location",
+        "jp": "勤務地",
+        "kr": "근무지",
+        "mergeFlag": false
+    },
+    news_job_workTime: {
+        "vi": "Thời gian làm việc",
+        "en": "Work time",
+        "jp": "勤務時間",
+        "kr": "근무 시간",
+        "mergeFlag": false
+    },
+    news_job_howToApply: {
+        "vi": "Cách thức ứng tuyển",
+        "en": "How to apply",
+        "jp": "応募方法",
+        "kr": "지원 방법",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text1: {
+        "vi": "Ứng viên nộp hồ sơ trực tuyến bằng cách bấm",
+        "en": "Candidates can apply online by clicking",
+        "jp": "応募はオンラインで行い、以下のリンクをクリックしてください。",
+        "kr": "지원자는 온라인으로 지원할 수 있습니다. 아래를 클릭하세요.",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text2: {
+        "vi": "Ứng tuyển",
+        "en": "Apply",
+        "jp": "応募する",
+        "kr": "지원하기",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text3: {
+        "vi": "ngay dưới đây.",
+        "en": "below.",
+        "jp": "以下",
+        "kr": "아래",
+        "mergeFlag": false
+    },
+
+    /////////////////////////////////////// store product
+    store_product_category: {
+        "vi": "Loại sản phẩm",
+        "en": "Product category",
+        "jp": "製品カテゴリ",
+        "kr": "제품 카테고리",
+        "mergeFlag": false
+    },
+    store_product_arrange: {
+        "vi": "Sắp xếp theo",
+        "en": "Arrange by",
+        "jp": "並べ替え",
+        "kr": "정렬 기준",
+        "mergeFlag": false
+    },
+    store_product_arrange_increase: {
+        "vi": "Giá tăng dần",
+        "en": "Price ascending",
+        "jp": "価格が安い順",
+        "kr": "가격 오름차순",
+        "mergeFlag": false
+    },
+    store_product_arrange_decrease: {
+        "vi": "Giá giảm dần",
+        "en": "Price descending",
+        "jp": "価格が高い順",
+        "kr": "가격 내림차순",
+        "mergeFlag": false
+    },
+    store_product_noProductAvailable: {
+        "vi": "Hiện chưa có sản phẩm nào",
+        "en": "No products available at the moment",
+        "jp": "現在、商品はありません",
+        "kr": "현재 제품이 없습니다",
+        "mergeFlag": false
+    },
+    store_productDetail_taxIncluded: {
+        "vi": "Đã bao gồm thuế",
+        "en": "tax included",
+        "jp": "税込み",
+        "kr": "세금 포함",
+        "mergeFlag": false
+    },
+    store_productDetail_availableInStoreOnly: {
+        "vi": "Chỉ có sẵn tại cửa hàng",
+        "en": "Available in-store only",
+        "jp": "店舗でのみ利用可能",
+        "kr": "매장에서만 구매 가능",
+        "mergeFlag": false
+    },
+    store_productDetail_otherProduct: {
+        "vi": "Sản phẩm khác",
+        "en": "Other products",
+        "jp": "その他の商品",
+        "kr": "다른 제품",
+        "mergeFlag": false
+    },
+    store_productDetail_returnToProductList: {
+        "vi": "Quay lại danh sách sản phẩm",
+        "en": "Return to product list",
+        "jp": "製品リストに戻る",
+        "kr": "제품 목록으로 돌아가기",
+        "mergeFlag": false
+    },
+    
+    
+    
+
+
+
 
 
     // data
@@ -3168,7 +3344,7 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-   
+
     menu_item6_priceList_description_item1: {
         "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
         "en": "*All prices include consumption tax.",
