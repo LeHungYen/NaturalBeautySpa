@@ -102,7 +102,7 @@ export default function Header(props) {
                 url: "/company",
                 items: [
                     {
-                        caption: "プロダクト",
+                        caption: getDict("nav_drawer_sub_3_0"),
                         url: routes.storeProduct
                     },
                     {
@@ -124,7 +124,7 @@ export default function Header(props) {
                 url: "/reservation"
             },
             {
-                name: "ご記入募集フォーム",
+                name: getDict("nav_news_jobs"),
                 url: routes.news_jobs
             },
 

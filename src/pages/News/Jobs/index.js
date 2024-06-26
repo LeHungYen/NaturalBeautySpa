@@ -30,7 +30,7 @@ function Jobs() {
     // api
     const getData = async () => {
         try {
-            const response = await apiService.fetchData(recruitmentServiceUrl.get, {}, {}, true);
+            const response = await apiService.fetchData(recruitmentServiceUrl.get, { language: "VN" }, {}, true);
             setJobs(response);
         } catch (error) {
             // setMessage(error.response.data.error)
@@ -101,7 +101,7 @@ function Jobs() {
                                     <PiCurrencyDollarFill className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Pay</p>
+                                    <p className={style.contentTitle}>{getDict("news_job_pay")}</p>
                                     <p className={style.contentValue}>{jobs[key].pay}</p>
                                 </div>
                             </li>
@@ -111,7 +111,7 @@ function Jobs() {
                                     <FaLocationDot className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Location</p>
+                                    <p className={style.contentTitle}>{getDict("news_job_location")}</p>
                                     <p className={style.contentValue}>{jobs[key].city}</p>
                                 </div>
                             </li>
@@ -121,7 +121,7 @@ function Jobs() {
                                     <BsHourglassSplit className={style.icon} />
                                 </div>
                                 <div className={style.subInfor}>
-                                    <p className={style.contentTitle}>Experience</p>
+                                    <p className={style.contentTitle}>{getDict("news_job_exp")}</p>
                                     <p className={style.contentValue}>{jobs[key].experience}</p>
                                 </div>
                             </li>
@@ -129,7 +129,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.apply}>
-                        <button onClick={openModal}>Ứng tuyển ngay</button>
+                        <button onClick={openModal}>{getDict("news_job_applyNow")}</button>
                     </div>
 
                 </div>
@@ -142,7 +142,7 @@ function Jobs() {
 
                 <div className={style.content}>
                     <div className={style.jobDescripton}>
-                        <p className={style.title}>Job descriptions</p>
+                        <p className={style.title}>{getDict("news_job_jobDescription")}</p>
                         <div className={style.text}>
                             {jobs[key].description.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -155,7 +155,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobRequirement}>
-                        <p className={style.title}>Requirements</p>
+                        <p className={style.title}>{getDict("news_job_requirement")}</p>
                         <div className={style.text}>
                             {jobs[key].requirement.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -168,7 +168,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobBenefits}>
-                        <p className={style.title}>Benefits</p>
+                        <p className={style.title}>{getDict("news_job_benefits")}</p>
                         <div className={style.text}>
                             {jobs[key].benefits.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -181,7 +181,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobLocation}>
-                        <p className={style.title}>Work location</p>
+                        <p className={style.title}>{getDict("news_job_workLocation")}</p>
                         <div className={style.text}>
                             {jobs[key].workLocation.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -194,7 +194,7 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobTime}>
-                        <p className={style.title}>Work time</p>
+                        <p className={style.title}>{getDict("news_job_workTime")}</p>
                         <div className={style.text}>
                             {jobs[key].workTime.split('\n').map((line, index) => (
                                 <React.Fragment key={index}>
@@ -207,19 +207,19 @@ function Jobs() {
                     </div>
 
                     <div className={style.jobApply}>
-                        <p className={style.title}>How to apply</p>
+                        <p className={style.title}>{getDict("news_job_howToApply")}</p>
 
                         <div className={style.text}>
                             <React.Fragment>
                                 <ul>
-                                    <li>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm <strong>Ứng tuyển</strong> ngay dưới đây.</li>
+                                    <li>{getDict("news_job_howToApply_text1")} <strong>{getDict("news_job_howToApply_text2")}</strong> {getDict("news_job_howToApply_text3")}</li>
                                 </ul>
                             </React.Fragment>
                         </div>
                     </div>
 
                     <div className={style.buttonApply}>
-                        <button onClick={openModal}>Ứng tuyển ngay</button>
+                        <button onClick={openModal}>{getDict("news_job_applyNow")}</button>
                     </div>
 
                 </div>

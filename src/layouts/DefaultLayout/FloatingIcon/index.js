@@ -9,6 +9,7 @@ export default function SettingIcon(props) {
     const flags = ["flag_en.jpg","flag_ja.jpg","flag_vn.jpg","flag_kr.jpg"]
     const lang = ["en","jp","vi","kr"]
     const dispatch = useDispatch();
+    
     const changeLang = function (lang) {
         changeLanguage(dispatch, lang)
     }

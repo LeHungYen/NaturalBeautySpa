@@ -1341,6 +1341,13 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    nav_drawer_sub_3_0: {
+        "vi": null,
+        "en": null,
+        "jp": "プロダクト",
+        "kr": null,
+        "mergeFlag": false
+    },
     nav_drawer_sub_3_1: {
         "vi": null,
         "en": null,
@@ -1394,6 +1401,13 @@ const dictLibrary = {
         "vi": null,
         "en": null,
         "jp": "予約専用フォーム",
+        "kr": null,
+        "mergeFlag": false
+    },
+    nav_news_jobs: {
+        "vi": null,
+        "en": null,
+        "jp": "ご記入募集フォーム",
         "kr": null,
         "mergeFlag": false
     },
@@ -2015,6 +2029,280 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
+    news_job_pay: {
+        "vi": "Mức lương",
+        "en": "Pay",
+        "jp": "給料",
+        "kr": "급여",
+        "mergeFlag": false
+    },
+    news_job_location: {
+        "vi": "Địa điểm",
+        "en": "Location",
+        "jp": "勤務地",
+        "kr": "위치",
+        "mergeFlag": false
+    },
+    news_job_exp: {
+        "vi": "Kinh nghiệm",
+        "en": "Experience",
+        "jp": "経験",
+        "kr": "경험",
+        "mergeFlag": false
+    },
+    news_job_applyNow: {
+        "vi": "Ứng tuyển ngay",
+        "en": "Apply now",
+        "jp": "今すぐ応募",
+        "kr": "지금 지원하세요",
+        "mergeFlag": false
+    },
+    news_job_jobDescription: {
+        "vi": "Mô tả công việc",
+        "en": "Job descriptions",
+        "jp": "仕事内容",
+        "kr": "직무 설명",
+        "mergeFlag": false
+    },
+    news_job_requirement: {
+        "vi": "Yêu cầu",
+        "en": "Requirements",
+        "jp": "要件",
+        "kr": "요구 사항",
+        "mergeFlag": false
+    },
+    news_job_benefits: {
+        "vi": "Phúc lợi",
+        "en": "Benefits",
+        "jp": "福利厚生",
+        "kr": "복리후생",
+        "mergeFlag": false
+    },
+    news_job_workLocation: {
+        "vi": "Địa điểm làm việc",
+        "en": "Work location",
+        "jp": "勤務地",
+        "kr": "근무지",
+        "mergeFlag": false
+    },
+    news_job_workTime: {
+        "vi": "Thời gian làm việc",
+        "en": "Work time",
+        "jp": "勤務時間",
+        "kr": "근무 시간",
+        "mergeFlag": false
+    },
+    news_job_howToApply: {
+        "vi": "Cách thức ứng tuyển",
+        "en": "How to apply",
+        "jp": "応募方法",
+        "kr": "지원 방법",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text1: {
+        "vi": "Ứng viên nộp hồ sơ trực tuyến bằng cách bấm",
+        "en": "Candidates can apply online by clicking",
+        "jp": "応募はオンラインで行い、以下のリンクをクリックしてください。",
+        "kr": "지원자는 온라인으로 지원할 수 있습니다. 아래를 클릭하세요.",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text2: {
+        "vi": "Ứng tuyển",
+        "en": "Apply",
+        "jp": "応募する",
+        "kr": "지원하기",
+        "mergeFlag": false
+    },
+    news_job_howToApply_text3: {
+        "vi": "ngay dưới đây.",
+        "en": "below.",
+        "jp": "以下",
+        "kr": "아래",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text1: {
+        "vi": "Vui lòng chỉ chọn file PDF.",
+        "en": "Please select only PDF files.",
+        "jp": "PDFファイルのみ選択してください。",
+        "kr": "PDF 파일만 선택해주세요.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text2: {
+        "vi": "File quá lớn. Vui lòng chọn file dưới 5MB.",
+        "en": "The file is too large. Please select a file under 5MB.",
+        "jp": "ファイルが大きすぎます。5MB以下のファイルを選択してください。",
+        "kr": "파일이 너무 큽니다. 5MB 이하의 파일을 선택해주세요.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text3: {
+        "vi": "Vui lòng chọn file.",
+        "en": "Please select a file.",
+        "jp": "ファイルを選択してください。",
+        "kr": "파일을 선택해주세요.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text4: {
+        "vi": "CV của bạn đã được gửi đi",
+        "en": "Your CV has been sent",
+        "jp": "あなたのCVは送信されました",
+        "kr": "귀하의 CV가 전송되었습니다.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text5: {
+        "vi": "Chúng tôi sẽ sớm liên lạc với bạn",
+        "en": "We will contact you soon",
+        "jp": "まもなくご連絡いたします",
+        "kr": "곧 연락드리겠습니다.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text6: {
+        "vi": "Ứng tuyển:",
+        "en": "Applying for:",
+        "jp": "応募する職位:",
+        "kr": "지원하는 직책:",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text7: {
+        "vi": "Họ và tên",
+        "en": "Full name",
+        "jp": "氏名",
+        "kr": "성명",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text8: {
+        "vi": "Email",
+        "en": "Email",
+        "jp": "メールアドレス",
+        "kr": "이메일",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text9: {
+        "vi": "Số điện thoại",
+        "en": "Phone number",
+        "jp": "電話番号",
+        "kr": "전화번호",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text10: {
+        "vi": "Thư giới thiệu",
+        "en": "Cover letter",
+        "jp": "カバーレター",
+        "kr": "자기소개서",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text11: {
+        "vi": "Viết giới thiệu ngắn gọn về bản thân (điểm mạnh, điểm yếu) và nêu rõ mong muốn, lý do bạn muốn ứng tuyển cho vị trí này",
+        "en": "Write a brief introduction about yourself (strengths, weaknesses) and specify your desires and reasons for applying for this position",
+        "jp": "自己紹介文（強み、弱み）を簡単に書き、この職位に応募する理由や希望を明確にしてください",
+        "kr": "자기소개서 (강점, 약점) 를 간단히 작성하고 이 직책에 지원하는 이유와 희망을 명확히 기재해주세요.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text12: {
+        "vi": "Tải lên CV từ máy tính, chọn hoặc kéo thả",
+        "en": "Upload CV from your computer, select or drag and drop",
+        "jp": "コンピューターからCVをアップロードし、選択またはドラッグ＆ドロップしてください",
+        "kr": "컴퓨터에서 CV를 업로드하고 선택하거나 드래그 앤 드롭하세요.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text13: {
+        "vi": "Hỗ trợ định dạng pdf có kích thước dưới 5MB",
+        "en": "Supports PDF format under 5MB",
+        "jp": "5MB以下のPDFフォーマットをサポートします",
+        "kr": "5MB 이하의 PDF 형식을 지원합니다.",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text14: {
+        "vi": "Chọn CV",
+        "en": "Select CV",
+        "jp": "CVを選択",
+        "kr": "CV 선택",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text15: {
+        "vi": "Hủy",
+        "en": "Cancel",
+        "jp": "キャンセル",
+        "kr": "취소",
+        "mergeFlag": false
+    },
+    news_job_modalCV_text16: {
+        "vi": "Nộp hồ sơ ứng tuyển",
+        "en": "Submit application",
+        "jp": "応募書類を提出する",
+        "kr": "지원서 제출",
+        "mergeFlag": false
+    },
+
+    /////////////////////////////////////// store product
+    store_product_category: {
+        "vi": "Loại sản phẩm",
+        "en": "Product category",
+        "jp": "製品カテゴリ",
+        "kr": "제품 카테고리",
+        "mergeFlag": false
+    },
+    store_product_arrange: {
+        "vi": "Sắp xếp theo",
+        "en": "Arrange by",
+        "jp": "並べ替え",
+        "kr": "정렬 기준",
+        "mergeFlag": false
+    },
+    store_product_arrange_increase: {
+        "vi": "Giá tăng dần",
+        "en": "Price ascending",
+        "jp": "価格が安い順",
+        "kr": "가격 오름차순",
+        "mergeFlag": false
+    },
+    store_product_arrange_decrease: {
+        "vi": "Giá giảm dần",
+        "en": "Price descending",
+        "jp": "価格が高い順",
+        "kr": "가격 내림차순",
+        "mergeFlag": false
+    },
+    store_product_noProductAvailable: {
+        "vi": "Hiện chưa có sản phẩm nào",
+        "en": "No products available at the moment",
+        "jp": "現在、商品はありません",
+        "kr": "현재 제품이 없습니다",
+        "mergeFlag": false
+    },
+    store_productDetail_taxIncluded: {
+        "vi": "Đã bao gồm thuế",
+        "en": "tax included",
+        "jp": "税込み",
+        "kr": "세금 포함",
+        "mergeFlag": false
+    },
+    store_productDetail_availableInStoreOnly: {
+        "vi": "Chỉ có sẵn tại cửa hàng",
+        "en": "Available in-store only",
+        "jp": "店舗でのみ利用可能",
+        "kr": "매장에서만 구매 가능",
+        "mergeFlag": false
+    },
+    store_productDetail_otherProduct: {
+        "vi": "Sản phẩm khác",
+        "en": "Other products",
+        "jp": "その他の商品",
+        "kr": "다른 제품",
+        "mergeFlag": false
+    },
+    store_productDetail_returnToProductList: {
+        "vi": "Quay lại danh sách sản phẩm",
+        "en": "Return to product list",
+        "jp": "製品リストに戻る",
+        "kr": "제품 목록으로 돌아가기",
+        "mergeFlag": false
+    },
+
+
+
+
+
+
 
 
     // data
@@ -3168,7 +3456,7 @@ const dictLibrary = {
         "kr": null,
         "mergeFlag": false
     },
-   
+
     menu_item6_priceList_description_item1: {
         "vi": "*Tất cả giá đã bao gồm thuế tiêu thụ.",
         "en": "*All prices include consumption tax.",
