@@ -30,7 +30,7 @@ function Jobs() {
     // api
     const getData = async () => {
         try {
-            const response = await apiService.fetchData(recruitmentServiceUrl.get, { language: "JP" }, {}, true);
+            const response = await apiService.fetchData(recruitmentServiceUrl.get, { language: "VN" }, {}, true);
             setJobs(response);
         } catch (error) {
             // setMessage(error.response.data.error)

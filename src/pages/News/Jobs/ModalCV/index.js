@@ -9,6 +9,7 @@ import { baseUrl, resumeServiceUrl } from "../../../../config/link";
 import { useLocation } from 'react-router-dom';
 import { SuccessOrErrorPopup } from "../../../../components/SuccessOrErrorPopup";
 import { Popup } from "../../../../components/Popup";
+import { getDict } from "../../../../services/dict";
 function ModalCV({ modal, setModal, job, index }) {
     const apiService = new ApiService(baseUrl)
     const location = useLocation();
@@ -44,11 +45,11 @@ function ModalCV({ modal, setModal, job, index }) {
 
     const handleFileChange = (file) => {
         if (file.type !== 'application/pdf') {
-            setErrors(prevErrors => ({ ...prevErrors, file: 'Vui lòng chỉ chọn file PDF.' }));
+            setErrors(prevErrors => ({ ...prevErrors, file: getDict("news_job_modalCV_text1") }));
             return;
         }
         if (file.size > 5 * 1024 * 1024) {
-            setErrors(prevErrors => ({ ...prevErrors, file: 'File quá lớn. Vui lòng chọn file dưới 5MB.' }));
+            setErrors(prevErrors => ({ ...prevErrors, file: getDict("news_job_modalCV_text2") }));
             return;
         }
         setForm(prevState => ({
@@ -83,7 +84,7 @@ function ModalCV({ modal, setModal, job, index }) {
         e.preventDefault();
 
         if (!form.file) {
-            setErrors({ ...errors, file: 'Vui lòng chọn file.' });
+            setErrors({ ...errors, file: getDict("news_job_modalCV_text3") });
             return;
         }
 
@@ -107,8 +108,8 @@ function ModalCV({ modal, setModal, job, index }) {
 
     const [message, setMessage] = useState({
         type: "success",
-        mainText: "CV của bạn đã được gửi đi",
-        subText: "Chúng tôi sẽ sớm liên lạc với bạn",
+        mainText: getDict("news_job_modalCV_text4"),
+        subText: getDict("news_job_modalCV_text5"),
         buttons: [
             { text: "Continue", action: cancelAction, className: "btn-success" },
         ]
@@ -120,15 +121,15 @@ function ModalCV({ modal, setModal, job, index }) {
                 <div className={style.container}>
                     <form onSubmit={save}>
                         <div className={style.header}>
-                            <p><span>Ứng tuyển: </span>{job?.title}</p>
+                            <p><span>{getDict("news_job_modalCV_text6")} </span>{job?.title}</p>
                         </div>
 
                         <div className={style.body}>
                             <div className={style.formInput}>
-                                <label>Họ và tên <span className={style.required}>*</span></label>
+                                <label>{getDict("news_job_modalCV_text7")} <span className={style.required}>*</span></label>
                                 <input
                                     type='text'
-                                    placeholder="Họ và tên"
+                                    placeholder={getDict("news_job_modalCV_text7")}
                                     value={form.fullName}
                                     required
                                     onChange={(e) => handleForm("fullName", e.target.value)}
@@ -138,10 +139,10 @@ function ModalCV({ modal, setModal, job, index }) {
 
                             <div className={style.dflex}>
                                 <div className={style.formInput}>
-                                    <label>Email <span className={style.required}>*</span></label>
+                                    <label>{getDict("news_job_modalCV_text8")} <span className={style.required}>*</span></label>
                                     <input
                                         type='text'
-                                        placeholder="Email"
+                                        placeholder={getDict("news_job_modalCV_text8")}
                                         required
                                         value={form.email}
                                         onChange={(e) => handleForm("email", e.target.value)}
@@ -149,10 +150,10 @@ function ModalCV({ modal, setModal, job, index }) {
                                     {errors.email && <p className={style.error}>{errors.email}</p>}
                                 </div>
                                 <div className={style.formInput}>
-                                    <label>Số điện thoại <span className={style.required}>*</span></label>
+                                    <label>{getDict("news_job_modalCV_text9")} <span className={style.required}>*</span></label>
                                     <input
                                         type='text'
-                                        placeholder="Số điện thoại"
+                                        placeholder={getDict("news_job_modalCV_text9")}
                                         required
                                         value={form.phone}
                                         onChange={(e) => handleForm("phone", e.target.value)}
@@ -162,9 +163,9 @@ function ModalCV({ modal, setModal, job, index }) {
                             </div>
 
                             <div className={style.formTextarea}>
-                                <label>Thư giới thiệu</label>
+                                <label>{getDict("news_job_modalCV_text10")}</label>
                                 <textarea
-                                    placeholder="Viết giới thiệu ngắn gọn về bản thân (điểm mạnh, điểm yếu) và nêu rõ mong muốn, lý do bạn muốn ứng tuyển cho vị trí này"
+                                    placeholder={getDict("news_job_modalCV_text11")}
                                     value={form.note}
                                     onChange={(e) => handleForm("note", e.target.value)}
                                 />
@@ -179,10 +180,10 @@ function ModalCV({ modal, setModal, job, index }) {
                             >
                                 <div className={style.mainText}>
                                     <MdCloudUpload className={style.icon} />
-                                    <p> Tải lên CV từ máy tính, chọn hoặc kéo thả</p>
+                                    <p> {getDict("news_job_modalCV_text12")}</p>
 
                                 </div>
-                                <p className={style.subText}>Hỗ trợ định dạng pdf có kích thước dưới 5MB</p>
+                                <p className={style.subText}>{getDict("news_job_modalCV_text13")}</p>
                                 <div className={style.fileAndBtn}>
                                     {form.file && <div className={style.file}>
                                         <div className={style.fileName}><PiFileTextLight className={style.icon} /> {form.file.name}</div>
@@ -192,7 +193,7 @@ function ModalCV({ modal, setModal, job, index }) {
                                     </div>}
 
 
-                                    <button className={style.selectBtn} onClick={handleSelectFileClick} type="button">Chọn CV</button>
+                                    <button className={style.selectBtn} onClick={handleSelectFileClick} type="button">{getDict("news_job_modalCV_text14")}</button>
                                     <input
                                         type="file"
                                         ref={fileInputRef}
@@ -209,8 +210,8 @@ function ModalCV({ modal, setModal, job, index }) {
                         </div>
 
                         <div className={style.buttons}>
-                            <button className={style.cancelBtn} type="button" onClick={() => setModal(false)}>Hủy</button>
-                            <button className={style.submitBtn} type="submit">Nộp hồ sơ ứng tuyển</button>
+                            <button className={style.cancelBtn} type="button" onClick={() => setModal(false)}>{getDict("news_job_modalCV_text15")}</button>
+                            <button className={style.submitBtn} type="submit">{getDict("news_job_modalCV_text16")}</button>
                         </div>
                     </form>
                 </div>
